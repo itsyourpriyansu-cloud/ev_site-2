@@ -187,14 +187,28 @@ pick(Math.max(0, fromHash));
 const io = new IntersectionObserver(entries => entries.forEach(e => {
   if (!e.isIntersecting) return;
   e.target.classList.add('in');
+  e.target.addEventListener('transitionend', () => { e.target.style.transitionDelay = ''; }, { once: true }); // so later hovers aren't delayed
   io.unobserve(e.target);
 }), { threshold: 0.15 });
-document.querySelectorAll('.block .head-row, .sol-row, .picker, .why-intro, .step, .faq-intro, .faq-item, .faq-panel, .partners-in').forEach((el, i) => {
+document.querySelectorAll('.block .head-row, .sol-row, .picker, .why-intro, .step, .faq-intro, .faq-item, .faq-panel, .partners-in, .card, .pcard, .seg, .row, .stage, .feat, .use, .spec-group, .flow li, .callout, .ladder').forEach((el, i) => {
   el.classList.add('reveal');
   el.style.transitionDelay = (i % 4) * 70 + 'ms';
   io.observe(el);
 });
 whyCards.forEach(c => io.observe(c));
+
+// Sub-nav scroll-spy: the link for the section crossing the middle band of the viewport gets aria-current
+const spyLinks = [...document.querySelectorAll('.subnav a[href^="#"]')];
+const spy = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  const a = spyLinks.find(l => l.hash === '#' + e.target.id);
+  spyLinks.forEach(l => l.removeAttribute('aria-current'));
+  if (!a) return; // back at the hero: nothing current
+  a.setAttribute('aria-current', 'true');
+  a.parentElement.parentElement.scrollTo({ left: a.offsetLeft - 16, behavior: 'smooth' });
+}), { rootMargin: '-45% 0px -50% 0px' });
+spyLinks.forEach(l => { const t = document.getElementById(l.hash.slice(1)); if (t) spy.observe(t); });
+if (spyLinks.length) spy.observe(document.getElementById('top'));
 
 // Rotators: parallel lists take turns (.is-active slides in, .is-prev slides out); picking one restarts the clock
 function cycle(groups, ms) {

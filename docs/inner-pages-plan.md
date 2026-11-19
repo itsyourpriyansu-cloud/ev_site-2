@@ -1,6 +1,7 @@
 # ev2 inner pages: section-by-section build plan
 
-**Status:** Phase 1 DONE (19 Nov 2026): D1–D5 accepted as recommended. L1–L6, L9 (paths + robots) and L10 are applied. L7 was dropped: the new pill header reads on any background. L8 (`aria-current`) and the per-page canonical/`og:url` move to `build.mjs` in Phase 2 (needs `SITE_URL`). The nav's "How it Works" and "FAQ" were replaced by About and Contact; FAQ stays in the footer as `/#faq`. Inner heroes must carry `id="top"` (the footer logo links to `#top`). The landing page (`index.html`, `style.css`, `script.js`) is the design source; every inner page reuses its parts.
+**Status:** Phase 1 DONE (19 Nov 2026): D1–D5 accepted as recommended. L1–L6, L9 (paths + robots) and L10 are applied. L7 was dropped: the new pill header reads on any background. L8 (`aria-current`) and the per-page canonical/`og:url` move to `build.mjs` in Phase 2 (needs `SITE_URL`). The nav's "How it Works" and "FAQ" were replaced by About and Contact; FAQ stays in the footer as `/#faq`. Inner heroes must carry `id="top"` (the footer logo links to `#top`).
+**Phase 2 DONE (19 Nov 2026):** `node build.mjs` writes 11 routes + `404.html` from `content/pages.json`; `index.html` stays byte-identical. Image slots resolve through `content/images.json` (brief: `docs/image-prompts.md`). Markup uses the §1.2 class names, which get their CSS in Phase 3, so inner pages render mostly unstyled until then. The landing page (`index.html`, `style.css`, `script.js`) is the design source; every inner page reuses its parts.
 **Content source:** `../envizon_ev/content/pages.json` (pages, the 4 Atom products, shared `stages` and `capabilities`) and `content/icons.json`. The rules come from `../envizon_ev/docs/inner-pages-plan.md`, `design-system.md` and `content-register.md`: no invented stats, prices, logos or testimonials; `BLOCKED` content is never rendered; `null` spec values show **"Confirmed per datasheet"**; standards read "designed to", never "certified".
 
 ---
@@ -223,6 +224,7 @@ No footer `.foot-cta` here (it would repeat the page). Phones and address stay B
 | 5 | /solutions, /partners (+ dialog partnership fieldset) | §3.3–3.4 complete |
 | 6 | /about, /contact, /privacy, /terms, 404 | §3.5–3.8 complete |
 | 7 | Audits + QA (§6, §7) | All checks green |
+| Images (parallel) | Antigravity generates the 27 slots in `docs/image-prompts.md` into `assets/img/gen/`. Pages ship with fallbacks. On the owner's go, flip `approved` per slot in `content/images.json` and rebuild | Every approved slot renders; no fallback is off-system |
 
 ---
 

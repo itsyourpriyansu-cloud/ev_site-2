@@ -1,0 +1,167 @@
+{
+ "_readme": "Image slots for inner pages (docs/image-prompts.md). build.mjs uses `file` only when approved is true and the file exists; otherwise `fallback`.",
+ "slots": {
+  "hero-chargers": {
+   "file": "/assets/img/gen/hero-chargers.webp",
+   "fallback": "/assets/img/charger-120.webp",
+   "alt": "Four Envizon Atom chargers, from a wall socket to a DC fast charger, in an office car park at dusk (illustrative render)",
+   "approved": true
+  },
+  "hero-solutions": {
+   "file": "/assets/img/gen/hero-solutions.webp",
+   "fallback": "/assets/img/night-canopy.webp",
+   "alt": "Dusk view of an apartment car park, an office forecourt and a van bay, each with EV chargers (illustrative render)",
+   "approved": true
+  },
+  "hero-partners": {
+   "file": "/assets/img/gen/hero-partners.webp",
+   "fallback": "/assets/img/partner-hero.webp",
+   "alt": "A partner's EV charger showroom at dusk, with chargers on display and two people talking (illustrative render)",
+   "approved": true
+  },
+  "hero-about": {
+   "file": "/assets/img/gen/hero-about.webp",
+   "fallback": "/assets/img/delivery-team.webp",
+   "alt": "Two engineers commissioning a DC fast charger next to an electric SUV at dusk (illustrative render)",
+   "approved": true
+  },
+  "hero-contact": {
+   "file": "/assets/img/gen/hero-contact.webp",
+   "fallback": "/assets/img/night-canopy.webp",
+   "alt": "A site supervisor on a call beside a wall-mounted EV charger in a basement car park (illustrative render)",
+   "approved": true
+  },
+  "dc-30": {
+   "file": "/assets/img/gen/dc-30.webp",
+   "fallback": "/assets/img/charger-60.webp",
+   "alt": "Isometric forecourt of a small office with one DC charger and a sedan charging (illustrative render)",
+   "approved": true
+  },
+  "dc-60-120": {
+   "file": "/assets/img/gen/dc-60-120.webp",
+   "fallback": "/assets/img/charger-120.webp",
+   "alt": "Isometric highway rest stop with three DC chargers under a canopy (illustrative render)",
+   "approved": true
+  },
+  "dc-180-360": {
+   "file": "/assets/img/gen/dc-180-360.webp",
+   "fallback": "/assets/img/charger-240.webp",
+   "alt": "Isometric electric bus depot with high-power DC charging cabinets (illustrative render)",
+   "approved": true
+  },
+  "par-opportunity": {
+   "file": "/assets/img/gen/par-opportunity.webp",
+   "fallback": "/assets/img/opportunity-network.webp",
+   "alt": "Isometric city with apartments, offices, a depot and a parking hub linked by charging routes (illustrative render)",
+   "approved": false
+  },
+  "par-distributor": {
+   "file": "/assets/img/gen/par-distributor.webp",
+   "fallback": "/assets/img/model-distributor.webp",
+   "alt": "Isometric charger showroom and warehouse stocked with chargers (illustrative render)",
+   "approved": false
+  },
+  "par-recurring": {
+   "file": "/assets/img/gen/par-recurring.webp",
+   "fallback": "/assets/img/price-recurring.webp",
+   "alt": "Isometric service van and technician maintaining a DC charger (illustrative render)",
+   "approved": false
+  },
+  "seg-residential": {
+   "file": "/assets/img/gen/seg-residential.webp",
+   "fallback": "/assets/img/model-site-operator.webp",
+   "alt": "Isometric apartment society with EV chargers (illustrative render)",
+   "approved": true
+  },
+  "seg-commercial": {
+   "file": "/assets/img/gen/seg-commercial.webp",
+   "fallback": "/assets/img/hero-charge-poster.webp",
+   "alt": "Isometric hotel and mall drop-off with EV chargers (illustrative render)",
+   "approved": true
+  },
+  "seg-fleets": {
+   "file": "/assets/img/gen/seg-fleets.webp",
+   "fallback": "/assets/img/charger-120.webp",
+   "alt": "Isometric logistics yard with EV chargers (illustrative render)",
+   "approved": true
+  },
+  "seg-cpo": {
+   "file": "/assets/img/gen/seg-cpo.webp",
+   "fallback": "/assets/img/support-hub.webp",
+   "alt": "Isometric public charging hub with EV chargers (illustrative render)",
+   "approved": true
+  },
+  "seg-bus-depots": {
+   "file": "/assets/img/gen/seg-bus-depots.webp",
+   "fallback": "/assets/img/charger-240.webp",
+   "alt": "Isometric city bus depot with EV chargers (illustrative render)",
+   "approved": true
+  },
+  "seg-public": {
+   "file": "/assets/img/gen/seg-public.webp",
+   "fallback": "/assets/img/model-turnkey.webp",
+   "alt": "Isometric highway fuel station with EV chargers (illustrative render)",
+   "approved": false
+  },
+  "scene-atom-ac-socket": {
+   "file": "/assets/img/gen/scene-atom-ac-socket.webp",
+   "fallback": "/assets/img/atom-ac-socket.webp",
+   "alt": "Envizon Atom AC Smart Socket at a house (illustrative render)",
+   "approved": false
+  },
+  "scene-atom-ac-wallbox": {
+   "file": "/assets/img/gen/scene-atom-ac-wallbox.webp",
+   "fallback": "/assets/img/atom-ac-wallbox.webp",
+   "alt": "Envizon Atom AC Wallbox in an apartment basement (illustrative render)",
+   "approved": false
+  },
+  "scene-atom-ac-destination": {
+   "file": "/assets/img/gen/scene-atom-ac-destination.webp",
+   "fallback": "/assets/img/atom-ac-destination.webp",
+   "alt": "Envizon Atom AC Destination at a hotel entrance (illustrative render)",
+   "approved": false
+  },
+  "scene-atom-dc-fast": {
+   "file": "/assets/img/gen/scene-atom-dc-fast.webp",
+   "fallback": "/assets/img/atom-dc-fast.webp",
+   "alt": "Envizon Atom DC Fast Charger at a highway plaza (illustrative render)",
+   "approved": false
+  },
+  "stage-1": {
+   "file": "/assets/img/gen/stage-1.webp",
+   "fallback": "/assets/img/activation-roadmap.webp",
+   "alt": "Isometric car park at the qualify stage of a charging project (illustrative render)",
+   "approved": false
+  },
+  "stage-2": {
+   "file": "/assets/img/gen/stage-2.webp",
+   "fallback": "/assets/img/deployment-cutaway.webp",
+   "alt": "Isometric car park at the survey stage of a charging project (illustrative render)",
+   "approved": false
+  },
+  "stage-3": {
+   "file": "/assets/img/gen/stage-3.webp",
+   "fallback": "/assets/img/price-project.webp",
+   "alt": "Isometric car park at the design stage of a charging project (illustrative render)",
+   "approved": false
+  },
+  "stage-4": {
+   "file": "/assets/img/gen/stage-4.webp",
+   "fallback": "/assets/img/delivery-team.webp",
+   "alt": "Isometric car park at the deploy stage of a charging project (illustrative render)",
+   "approved": false
+  },
+  "stage-5": {
+   "file": "/assets/img/gen/stage-5.webp",
+   "fallback": "/assets/img/charger-60.webp",
+   "alt": "Isometric car park at the launch stage of a charging project (illustrative render)",
+   "approved": false
+  },
+  "stage-6": {
+   "file": "/assets/img/gen/stage-6.webp",
+   "fallback": "/assets/img/support-hub.webp",
+   "alt": "Isometric car park at the operate stage of a charging project (illustrative render)",
+   "approved": false
+  }
+ }
+}

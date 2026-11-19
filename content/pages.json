@@ -1,0 +1,2109 @@
+{
+  "_readme": "Inner-page copy (docs/inner-pages-plan.md). Rendered by tools/build_pages.py into <route>/index.html on top of the generated homepage shell. status: APPROVED | PROPOSED | VERIFY (shown, needs sign-off) | BLOCKED (never rendered). A spec value of null renders as 'Confirmed per datasheet' (source tables disagree).",
+  "products": [
+    {
+      "slug": "atom-ac-socket",
+      "name": "Atom AC Smart Socket",
+      "model": "Atom 411-3S03",
+      "kind": "AC",
+      "power": [
+        "3.3 kW",
+        "Single phase"
+      ],
+      "tagline": "A compact, app-controlled charging socket for 2-, 3- and 4-wheelers where vehicles stay for hours.",
+      "summary": "App-controlled socket for homes, light commercial sites and parking.",
+      "image": "/assets/img/atom-ac-socket.webp",
+      "imageAlt": "Envizon Atom AC Smart Socket, a compact wall-mounted charging socket with a green status ring (illustrative render)",
+      "features": [
+        {
+          "icon": "key",
+          "title": "Access control",
+          "text": "Charging starts only after authentication in the Atom EV app, so the socket can't be used by just anyone."
+        },
+        {
+          "icon": "shield",
+          "title": "Built-in safety",
+          "text": "Protection against surge, earth faults, leakage and short circuits on every session."
+        },
+        {
+          "icon": "card",
+          "title": "Payments",
+          "text": "Users pay by UPI or debit/credit card through the app, which suits shared and commercial parking."
+        },
+        {
+          "icon": "plug",
+          "title": "Compact design",
+          "text": "A small wall-mounted unit with an LED ring that shows charging status at a glance."
+        }
+      ],
+      "useCases": [
+        {
+          "icon": "home",
+          "title": "Homes",
+          "text": "Overnight charging for scooters, three-wheelers and cars."
+        },
+        {
+          "icon": "office",
+          "title": "Offices",
+          "text": "Staff charging during the working day."
+        },
+        {
+          "icon": "apartment",
+          "title": "Outdoor and society parking",
+          "text": "Low-cost points spread across parking bays."
+        },
+        {
+          "icon": "mall",
+          "title": "Light commercial",
+          "text": "Shops and small sites where vehicles stay for hours."
+        }
+      ],
+      "specs": [
+        {
+          "group": "Electrical",
+          "rows": [
+            [
+              "Output power",
+              "3.3 kW, single phase"
+            ],
+            [
+              "Higher-output option",
+              null
+            ],
+            [
+              "Input",
+              "230 V AC nominal, 50 Hz"
+            ],
+            [
+              "Energy metering",
+              "Yes"
+            ]
+          ]
+        },
+        {
+          "group": "Connector",
+          "rows": [
+            [
+              "Outlet",
+              "Industrial socket (IEC 60309)"
+            ]
+          ]
+        },
+        {
+          "group": "Control & connectivity",
+          "rows": [
+            [
+              "Control",
+              "Atom EV app (OCPP)"
+            ],
+            [
+              "Authentication",
+              "Mobile app"
+            ],
+            [
+              "Payment",
+              "UPI, debit and credit cards"
+            ],
+            [
+              "Status indication",
+              null
+            ]
+          ]
+        },
+        {
+          "group": "Environment",
+          "rows": [
+            [
+              "Ingress protection",
+              null
+            ],
+            [
+              "Operating temperature",
+              null
+            ],
+            [
+              "Storage temperature",
+              "−30 to +70 °C"
+            ]
+          ]
+        },
+        {
+          "group": "Mechanical",
+          "rows": [
+            [
+              "Dimensions (W × H × D)",
+              "125 × 295 × 140 mm"
+            ],
+            [
+              "Mounting",
+              "Wall"
+            ]
+          ]
+        },
+        {
+          "group": "Designed to",
+          "rows": [
+            [
+              "Standards",
+              "IS 17017-22-1, IEC 60309"
+            ]
+          ]
+        }
+      ],
+      "protections": [
+        "Over/under-voltage",
+        "Over-current",
+        "Short circuit",
+        "Leakage current",
+        "Earth fault",
+        "Surge",
+        "Over-temperature"
+      ],
+      "faq": [
+        {
+          "q": "Which vehicles can use the smart socket?",
+          "a": "It is designed for 2-, 3- and 4-wheelers that charge from a standard AC socket using their own portable charger. We confirm compatibility for your vehicle mix during the site assessment."
+        },
+        {
+          "q": "Do users need the app?",
+          "a": "Yes. Charging is started, monitored and paid for in the Atom EV app, which is how the socket controls access."
+        },
+        {
+          "q": "Is it suitable for outdoor parking?",
+          "a": "The enclosure rating is being confirmed against the current datasheet. For exposed outdoor bays we will recommend a protected location or an IP54 product such as the wallbox."
+        }
+      ]
+    },
+    {
+      "slug": "atom-ac-wallbox",
+      "name": "Atom AC Wallbox",
+      "model": "Atom 111-2G07",
+      "kind": "AC",
+      "power": [
+        "7.4 kW",
+        "11 kW",
+        "22 kW"
+      ],
+      "tagline": "A Type 2 wallbox for homes, societies and workplaces, with RFID, app and scheduled charging.",
+      "summary": "Type 2 wallbox with RFID, app and timer modes.",
+      "image": "/assets/img/atom-ac-wallbox.webp",
+      "imageAlt": "Envizon Atom AC Wallbox with a coiled Type 2 charging cable (illustrative render)",
+      "features": [
+        {
+          "icon": "key",
+          "title": "Three ways to start",
+          "text": "Easy mode, an RFID card or the Bluetooth app. Only registered users can charge when access control is on."
+        },
+        {
+          "icon": "pulse",
+          "title": "Scheduled charging",
+          "text": "Set charging to run in off-peak hours on time-of-use tariffs."
+        },
+        {
+          "icon": "shield",
+          "title": "Built-in safety",
+          "text": "Integrated surge protection plus earth-fault, leakage, short-circuit and over-temperature protection."
+        },
+        {
+          "icon": "plug",
+          "title": "IP54, rust-free enclosure",
+          "text": "A compact wall unit with a 5 m Type 2 cable, an LED status strip and a character display."
+        }
+      ],
+      "useCases": [
+        {
+          "icon": "home",
+          "title": "Homes",
+          "text": "Bungalows, villas and individual garages."
+        },
+        {
+          "icon": "apartment",
+          "title": "Apartments & societies",
+          "text": "RFID per resident on shared parking."
+        },
+        {
+          "icon": "office",
+          "title": "Workplaces",
+          "text": "Small offices and staff parking."
+        },
+        {
+          "icon": "mall",
+          "title": "Commercial & public parking",
+          "text": "Two-step verification for shared bays."
+        }
+      ],
+      "specs": [
+        {
+          "group": "Electrical",
+          "rows": [
+            [
+              "Output power",
+              "7.4 kW (1-phase) · 11 kW / 22 kW (3-phase)"
+            ],
+            [
+              "3.3 kW option",
+              null
+            ],
+            [
+              "Input",
+              "230 V 1-phase or 380–415 V 3-phase, 50 Hz"
+            ],
+            [
+              "Max current",
+              "32 A"
+            ],
+            [
+              "Energy metering",
+              null
+            ]
+          ]
+        },
+        {
+          "group": "Connector",
+          "rows": [
+            [
+              "Connector",
+              "Type 2 (IEC 62196)"
+            ],
+            [
+              "Cable",
+              "5 m, tethered"
+            ]
+          ]
+        },
+        {
+          "group": "Control & connectivity",
+          "rows": [
+            [
+              "Connectivity",
+              "Bluetooth"
+            ],
+            [
+              "Authentication",
+              "Atom EV app (Bluetooth) or RFID card"
+            ],
+            [
+              "Payment",
+              "UPI, debit and credit cards"
+            ],
+            [
+              "Status & display",
+              "LED strip, character display"
+            ]
+          ]
+        },
+        {
+          "group": "Environment",
+          "rows": [
+            [
+              "Ingress protection",
+              "IP54"
+            ],
+            [
+              "Operating temperature",
+              null
+            ],
+            [
+              "Storage temperature",
+              "−30 to +70 °C"
+            ]
+          ]
+        },
+        {
+          "group": "Mechanical",
+          "rows": [
+            [
+              "Dimensions (W × H × D)",
+              "287 × 406 × 127 mm"
+            ],
+            [
+              "Mounting",
+              "Wall"
+            ]
+          ]
+        },
+        {
+          "group": "Designed to",
+          "rows": [
+            [
+              "Standards",
+              "IEC 61851-21-2, IS 17017-1, AIS-138 Part 1"
+            ]
+          ]
+        }
+      ],
+      "protections": [
+        "Over/under-voltage",
+        "Over-current",
+        "Short circuit",
+        "Leakage current",
+        "Earth fault",
+        "Integrated surge protection",
+        "Over-temperature"
+      ],
+      "faq": [
+        {
+          "q": "Will a 22 kW wallbox charge my car at 22 kW?",
+          "a": "Only if the car's on-board charger and your supply support three-phase 22 kW. Many cars accept 7.4 or 11 kW on AC, so we size the wallbox to the vehicle and the connection."
+        },
+        {
+          "q": "Can residents in a society share wallboxes?",
+          "a": "Yes. RFID cards or the app identify each user, so shared points can be used by registered residents only."
+        },
+        {
+          "q": "Does it need an internet connection?",
+          "a": "No. The wallbox is controlled over Bluetooth from the app, and RFID works locally."
+        }
+      ]
+    },
+    {
+      "slug": "atom-ac-destination",
+      "name": "Atom AC Destination",
+      "model": "Atom 232-2G40-2G40",
+      "kind": "AC",
+      "power": [
+        "7.4 kW",
+        "22 kW",
+        "1–2 guns"
+      ],
+      "tagline": "Single- or dual-gun AC charging on a pedestal for hotels, offices, malls and long-stay parking.",
+      "summary": "Single- or dual-gun AC for hotels, offices, malls and long-dwell parking.",
+      "image": "/assets/img/atom-ac-destination.webp",
+      "imageAlt": "Envizon Atom AC Destination charger, a slim pedestal unit with a Type 2 gun (illustrative render)",
+      "features": [
+        {
+          "icon": "plug",
+          "title": "Two vehicles at once",
+          "text": "Dual-gun versions charge two cars from one unit, with an LCD and a simple interface."
+        },
+        {
+          "icon": "key",
+          "title": "RFID and app access",
+          "text": "Drivers start sessions with an RFID card or the mobile app."
+        },
+        {
+          "icon": "card",
+          "title": "Optional payments",
+          "text": "UPI and card payments can be enabled for public or paid parking."
+        },
+        {
+          "icon": "protocol",
+          "title": "Network-ready",
+          "text": "Ethernet and Wi-Fi with optional 4G, and optional OCPP 1.6J for a charging management system."
+        }
+      ],
+      "useCases": [
+        {
+          "icon": "hotel",
+          "title": "Hotels & resorts",
+          "text": "Guest charging during an overnight stay."
+        },
+        {
+          "icon": "office",
+          "title": "Offices & IT parks",
+          "text": "Staff and visitor parking."
+        },
+        {
+          "icon": "mall",
+          "title": "Malls & private parking",
+          "text": "Long-stay visitor bays."
+        },
+        {
+          "icon": "apartment",
+          "title": "Apartments & communities",
+          "text": "Shared charging on common parking."
+        }
+      ],
+      "specs": [
+        {
+          "group": "Electrical",
+          "rows": [
+            [
+              "Output power",
+              "7.4 kW (1-phase) · 22 kW (3-phase)"
+            ],
+            [
+              "Higher-power (80 kW) option",
+              null
+            ],
+            [
+              "Input",
+              "415 V 3-phase, 50 Hz"
+            ],
+            [
+              "Energy metering",
+              "Class 1"
+            ]
+          ]
+        },
+        {
+          "group": "Connector",
+          "rows": [
+            [
+              "Connector",
+              "1 or 2 × Type 2 (IEC 62196)"
+            ],
+            [
+              "Cable",
+              "5 m, tethered"
+            ]
+          ]
+        },
+        {
+          "group": "Control & connectivity",
+          "rows": [
+            [
+              "Connectivity",
+              "Ethernet, Wi-Fi, optional 4G"
+            ],
+            [
+              "Backend",
+              "OCPP 1.6J (optional) or local"
+            ],
+            [
+              "Authentication",
+              "Mobile app or RFID card"
+            ],
+            [
+              "Payment",
+              "UPI, debit and credit cards (optional)"
+            ],
+            [
+              "Status & display",
+              "LEDs, LCD"
+            ]
+          ]
+        },
+        {
+          "group": "Environment",
+          "rows": [
+            [
+              "Ingress protection",
+              "IP54"
+            ],
+            [
+              "Operating temperature",
+              null
+            ],
+            [
+              "Storage temperature",
+              "−30 to +70 °C"
+            ]
+          ]
+        },
+        {
+          "group": "Mechanical",
+          "rows": [
+            [
+              "Dimensions (W × H × D)",
+              "400 × 1680 × 250 mm"
+            ],
+            [
+              "Mounting",
+              "Wall, or floor on a pedestal"
+            ]
+          ]
+        },
+        {
+          "group": "Designed to",
+          "rows": [
+            [
+              "Standards",
+              "IS 17017-1, AIS-138 Part 1, IEC 61851-1, IEC 62196-2"
+            ]
+          ]
+        }
+      ],
+      "protections": [
+        "Over/under-voltage",
+        "Over-current / overload",
+        "Short circuit",
+        "Leakage current",
+        "Earth fault",
+        "Surge",
+        "Over-temperature"
+      ],
+      "faq": [
+        {
+          "q": "How is this different from the wallbox?",
+          "a": "The destination charger is built for shared, commercial use: it can have two guns, stands on a pedestal, and connects to a charging management system over Ethernet, Wi-Fi or 4G."
+        },
+        {
+          "q": "Can it connect to our charging management system?",
+          "a": "OCPP 1.6J is available as an option. We confirm backend compatibility for your platform before the order."
+        },
+        {
+          "q": "Which connectors does it support?",
+          "a": "Type 2 (IEC 62196). Other AC connector standards are confirmed per order against the current datasheet."
+        }
+      ]
+    },
+    {
+      "slug": "atom-dc-fast",
+      "name": "Atom DC Fast Charger",
+      "model": null,
+      "kind": "DC",
+      "power": [
+        "30 kW",
+        "60–120 kW",
+        "180–360 kW"
+      ],
+      "tagline": "CCS2 fast charging for public sites, highways, fleets and bus depots, in single- and multi-gun configurations.",
+      "summary": "CCS2 public and fleet fast charging, single or multi-gun.",
+      "image": "/assets/img/atom-dc-fast.webp",
+      "imageAlt": "Envizon Atom DC Fast Charger, a floor-standing dual-gun unit with a central display (illustrative render)",
+      "features": [
+        {
+          "icon": "bolt",
+          "title": "30 to 360 kW",
+          "text": "One family across three power bands, single or multi-gun, in classic and standard enclosure sizes."
+        },
+        {
+          "icon": "shield",
+          "title": "Extended protection",
+          "text": "Adds insulation monitoring, smoke detection, phase-sequence and phase/neutral-loss protection to the standard set."
+        },
+        {
+          "icon": "card",
+          "title": "Public-ready payments",
+          "text": "RFID and app authentication, with UPI and card payments for public charging."
+        },
+        {
+          "icon": "protocol",
+          "title": "Network-ready",
+          "text": "7-inch display, Ethernet and Wi-Fi with optional 4G, and optional OCPP 1.6J."
+        }
+      ],
+      "useCases": [
+        {
+          "icon": "depot",
+          "title": "Bus depots & fleets",
+          "text": "High-power charging between shifts and routes."
+        },
+        {
+          "icon": "highway",
+          "title": "Highways & fuel stations",
+          "text": "Quick top-ups at restaurants and fuel stops."
+        },
+        {
+          "icon": "office",
+          "title": "Retail & offices",
+          "text": "Shops, commercial and office buildings."
+        },
+        {
+          "icon": "mall",
+          "title": "Malls & cinemas",
+          "text": "Public charging during a visit."
+        }
+      ],
+      "variants": {
+        "head": [
+          "Band",
+          "Output",
+          "Typical sites"
+        ],
+        "rows": [
+          [
+            "Atom DC 30 kW",
+            "30 kW",
+            "Retail, offices, smaller public sites"
+          ],
+          [
+            "Atom DC 60–120 kW",
+            "60 to 120 kW",
+            "Public charging, fleets, highway stops"
+          ],
+          [
+            "Atom DC 180–360 kW",
+            "180 to 360 kW",
+            "Bus depots, heavy fleets, high-traffic corridors"
+          ]
+        ]
+      },
+      "specs": [
+        {
+          "group": "Electrical",
+          "rows": [
+            [
+              "Output power",
+              "30, 60, 120, 180, 360 kW"
+            ],
+            [
+              "Output voltage",
+              "200–1000 V DC"
+            ],
+            [
+              "Current per gun",
+              null
+            ],
+            [
+              "Input",
+              "415 V 3-phase, 50 Hz"
+            ],
+            [
+              "Energy metering",
+              "Class 1"
+            ]
+          ]
+        },
+        {
+          "group": "Connector",
+          "rows": [
+            [
+              "Connector",
+              "CCS2 (IEC 62196-3)"
+            ],
+            [
+              "Cable",
+              "5 m"
+            ],
+            [
+              "Guns",
+              "Single or multi-gun"
+            ]
+          ]
+        },
+        {
+          "group": "Control & connectivity",
+          "rows": [
+            [
+              "Display",
+              "7-inch LCD"
+            ],
+            [
+              "Connectivity",
+              "Ethernet, Wi-Fi, optional 4G"
+            ],
+            [
+              "Backend",
+              "OCPP 1.6J (optional) or local"
+            ],
+            [
+              "Authentication",
+              "Mobile app or RFID card"
+            ],
+            [
+              "Payment",
+              "UPI, debit and credit cards"
+            ]
+          ]
+        },
+        {
+          "group": "Environment",
+          "rows": [
+            [
+              "Ingress protection",
+              "IP54, outdoor"
+            ],
+            [
+              "Operating temperature",
+              null
+            ],
+            [
+              "Storage temperature",
+              "−30 to +70 °C"
+            ]
+          ]
+        },
+        {
+          "group": "Mechanical",
+          "rows": [
+            [
+              "Dimensions, 30 kW (W × H × D)",
+              "600 × 800 × 420 mm"
+            ],
+            [
+              "Mounting",
+              null
+            ]
+          ]
+        },
+        {
+          "group": "Designed to",
+          "rows": [
+            [
+              "Standards",
+              "IS 17017-1, AIS-138 Part 1, IEC 61851-1, IEC 62196-2"
+            ]
+          ]
+        }
+      ],
+      "protections": [
+        "Over/under-voltage",
+        "Over-current",
+        "Short circuit",
+        "Leakage current",
+        "Earth fault",
+        "Surge",
+        "Over-temperature",
+        "Phase/neutral loss",
+        "Phase sequence",
+        "Smoke detection",
+        "Insulation monitoring"
+      ],
+      "faq": [
+        {
+          "q": "Which power band do I need?",
+          "a": "It depends on how long vehicles stay, how many charge at once and the supply at your site. Quick-stop public sites usually need more power per gun than depots charging overnight. We size it after a site assessment."
+        },
+        {
+          "q": "Which vehicles can it charge?",
+          "a": "Vehicles that use the CCS2 connector, which most new electric cars in India use. Compatibility for buses and commercial vehicles is confirmed per model."
+        },
+        {
+          "q": "Will my site need a new transformer?",
+          "a": "Often, for higher power bands. The survey covers available load, DISCOM approvals and any transformer or civil works, and the quote states them separately."
+        }
+      ]
+    }
+  ],
+  "shared": {
+    "capabilities": {
+      "type": "table",
+      "id": "capabilities",
+      "eyebrow": "Beyond the hardware",
+      "title": "Hardware backed by deployment.",
+      "intro": "You need a working charging site, from design to day-to-day operation. That's what we deliver.",
+      "image": "/assets/img/deployment-cutaway.webp",
+      "imageAlt": "Cutaway of a DC charger installation showing underground cabling and the electrical panel (illustrative render)",
+      "head": [
+        "Capability",
+        "What we deliver"
+      ],
+      "rows": [
+        [
+          "Hardware portfolio",
+          "AC smart sockets, wallboxes, destination chargers and DC fast chargers"
+        ],
+        [
+          "User access",
+          "RFID, mobile app and scheduled charging, depending on the model"
+        ],
+        [
+          "Site design",
+          "Load assessment, charger selection, layout, cable routing and electrical scope"
+        ],
+        [
+          "Deployment",
+          "Supply, installation, commissioning, user handover and documentation"
+        ],
+        [
+          "Operations",
+          "Preventive maintenance, fault triage, service escalation and uptime reporting"
+        ],
+        [
+          "Integration",
+          "OCPP version, CMS, payment and roaming compatibility confirmed per model"
+        ]
+      ]
+    },
+    "stages": {
+      "type": "rows",
+      "id": "process",
+      "eyebrow": "How a project runs",
+      "title": "Six stages, from first call to a working site.",
+      "intro": "Every project follows the same path, so you know what happens next and who owns it.",
+      "image": "/assets/img/delivery-team.webp",
+      "imageAlt": "Two engineers reviewing a tablet beside a DC charger and an electric SUV (illustrative image)",
+      "items": [
+        {
+          "title": "Qualify",
+          "text": "Demand, vehicle mix, dwell time and site ownership."
+        },
+        {
+          "title": "Survey",
+          "text": "Power availability, load, layout and civil/electrical scope."
+        },
+        {
+          "title": "Design & quote",
+          "text": "Charger selection, bill of materials, capex, approvals and timeline."
+        },
+        {
+          "title": "Deploy",
+          "text": "Supply, installation, testing and commissioning."
+        },
+        {
+          "title": "Launch",
+          "text": "Training, signage, user workflow and the handover pack."
+        },
+        {
+          "title": "Operate",
+          "text": "Support, maintenance, reporting and expansion."
+        }
+      ],
+      "layout": "steps",
+      "tone": "soft"
+    }
+  },
+  "pages": [
+    {
+      "route": "chargers",
+      "status": "PROPOSED",
+      "title": "EV Chargers, 3.3 kW AC to 360 kW DC | Envizon EV Solutions",
+      "description": "The Envizon Atom range: AC smart sockets, wallboxes, destination chargers and DC fast chargers up to 360 kW, with site design and installation.",
+      "sections": [
+        {
+          "type": "hero",
+          "eyebrow": "EV chargers",
+          "title": "A charger for every site.",
+          "sub": "From a 3.3 kW smart socket to 360 kW DC fast charging, matched to the vehicle, the site and how long cars stay.",
+          "chips": [
+            "AC 3.3–22 kW",
+            "DC 30–360 kW",
+            "CCS2 · Type 2",
+            "OCPP-ready options"
+          ],
+          "ctas": [
+            {
+              "label": "Get a Quote",
+              "type": "PRODUCT_QUOTE"
+            },
+            {
+              "label": "Talk to an Expert",
+              "type": "GENERAL",
+              "ghost": true
+            }
+          ],
+          "image": "/assets/img/charger-120.webp",
+          "imageAlt": "Envizon 120 kW DC charger at a highway parking bay with an electric SUV plugged in (illustrative render)",
+          "band": true
+        },
+        {
+          "type": "ladder",
+          "id": "power",
+          "eyebrow": "Power range",
+          "title": "Pick by how long vehicles stay.",
+          "intro": "Long stays suit AC. Short stops and high-use bays need DC. Each stop opens the full spec sheet."
+        },
+        {
+          "type": "cards",
+          "id": "ac",
+          "eyebrow": "AC charging",
+          "title": "For long stays.",
+          "intro": "Homes, societies, workplaces and destinations where vehicles park for hours.",
+          "items": [
+            {
+              "product": "atom-ac-socket"
+            },
+            {
+              "product": "atom-ac-wallbox"
+            },
+            {
+              "product": "atom-ac-destination"
+            }
+          ],
+          "tone": "dark",
+          "layout": "split"
+        },
+        {
+          "type": "cards",
+          "id": "dc",
+          "tone": "dark",
+          "eyebrow": "DC fast charging",
+          "title": "For quick turnarounds.",
+          "intro": "One CCS2 family in three power bands, for public sites, fleets and depots.",
+          "items": [
+            {
+              "image": "/assets/img/charger-60.webp",
+              "imageAlt": "DC fast charger in a car park (illustrative render)",
+              "eyebrow": "Atom DC",
+              "title": "30 kW",
+              "text": "Retail, offices and smaller public sites.",
+              "links": [
+                {
+                  "label": "View specifications",
+                  "href": "/chargers/atom-dc-fast/"
+                },
+                {
+                  "label": "Request quote",
+                  "type": "PRODUCT_QUOTE",
+                  "product": "Atom DC Fast Charger"
+                }
+              ],
+              "slot": "dc-30"
+            },
+            {
+              "image": "/assets/img/charger-120.webp",
+              "imageAlt": "DC fast charger at a highway plaza (illustrative render)",
+              "eyebrow": "Atom DC",
+              "title": "60–120 kW",
+              "text": "Public charging, fleets and highway stops.",
+              "links": [
+                {
+                  "label": "View specifications",
+                  "href": "/chargers/atom-dc-fast/"
+                },
+                {
+                  "label": "Request quote",
+                  "type": "PRODUCT_QUOTE",
+                  "product": "Atom DC Fast Charger"
+                }
+              ],
+              "slot": "dc-60-120"
+            },
+            {
+              "image": "/assets/img/charger-240.webp",
+              "imageAlt": "DC fast charger at an electric bus depot (illustrative render)",
+              "eyebrow": "Atom DC",
+              "title": "180–360 kW",
+              "text": "Bus depots, heavy fleets and high-traffic corridors.",
+              "links": [
+                {
+                  "label": "View specifications",
+                  "href": "/chargers/atom-dc-fast/"
+                },
+                {
+                  "label": "Request quote",
+                  "type": "PRODUCT_QUOTE",
+                  "product": "Atom DC Fast Charger"
+                }
+              ],
+              "slot": "dc-180-360"
+            }
+          ],
+          "layout": "split"
+        },
+        {
+          "type": "chips",
+          "eyebrow": "Solutions by customer",
+          "title": "Match the charger to the customer.",
+          "items": [
+            {
+              "label": "Residential & apartments",
+              "href": "/solutions/#residential"
+            },
+            {
+              "label": "Retail, hospitality & workplaces",
+              "href": "/solutions/#commercial"
+            },
+            {
+              "label": "Fleets & logistics",
+              "href": "/solutions/#fleets"
+            },
+            {
+              "label": "Charge Point Operators",
+              "href": "/solutions/#cpo"
+            },
+            {
+              "label": "Bus depots",
+              "href": "/solutions/#bus-depots"
+            },
+            {
+              "label": "Public & highway charging",
+              "href": "/solutions/#public"
+            }
+          ]
+        },
+        {
+          "type": "ref",
+          "ref": "capabilities"
+        },
+        {
+          "type": "cta",
+          "title": "Not sure which charger fits?",
+          "sub": "Tell us about the site and the vehicles. We'll recommend a configuration after a site assessment.",
+          "primary": {
+            "label": "Book a Site Assessment",
+            "type": "SITE_ASSESSMENT"
+          },
+          "secondary": {
+            "label": "See solutions",
+            "href": "/solutions/"
+          }
+        }
+      ]
+    },
+    {
+      "route": "solutions",
+      "status": "PROPOSED",
+      "title": "EV Charging Solutions for Homes, Businesses, Fleets & CPOs | Envizon EV",
+      "description": "EV charging planned around your site: residential, commercial, fleet, CPO, bus depot and public charging, from survey to operation.",
+      "sections": [
+        {
+          "type": "hero",
+          "eyebrow": "Solutions",
+          "title": "Charging planned around your site.",
+          "sub": "Right charger. Right power. Right support. Six customer types, one delivery process.",
+          "ctas": [
+            {
+              "label": "Book a Site Assessment",
+              "type": "SITE_ASSESSMENT"
+            },
+            {
+              "label": "Explore chargers",
+              "href": "/chargers/",
+              "ghost": true
+            }
+          ],
+          "image": "/assets/img/delivery-team.webp",
+          "imageAlt": "Two engineers reviewing a tablet beside a DC charger and an electric SUV (illustrative image)",
+          "band": true
+        },
+        {
+          "type": "jump",
+          "items": [
+            [
+              "Residential",
+              "#residential"
+            ],
+            [
+              "Commercial",
+              "#commercial"
+            ],
+            [
+              "Fleets",
+              "#fleets"
+            ],
+            [
+              "CPOs",
+              "#cpo"
+            ],
+            [
+              "Bus depots",
+              "#bus-depots"
+            ],
+            [
+              "Public & highway",
+              "#public"
+            ],
+            [
+              "How it runs",
+              "#process"
+            ]
+          ]
+        },
+        {
+          "type": "rows",
+          "id": "segments",
+          "title": "One partner for every kind of site.",
+          "items": [
+            {
+              "id": "residential",
+              "eyebrow": "Residential & apartments",
+              "headline": "Charging at home, without the guesswork.",
+              "text": "Individual homes need a safe, right-sized point. Societies need shared charging that's fair to residents and kind to the building's supply. We plan both around your connection and parking.",
+              "bullets": [
+                "Load check on the home or society supply",
+                "Wallbox or smart-socket recommendation per bay",
+                "RFID or app access per resident",
+                "Scheduled charging for off-peak tariffs",
+                "Installation and handover to the society"
+              ],
+              "chips": [
+                {
+                  "label": "Atom AC Smart Socket",
+                  "href": "/chargers/atom-ac-socket/"
+                },
+                {
+                  "label": "Atom AC Wallbox",
+                  "href": "/chargers/atom-ac-wallbox/"
+                }
+              ],
+              "cta": {
+                "label": "Plan home or society charging",
+                "type": "SITE_ASSESSMENT"
+              },
+              "diagram": {
+                "pill": "AC",
+                "icon": "apartment",
+                "source": "Society supply",
+                "nodes": [
+                  "Smart Socket · 3.3 kW",
+                  "Wallbox · 7.4–22 kW"
+                ],
+                "sink": "Residents · RFID"
+              }
+            },
+            {
+              "id": "commercial",
+              "eyebrow": "Retail, hospitality & workplaces",
+              "headline": "Charging your guests and staff will use.",
+              "text": "Hotels, malls, offices and shops want charging that matches how long people stay. We size AC for long dwell times and add DC where turnover is quick, with payments built in.",
+              "bullets": [
+                "Dwell-time and footfall-based sizing",
+                "Single- or dual-gun AC for long-stay bays",
+                "DC for quick-turnover locations",
+                "UPI and card payments for paid charging",
+                "Signage and user workflow at launch"
+              ],
+              "chips": [
+                {
+                  "label": "Atom AC Smart Socket",
+                  "href": "/chargers/atom-ac-socket/"
+                },
+                {
+                  "label": "Atom AC Destination",
+                  "href": "/chargers/atom-ac-destination/"
+                },
+                {
+                  "label": "Atom DC Fast Charger",
+                  "href": "/chargers/atom-dc-fast/"
+                }
+              ],
+              "cta": {
+                "label": "Book a site assessment",
+                "type": "SITE_ASSESSMENT"
+              },
+              "diagram": {
+                "pill": "AC + DC",
+                "icon": "mall",
+                "source": "Building supply",
+                "nodes": [
+                  "Destination · 7.4–22 kW",
+                  "DC Fast · from 30 kW"
+                ],
+                "sink": "Guests & staff"
+              }
+            },
+            {
+              "id": "fleets",
+              "eyebrow": "Fleets & logistics",
+              "headline": "Depot charging sized to your duty cycle.",
+              "text": "Fleets run on schedules, not on chance. We plan depot power around shift patterns and route lengths, so vehicles leave charged and the connection isn't overloaded.",
+              "bullets": [
+                "Duty-cycle and shift-pattern analysis",
+                "Overnight AC vs opportunity DC charging mix",
+                "Depot load planning and phasing",
+                "RFID per driver or vehicle",
+                "Maintenance and uptime reporting"
+              ],
+              "chips": [
+                {
+                  "label": "Atom DC Fast Charger",
+                  "href": "/chargers/atom-dc-fast/"
+                },
+                {
+                  "label": "Atom AC Destination",
+                  "href": "/chargers/atom-ac-destination/"
+                }
+              ],
+              "cta": {
+                "label": "Plan fleet charging",
+                "type": "FLEET"
+              },
+              "diagram": {
+                "pill": "Depot",
+                "icon": "depot",
+                "source": "Depot transformer",
+                "nodes": [
+                  "DC Fast · 60–120 kW",
+                  "Destination · 22 kW"
+                ],
+                "sink": "Fleet vehicles"
+              }
+            },
+            {
+              "id": "cpo",
+              "eyebrow": "Charge Point Operators",
+              "headline": "Hardware that fits your network.",
+              "text": "Operators need chargers that join their backend and stay online. We confirm OCPP and payment compatibility per model before you order, then deliver and support each site.",
+              "bullets": [
+                "OCPP 1.6J options on networked models",
+                "Backend compatibility confirmed before order",
+                "Multi-site rollout and commissioning",
+                "Payments, RFID and app access",
+                "Fault triage and service escalation"
+              ],
+              "chips": [
+                {
+                  "label": "Atom DC Fast Charger",
+                  "href": "/chargers/atom-dc-fast/"
+                },
+                {
+                  "label": "Atom AC Destination",
+                  "href": "/chargers/atom-ac-destination/"
+                }
+              ],
+              "cta": {
+                "label": "Talk to us about your network",
+                "type": "GENERAL"
+              },
+              "diagram": {
+                "pill": "OCPP 1.6J",
+                "icon": "protocol",
+                "source": "Grid connection",
+                "nodes": [
+                  "DC Fast · 30–360 kW",
+                  "Destination · 7.4–22 kW"
+                ],
+                "sink": "Your CMS backend"
+              }
+            },
+            {
+              "id": "bus-depots",
+              "eyebrow": "Bus depots",
+              "headline": "High-power charging for electric buses.",
+              "text": "A bus depot is a small power plant. We plan high-power DC around the depot's timetable, the transformer and DISCOM approvals, and the space between bays.",
+              "bullets": [
+                "180–360 kW DC charging",
+                "Transformer and DISCOM scope in the survey",
+                "Gun scheduling around the timetable",
+                "Layout for bus manoeuvring and cable reach",
+                "Preventive maintenance plans"
+              ],
+              "chips": [
+                {
+                  "label": "Atom DC Fast Charger",
+                  "href": "/chargers/atom-dc-fast/"
+                }
+              ],
+              "cta": {
+                "label": "Plan depot charging",
+                "type": "FLEET"
+              },
+              "diagram": {
+                "pill": "High power",
+                "icon": "depot",
+                "source": "HT supply",
+                "nodes": [
+                  "Bay 1 · DC 180–360 kW",
+                  "Bay 2 · DC 180–360 kW",
+                  "Bay 3 · DC 180–360 kW"
+                ],
+                "sink": "Bus fleet"
+              }
+            },
+            {
+              "id": "public",
+              "eyebrow": "Public & highway charging",
+              "headline": "Fast charging where drivers stop.",
+              "text": "Fuel stations, highway restaurants, malls and metro parking need quick, reliable public charging. We plan DC for turnover and add payments drivers already use.",
+              "bullets": [
+                "30–360 kW DC for short stops",
+                "Site selection and power check",
+                "UPI and card payments",
+                "Signage and user workflow",
+                "Uptime reporting and support"
+              ],
+              "chips": [
+                {
+                  "label": "Atom DC Fast Charger",
+                  "href": "/chargers/atom-dc-fast/"
+                }
+              ],
+              "cta": {
+                "label": "Book a site assessment",
+                "type": "SITE_ASSESSMENT"
+              },
+              "diagram": {
+                "pill": "Public",
+                "icon": "highway",
+                "source": "Grid connection",
+                "nodes": [
+                  "DC Fast · 60–120 kW",
+                  "DC Fast · 30 kW"
+                ],
+                "sink": "Drivers · UPI"
+              }
+            }
+          ],
+          "layout": "blocks"
+        },
+        {
+          "type": "ref",
+          "ref": "stages"
+        },
+        {
+          "type": "cards",
+          "id": "packages",
+          "tone": "soft",
+          "eyebrow": "Turnkey scope",
+          "title": "Packaged the way you buy.",
+          "cols": 4,
+          "items": [
+            {
+              "icon": "plug",
+              "title": "Charger supply + installation",
+              "text": "Hardware, mounting, wiring and commissioning."
+            },
+            {
+              "icon": "tools",
+              "title": "Complete site EPC",
+              "text": "Design, civil and electrical works, approvals and commissioning."
+            },
+            {
+              "icon": "depot",
+              "title": "Fleet depot package",
+              "text": "Depot power planning, DC charging and phasing."
+            },
+            {
+              "icon": "refresh",
+              "title": "Managed operations + AMC",
+              "text": "Maintenance, monitoring and support after launch."
+            }
+          ],
+          "note": "Every quote states its inclusions and exclusions: utility upgrades, transformer, civil work, permits, network connectivity, payment/CMS, taxes and warranty."
+        },
+        {
+          "type": "ref",
+          "ref": "capabilities"
+        },
+        {
+          "type": "faq",
+          "eyebrow": "FAQ",
+          "title": "Common questions.",
+          "items": [
+            {
+              "q": "Do you only supply chargers, or install them too?",
+              "a": "Both. We can supply chargers alone, supply and install, or deliver the complete site including civil and electrical works."
+            },
+            {
+              "q": "What happens during a site assessment?",
+              "a": "We check the available power and load, the parking layout, cable routes and the civil and electrical scope, then recommend chargers and a phased plan."
+            },
+            {
+              "q": "Who handles DISCOM approvals and transformer upgrades?",
+              "a": "We include them in the survey and state them separately in the quote, so you can see what the charger costs and what the site needs."
+            },
+            {
+              "q": "Can we start small and add chargers later?",
+              "a": "Yes. We design the electrical scope with expansion in mind, so later chargers don't mean starting over."
+            },
+            {
+              "q": "What support do you provide after launch?",
+              "a": "Preventive maintenance, fault triage and service escalation, with AMC and managed-operations options. Service levels are agreed in the contract."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "title": "Tell us about your site.",
+          "sub": "We'll come back with a charger recommendation and a phased plan.",
+          "primary": {
+            "label": "Book a Site Assessment",
+            "type": "SITE_ASSESSMENT"
+          },
+          "secondary": {
+            "label": "Explore chargers",
+            "href": "/chargers/"
+          }
+        }
+      ]
+    },
+    {
+      "route": "partners",
+      "status": "PROPOSED",
+      "title": "Become an EV Charging Partner | Envizon EV Solutions",
+      "description": "Distribute, deliver and operate EV charging in your territory with Envizon EV: distributor, turnkey delivery, site-operator and managed-CPO partnership models.",
+      "sections": [
+        {
+          "type": "hero",
+          "eyebrow": "Partner with Envizon EV",
+          "title": "Build a local EV charging business.",
+          "sub": "Distribute, deliver and operate EV charging in your territory, with central product, engineering and training support.",
+          "chips": [
+            "Distributor",
+            "Turnkey infrastructure",
+            "Charge-point operations",
+            "Revenue sharing"
+          ],
+          "ctas": [
+            {
+              "label": "Become a Partner",
+              "type": "PARTNERSHIP"
+            },
+            {
+              "label": "See the models",
+              "href": "#models",
+              "ghost": true
+            }
+          ],
+          "image": "/assets/img/partner-hero.webp",
+          "imageAlt": "Envizon DC charger plugged into a white electric SUV (illustrative render)"
+        },
+        {
+          "type": "jump",
+          "items": [
+            [
+              "Opportunity",
+              "#opportunity"
+            ],
+            [
+              "Models",
+              "#models"
+            ],
+            [
+              "Pricing",
+              "#pricing"
+            ],
+            [
+              "Support",
+              "#support"
+            ],
+            [
+              "First 90 days",
+              "#first-90-days"
+            ],
+            [
+              "Next steps",
+              "#next-steps"
+            ],
+            [
+              "FAQ",
+              "#faq"
+            ]
+          ]
+        },
+        {
+          "type": "rows",
+          "id": "opportunity",
+          "eyebrow": "The opportunity",
+          "title": "Four ways to earn from one relationship.",
+          "intro": "Build a local business across product sales, project delivery and ongoing service.",
+          "image": "/assets/img/opportunity-network.webp",
+          "imageAlt": "Isometric city with apartments, offices, a logistics depot and a parking hub linked by charging routes (illustrative render)",
+          "items": [
+            {
+              "title": "Product sales",
+              "text": "Develop local demand for AC and DC chargers across homes, workplaces, fleets and public sites."
+            },
+            {
+              "title": "Project delivery",
+              "text": "Turn equipment orders into installation projects through surveys, electrical works, commissioning and handover."
+            },
+            {
+              "title": "Operating support",
+              "text": "Coordinate maintenance, software operations and customer support to keep charging running."
+            },
+            {
+              "title": "Recurring income",
+              "text": "Earn from AMC, managed services or charging revenue share, where the contract provides for it."
+            }
+          ],
+          "slot": "par-opportunity"
+        },
+        {
+          "type": "cards",
+          "id": "value",
+          "tone": "soft",
+          "eyebrow": "Partner value",
+          "title": "What you get.",
+          "cols": 3,
+          "items": [
+            {
+              "icon": "flow",
+              "title": "Multiple routes to market",
+              "text": "Equipment distribution, turnkey projects, site-owner/CPO partnerships and sole-operator contracts."
+            },
+            {
+              "icon": "support",
+              "title": "Local ownership, central support",
+              "text": "You own the local market. We provide product, engineering, training and escalation support."
+            },
+            {
+              "icon": "trend",
+              "title": "Several revenue lines",
+              "text": "Hardware margin, project delivery, annual maintenance and agreed operating income."
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "id": "models",
+          "eyebrow": "Partnership models",
+          "title": "Choose the model that fits you.",
+          "intro": "Match the commercial model to your capabilities, capital and customer relationships.",
+          "cols": 3,
+          "items": [
+            {
+              "image": "/assets/img/model-distributor.webp",
+              "imageAlt": "Isometric showroom and warehouse stocked with chargers (illustrative render)",
+              "contain": true,
+              "eyebrow": "Model A",
+              "title": "Authorised Distributor",
+              "meta": [
+                [
+                  "You bring",
+                  "Local sales, demo stock and working capital."
+                ],
+                [
+                  "You earn",
+                  "Product margin, installation/project margin and service referrals."
+                ],
+                [
+                  "Best for",
+                  "Established electrical, solar, auto or infrastructure dealers."
+                ]
+              ],
+              "slot": "par-distributor"
+            },
+            {
+              "image": "/assets/img/model-turnkey.webp",
+              "imageAlt": "Isometric site with an excavator, trenching and chargers being installed (illustrative render)",
+              "contain": true,
+              "eyebrow": "Model B",
+              "title": "Turnkey Delivery Partner",
+              "meta": [
+                [
+                  "You bring",
+                  "Local execution of civil and electrical work, installation and commissioning, on an Envizon-led design."
+                ],
+                [
+                  "You earn",
+                  "Agreed project delivery margin and maintenance income."
+                ],
+                [
+                  "Best for",
+                  "Electrical contractors and EPC firms."
+                ]
+              ]
+            },
+            {
+              "image": "/assets/img/model-site-operator.webp",
+              "imageAlt": "Isometric villa with chargers in its parking area (illustrative render)",
+              "contain": true,
+              "eyebrow": "Model C",
+              "title": "Site Operator / Revenue Share",
+              "meta": [
+                [
+                  "You bring",
+                  "A site, capex or local operations."
+                ],
+                [
+                  "You earn",
+                  "A share of charging revenue, on ownership, tariff, energy-cost and uptime terms defined up front."
+                ],
+                [
+                  "Best for",
+                  "Parking, retail, hospitality, fleets and property owners."
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "eyebrow": "Optional model D",
+          "title": "Sole operator / managed CPO.",
+          "bullets": [
+            "Envizon EV or a designated operating entity manages agreed day-to-day operations, customer support, maintenance coordination and performance reporting.",
+            "The commercial structure can be a fixed management fee, a revenue share or a hybrid. Exclusivity and territory depend on the contract."
+          ]
+        },
+        {
+          "type": "cards",
+          "id": "range",
+          "tone": "dark",
+          "eyebrow": "What you'll sell",
+          "title": "A range for every charging need.",
+          "items": [
+            {
+              "product": "atom-ac-socket"
+            },
+            {
+              "product": "atom-ac-wallbox"
+            },
+            {
+              "product": "atom-ac-destination"
+            },
+            {
+              "product": "atom-dc-fast"
+            }
+          ],
+          "layout": "split"
+        },
+        {
+          "type": "ref",
+          "ref": "stages"
+        },
+        {
+          "type": "cards",
+          "id": "pricing",
+          "eyebrow": "How we price",
+          "title": "Three prices, so the scope is always clear.",
+          "intro": "Equipment, project delivery and recurring services are always quoted separately.",
+          "cols": 3,
+          "items": [
+            {
+              "image": "/assets/img/price-equipment.webp",
+              "imageAlt": "Charger and electric SUV on a plinth (illustrative render)",
+              "contain": true,
+              "eyebrow": "1",
+              "title": "Equipment price",
+              "text": "Charger model + power rating + connector/cable + connectivity + optional pedestal or protection."
+            },
+            {
+              "image": "/assets/img/price-project.webp",
+              "imageAlt": "Cutaway of trenching, cabling and an electrical panel (illustrative render)",
+              "contain": true,
+              "eyebrow": "2",
+              "title": "Project price",
+              "text": "Equipment + design + installation + civil/electrical works + utility upgrades + commissioning + taxes."
+            },
+            {
+              "image": "/assets/img/price-recurring.webp",
+              "imageAlt": "Laptops, servers and a cloud symbol (illustrative render)",
+              "contain": true,
+              "eyebrow": "3",
+              "title": "Recurring price",
+              "text": "AMC / preventive maintenance + remote support + CMS/software + payment fees + site operations, where applicable.",
+              "slot": "par-recurring"
+            }
+          ],
+          "note": "A charger-only price is never presented as a turnkey price. Each quote states warranty start, freight, GST, payment milestones, lead time and validity."
+        },
+        {
+          "type": "cards",
+          "id": "site-partnerships",
+          "tone": "soft",
+          "eyebrow": "Site partnerships",
+          "title": "Who brings what, and how revenue is shared.",
+          "cols": 2,
+          "items": [
+            {
+              "icon": "apartment",
+              "title": "The site partner contributes",
+              "text": "Land or parking bays, access, customer footfall and possibly part of the capex. Rent, power supply, access hours, signage and exclusivity are agreed up front."
+            },
+            {
+              "icon": "bolt",
+              "title": "Envizon EV contributes",
+              "text": "Charger selection, project delivery, agreed software and operations, maintenance coordination and reporting, only as contracted."
+            }
+          ]
+        },
+        {
+          "type": "flow",
+          "eyebrow": "Revenue waterfall",
+          "title": "From receipts to payouts.",
+          "items": [
+            {
+              "icon": "card",
+              "title": "Charging receipts",
+              "text": "Everything drivers pay for charging at the site."
+            },
+            {
+              "icon": "sliders",
+              "title": "Less agreed deductions",
+              "text": "Electricity, payment fees, taxes, refunds, CMS/operations and maintenance."
+            },
+            {
+              "icon": "flow",
+              "title": "Net proceeds distributed",
+              "text": "Shared on the agreed split and settlement schedule."
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "eyebrow": "Agreed up front",
+          "title": "Commercial terms we lock down.",
+          "bullets": [
+            "The revenue split and what it applies to: gross receipts, net receipts, or profit after defined costs.",
+            "Asset ownership, capex recovery, tariff control, billing and settlement frequency, audit rights and reporting.",
+            "Uptime and service levels, fault response, insurance, safety, customer complaints, termination and asset transfer."
+          ]
+        },
+        {
+          "type": "rows",
+          "id": "support",
+          "eyebrow": "Partner support",
+          "title": "You're never on your own.",
+          "intro": "Product knowledge, delivery guidance and service coordination behind every customer relationship.",
+          "image": "/assets/img/support-hub.webp",
+          "imageAlt": "Isometric support hub with training, service and office areas around a charger (illustrative render)",
+          "items": [
+            {
+              "title": "Pre-sales",
+              "text": "Product training, sizing guidance, solution selection, proposal templates and technical qualification."
+            },
+            {
+              "title": "Project delivery",
+              "text": "Site survey checklist, installation guidance, commissioning checklist, documentation and customer handover."
+            },
+            {
+              "title": "After-sales",
+              "text": "Warranty process, remote triage, spare-parts pathway, service escalation and preventive maintenance options."
+            },
+            {
+              "title": "Growth support",
+              "text": "Joint campaigns, lead registration, demo support, account planning and partner performance reviews."
+            }
+          ],
+          "bullets": [
+            "A named channel manager and technical escalation contact",
+            "Onboarding and certification for your technicians",
+            "Monthly pipeline/service reviews and quarterly business reviews for regional partners"
+          ]
+        },
+        {
+          "type": "rows",
+          "id": "first-90-days",
+          "tone": "soft",
+          "eyebrow": "Territory activation",
+          "title": "Your first 90 days.",
+          "intro": "From commercial alignment to pipeline, pilots and repeatable delivery.",
+          "image": "/assets/img/activation-roadmap.webp",
+          "imageAlt": "Winding road linking a showroom, apartments, a fuel canopy and a solar charging hub (illustrative render)",
+          "items": [
+            {
+              "num": "Days 1–15",
+              "title": "Contract & enable",
+              "text": "Territory, target segments, pricing policy, credit terms, training and demo plan."
+            },
+            {
+              "num": "Days 16–30",
+              "title": "Build pipeline",
+              "text": "Map 50–100 prospects: dealers, apartments, hotels, fleets, parking and solar/electrical partners."
+            },
+            {
+              "num": "Days 31–60",
+              "title": "Convert pilots",
+              "text": "Run site surveys, quote first projects, close reference sites and capture customer proof points."
+            },
+            {
+              "num": "Days 61–90",
+              "title": "Scale delivery",
+              "text": "Review conversion, stock turns, service cases, margins and next-quarter pipeline."
+            }
+          ]
+        },
+        {
+          "type": "chips",
+          "eyebrow": "What we track together",
+          "title": "The partner success dashboard.",
+          "items": [
+            "Qualified leads",
+            "Quote-to-order conversion",
+            "Gross margin",
+            "Monthly sell-through",
+            "On-time project delivery",
+            "Service ticket ageing",
+            "Warranty and returns",
+            "Customer satisfaction",
+            "Repeat business",
+            "Receivables and stock ageing"
+          ]
+        },
+        {
+          "type": "rows",
+          "id": "next-steps",
+          "eyebrow": "Next steps",
+          "title": "Agree the territory, model and terms.",
+          "items": [
+            {
+              "title": "Confirm territory and model",
+              "text": "Choose your territory and preferred partnership model."
+            },
+            {
+              "title": "Receive the partner pack",
+              "text": "Current product datasheets, price book, channel margins and warranty policy, plus illustrative economics and market positioning."
+            },
+            {
+              "title": "Build a 12-month plan",
+              "text": "A business plan with territory pipeline and realistic return scenarios."
+            },
+            {
+              "title": "Agree terms and sign",
+              "text": "Service levels, turnkey scope, revenue-share formula and contract terms."
+            }
+          ]
+        },
+        {
+          "type": "faq",
+          "eyebrow": "FAQ",
+          "title": "Partner questions.",
+          "items": [
+            {
+              "q": "Who can become a partner?",
+              "a": "Electrical, solar, automotive and infrastructure businesses, EPC contractors, property and parking owners, and fleet operators. The right model depends on what you already do."
+            },
+            {
+              "q": "How much do I need to invest?",
+              "a": "It depends on the model. Distributors invest in demo stock and working capital; site partners may contribute a site or capex. Illustrative economics are in the partner pack, shared after the first conversation."
+            },
+            {
+              "q": "Is my territory exclusive?",
+              "a": "Exclusivity and territory are agreed in the contract, based on the model and the plan."
+            },
+            {
+              "q": "Do you train our technicians?",
+              "a": "Yes. Onboarding includes product training and certification for partner technicians, plus survey and commissioning checklists."
+            },
+            {
+              "q": "Do I need to hold stock?",
+              "a": "Distributors keep demo stock. Delivery partners and site operators usually don't."
+            },
+            {
+              "q": "How is revenue share settled?",
+              "a": "On the split, deductions and settlement frequency agreed in the contract, with reporting and audit rights."
+            }
+          ]
+        },
+        {
+          "type": "cta",
+          "title": "Build the charging network in your territory.",
+          "sub": "Start with a conversation about your territory and the model that fits.",
+          "primary": {
+            "label": "Become a Partner",
+            "type": "PARTNERSHIP"
+          },
+          "secondary": {
+            "label": "Explore chargers",
+            "href": "/chargers/"
+          }
+        }
+      ]
+    },
+    {
+      "route": "about",
+      "status": "PROPOSED",
+      "title": "About Envizon EV Solutions | EV Charging, End to End",
+      "description": "Envizon EV Solutions designs, supplies, installs and operates EV charging for homes, businesses, fleets and operators in India.",
+      "sections": [
+        {
+          "type": "hero",
+          "eyebrow": "About Envizon EV",
+          "title": "EV charging, end to end.",
+          "sub": "We design, supply, install and support EV charging, so our customers get a working site, not just a box on the wall.",
+          "ctas": [
+            {
+              "label": "Talk to Us",
+              "type": "GENERAL"
+            },
+            {
+              "label": "Explore chargers",
+              "href": "/chargers/",
+              "ghost": true
+            }
+          ],
+          "image": "/assets/img/night-canopy.webp",
+          "imageAlt": "Electric SUV charging under a lit solar canopy at night, with a city skyline behind (illustrative render)",
+          "band": true
+        },
+        {
+          "type": "cards",
+          "id": "what-we-do",
+          "eyebrow": "What we do",
+          "title": "One team, from survey to support.",
+          "cols": 4,
+          "items": [
+            {
+              "icon": "site",
+              "title": "Design",
+              "text": "Site surveys, load assessment, charger selection and layout."
+            },
+            {
+              "icon": "package",
+              "title": "Supply",
+              "text": "The Atom range, from 3.3 kW AC to 360 kW DC."
+            },
+            {
+              "icon": "tools",
+              "title": "Install",
+              "text": "Civil and electrical works, commissioning and handover."
+            },
+            {
+              "icon": "pulse",
+              "title": "Operate",
+              "text": "Maintenance, fault triage, reporting and expansion."
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "id": "purpose",
+          "tone": "soft",
+          "eyebrow": "Why we exist",
+          "title": "Vision and mission.",
+          "cols": 2,
+          "items": [
+            {
+              "eyebrow": "Vision",
+              "title": "Clean transport, charged locally.",
+              "text": "Cities where electric vehicles are the easy choice, because dependable charging is wherever people live, work and travel."
+            },
+            {
+              "eyebrow": "Mission",
+              "title": "Charging that works on day one, and day one thousand.",
+              "text": "Deliver safe, standards-based EV charging that's sized to each site, installed properly and supported for its working life."
+            }
+          ]
+        },
+        {
+          "type": "ref",
+          "ref": "stages"
+        },
+        {
+          "type": "chips",
+          "eyebrow": "Standards",
+          "title": "Hardware designed to recognised standards.",
+          "intro": "Certification is confirmed per model against current datasheets.",
+          "items": [
+            "IS 17017-1",
+            "IS 17017-22-1",
+            "AIS-138 Part 1",
+            "IEC 61851-1",
+            "IEC 61851-21-2",
+            "IEC 62196-2",
+            "IEC 62196-3",
+            "IEC 60309"
+          ]
+        },
+        {
+          "type": "cta",
+          "title": "Let's plan your charging site.",
+          "sub": "Tell us about the site and the vehicles, and we'll take it from there.",
+          "primary": {
+            "label": "Get a Quote",
+            "type": "GENERAL"
+          },
+          "secondary": {
+            "label": "Become a partner",
+            "href": "/partners/"
+          }
+        }
+      ]
+    },
+    {
+      "route": "contact",
+      "status": "PROPOSED",
+      "title": "Contact Envizon EV Solutions",
+      "description": "Request a charger quote, book a site assessment or talk to Envizon EV about fleet charging and partnerships.",
+      "sections": [
+        {
+          "type": "hero",
+          "eyebrow": "Contact",
+          "title": "Talk to Envizon EV.",
+          "sub": "Tell us what you need. The right team will get back to you.",
+          "ctas": [
+            {
+              "label": "Send an enquiry",
+              "type": "GENERAL"
+            }
+          ],
+          "image": "/assets/img/night-canopy.webp",
+          "imageAlt": "Electric SUV charging under a lit solar canopy at night, with a city skyline behind (illustrative render)"
+        },
+        {
+          "type": "cards",
+          "id": "enquiries",
+          "eyebrow": "How can we help?",
+          "title": "Pick a starting point.",
+          "cols": 3,
+          "items": [
+            {
+              "icon": "plug",
+              "title": "Charger quote",
+              "text": "Pricing for a specific charger or configuration.",
+              "links": [
+                {
+                  "label": "Request a quote",
+                  "type": "PRODUCT_QUOTE"
+                }
+              ]
+            },
+            {
+              "icon": "site",
+              "title": "Site assessment",
+              "text": "A survey of power, layout and scope for your site.",
+              "links": [
+                {
+                  "label": "Book an assessment",
+                  "type": "SITE_ASSESSMENT"
+                }
+              ]
+            },
+            {
+              "icon": "depot",
+              "title": "Fleet charging",
+              "text": "Depot and fleet charging plans.",
+              "links": [
+                {
+                  "label": "Plan fleet charging",
+                  "type": "FLEET"
+                }
+              ]
+            },
+            {
+              "icon": "flow",
+              "title": "Partnership",
+              "text": "Distributor, delivery, site-operator and CPO models.",
+              "links": [
+                {
+                  "label": "Become a partner",
+                  "type": "PARTNERSHIP"
+                }
+              ]
+            },
+            {
+              "icon": "chat",
+              "title": "Anything else",
+              "text": "General questions about Envizon EV.",
+              "links": [
+                {
+                  "label": "Send an enquiry",
+                  "type": "GENERAL"
+                }
+              ]
+            },
+            {
+              "status": "VERIFY",
+              "icon": "mail",
+              "title": "Sales email",
+              "text": "evse_sales@envizonev.com",
+              "links": [
+                {
+                  "label": "Email sales",
+                  "href": "mailto:evse_sales@envizonev.com"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "flow",
+          "id": "next",
+          "eyebrow": "What happens next",
+          "title": "Three steps from enquiry to plan.",
+          "status": "PROPOSED",
+          "items": [
+            {
+              "icon": "chat",
+              "title": "We read your enquiry",
+              "text": "The right team picks it up based on what you selected."
+            },
+            {
+              "icon": "phone",
+              "title": "We call to understand the site",
+              "text": "Vehicles, power available, parking layout and how long vehicles stay."
+            },
+            {
+              "icon": "clipboard",
+              "title": "You get clear next steps",
+              "text": "A recommended charger setup, a site visit if needed, and a quote."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "privacy",
+      "status": "PAGE_PENDING",
+      "title": "Privacy Policy | Envizon EV Solutions",
+      "description": "Envizon EV Solutions privacy policy.",
+      "sections": [
+        {
+          "type": "hero",
+          "eyebrow": "Legal",
+          "title": "Privacy Policy",
+          "sub": "This policy is being finalised with our legal team and will be published here before enquiry forms go live."
+        }
+      ]
+    },
+    {
+      "route": "terms",
+      "status": "PAGE_PENDING",
+      "title": "Terms of Use | Envizon EV Solutions",
+      "description": "Envizon EV Solutions terms of use.",
+      "sections": [
+        {
+          "type": "hero",
+          "eyebrow": "Legal",
+          "title": "Terms of Use",
+          "sub": "These terms are being finalised with our legal team and will be published here before launch."
+        }
+      ]
+    }
+  ]
+}

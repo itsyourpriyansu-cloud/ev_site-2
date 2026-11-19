@@ -1016,7 +1016,7 @@
     {
       "route": "solutions",
       "status": "PROPOSED",
-      "title": "EV Charging Solutions for Homes, Businesses, Fleets & CPOs | Envizon EV",
+      "title": "EV Charging Solutions for Homes, Businesses & Fleets | Envizon EV",
       "description": "EV charging planned around your site: residential, commercial, fleet, CPO, bus depot and public charging, from survey to operation.",
       "sections": [
         {
@@ -2081,7 +2081,7 @@
       "route": "privacy",
       "status": "PAGE_PENDING",
       "title": "Privacy Policy | Envizon EV Solutions",
-      "description": "Envizon EV Solutions privacy policy.",
+      "description": "How Envizon EV Solutions collects, uses and protects the information you share through this website and enquiry forms.",
       "sections": [
         {
           "type": "hero",
@@ -2095,7 +2095,7 @@
       "route": "terms",
       "status": "PAGE_PENDING",
       "title": "Terms of Use | Envizon EV Solutions",
-      "description": "Envizon EV Solutions terms of use.",
+      "description": "The terms that apply when you use the Envizon EV Solutions website, request a quote or contact our team.",
       "sections": [
         {
           "type": "hero",

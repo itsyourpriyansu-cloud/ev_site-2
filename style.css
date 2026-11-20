@@ -957,16 +957,12 @@ symbol[id^="l-"] * { vector-effect: non-scaling-stroke; }
   .spec-group { grid-template-columns: minmax(0, 1fr); }
   .stats div { padding-right: 10px; }
   .stats div + div { padding-left: 10px; }
-  .subnav { background: #fff; -webkit-backdrop-filter: none; backdrop-filter: none; } /* a backdrop-filter would trap the fixed CTA inside the bar */
+  .subnav .btn-primary { display: none; } /* phones: the header Get a Quote is the only quote CTA */
   .page-hero-media img { object-position: 72% 50%; }
   .page-hero-media::after { background: linear-gradient(180deg, rgb(14 28 24 / .62), rgb(14 28 24 / .3) 40%, rgb(14 28 24 / .9)); }
   .page-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
   .page-facts li { padding: 10px 12px; white-space: normal; }
   .stats dd { font-size: 26px; }
-  .subnav .btn-primary { position: fixed; left: 16px; right: 16px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 45; box-shadow: 0 16px 32px -12px rgb(14 28 24 / .6); }
-  body:has(.subnav .btn-primary) .footer { padding-bottom: 80px; }
-  .subnav .btn-primary { transition: opacity .3s, translate .4s var(--pg-ease), visibility .4s; }
-  .hero-on .subnav .btn-primary { opacity: 0; translate: 0 16px; visibility: hidden; }
   /* ladder: one row per charger, each with its own track and band */
   .ladder { padding: 0; margin-bottom: 0; }
   .ladder-track { display: grid; gap: 24px; height: auto; background: none; }

@@ -68,22 +68,14 @@ const specVal = (p, ...names) => p.specs.flatMap(g => g.rows).find(([k, v]) => n
 console.assert(kw({ power: ['7.4 kW', '11 kW', '22 kW'] }) === '7.4–22' && kw({ power: ['3.3 kW'] }) === '3.3' && kw({ power: ['7.4 kW', '22 kW', '1–2 guns'] }) === '7.4–22', 'kw');
 
 // ---------- section renderers ----------
-function crumbs(trail) {
-  const items = [['Home', '/'], ...trail];
-  return `<nav class="crumbs" aria-label="Breadcrumb"><ol>${items.map(([n, h], i) => i === items.length - 1 ? `<li aria-current="page">${esc(n)}</li>` : `<li><a href="${h}">${esc(n)}</a></li>`).join('')}</ol></nav>`;
-}
-
 function hero(s, page, trail) {
   const p = pic('hero-' + page.route, s.image, s.imageAlt);
   const photo = !!p.src && page.status !== 'PAGE_PENDING';
-  // photo hero mirrors the homepage hero: crumbs + title + CTAs on top, tagline + facts card in the foot row.
-  // The crumb already names the page, so the eyebrow only shows on plain (legal/404) heroes.
+  // photo hero mirrors the homepage hero: title + CTAs on top, tagline + facts card in the foot row. No crumbs or eyebrows (owner call).
   const ctas = s.ctas?.length ? `<div class="cta-row hero-cta hero-reveal">${s.ctas.map((c, i) => btn(c, { dark: photo, large: photo && !i })).join('')}</div>` : '';
   if (!photo) return `<section class="page-hero page-hero--plain" id="top">
   <div class="wrap page-hero-in">
-    ${crumbs(trail)}
     <div class="page-hero-copy">
-      ${s.eyebrow ? `<p class="page-eyebrow">${esc(s.eyebrow)}</p>` : ''}
       <h1 class="page-title">${lines(s.title)}</h1>
       ${s.sub ? `<p class="page-sub">${esc(s.sub)}</p>` : ''}
       ${ctas}
@@ -94,7 +86,6 @@ function hero(s, page, trail) {
   <div class="page-hero-media">${img(p, 'fetchpriority="high"')}</div>
   <div class="wrap page-hero-in">
     <div class="page-hero-copy">
-      ${crumbs(trail)}
       <h1 class="page-title">${lines(s.title)}</h1>
       ${ctas}
     </div>
@@ -269,9 +260,7 @@ function productPage(p) {
   return [
 `<section class="page-hero page-hero--product" id="top">
   <div class="wrap page-hero-in">
-    ${crumbs([['Chargers', '/chargers/'], [p.name]])}
     <div class="page-hero-copy">
-      <p class="page-eyebrow">Atom · ${p.kind === 'DC' ? 'DC fast charger' : 'AC charger'}${p.model ? ` · ${esc(p.model)}` : ''}</p>
       <h1 class="page-title">${lines(p.name)}</h1>
       <p class="page-sub">${esc(p.tagline)}</p>
       <dl class="stats hero-reveal">

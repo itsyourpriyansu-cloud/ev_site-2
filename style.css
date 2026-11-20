@@ -106,12 +106,37 @@ ol, ul { list-style: none; }
   .btn-glass:hover { border-color: var(--color-sun); background: rgb(242 207 60 / .08); }
 }
 
-/* Preloader: brand curtain that lifts away */
-.curtain { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; background: var(--gradient-brand-deep); transition: transform .9s var(--pg-ease-io), visibility 0s .9s; }
-.curtain img { width: min(260px, 60vw); height: auto; animation: curtain-in .9s var(--pg-ease) both; transition: opacity .3s; }
-.curtain.done { transform: translateY(-100%); visibility: hidden; }
-.curtain.done img { opacity: 0; }
-@keyframes curtain-in { from { opacity: 0; transform: translateY(14px); } }
+/* Preloader: slow, smooth typing -> EV toggle switch -> pill engulfs text -> full-height color-shift zoom reveal */
+.curtain { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; overflow: hidden; background: radial-gradient(ellipse 80% 72% at 50% 48%, #0a3622 0%, #072216 56%, #05160e 100%); opacity: 1; transition: opacity .56s cubic-bezier(.4, 0, .2, 1), visibility 0s .56s; }
+.curtain-logo { width: min(380px, 80vw); height: auto; overflow: visible; transform-origin: 50% 48%; will-change: transform, opacity; }
+.curtain .c-ch { opacity: 0; transform: translateY(12px); transition: opacity .34s ease-out, transform .46s var(--pg-ease); transition-delay: calc(var(--i) * 95ms); }
+.curtain .c-odot { transform-box: fill-box; transform-origin: center; transform: scale(0); transition: transform .48s cubic-bezier(.34, 1.45, .64, 1) .54s; }
+.curtain .c-caret { opacity: 0; transition: transform 90ms var(--pg-ease), opacity .26s ease-out; filter: drop-shadow(0 0 12px rgb(22 177 76 / .65)); }
+.curtain .c-track { fill: rgb(14 28 24 / .55); stroke: rgb(214 241 219 / .24); stroke-width: 10; opacity: 0; transition: opacity .45s ease-out .1s, stroke-opacity .35s; }
+.curtain .c-knob { fill: #d6f1db; opacity: 0; transform-box: fill-box; transform-origin: center; transform: translateX(0) scale(1); transition: opacity .42s ease-out .1s, transform .38s cubic-bezier(.22, 1, .36, 1); filter: drop-shadow(0 4px 12px rgb(0 0 0 / .35)); }
+.curtain .c-pill-fill { opacity: 0; transition: opacity .42s ease-out; filter: drop-shadow(0 0 36px rgb(22 177 76 / .28)); }
+.curtain .c-ev { transform: translateX(0); transition: transform .68s cubic-bezier(.76, 0, .24, 1); }
+.curtain .c-ev-mark { opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(.9); transition: opacity .4s ease-out .28s, transform .46s var(--pg-ease) .28s; }
+.curtain .c-sub { opacity: 0; transform: translateY(10px); transition: opacity .42s ease-out .34s, transform .5s var(--pg-ease) .34s; }
+.curtain.is-type .c-ch { opacity: 1; transform: none; }
+.curtain.is-type .c-odot { transform: scale(1); }
+.curtain.is-type .c-caret { opacity: 1; }
+.curtain.is-type .c-track, .curtain.is-type .c-knob { opacity: 1; }
+.curtain.is-toggle .c-caret { opacity: 0; }
+.curtain.is-toggle .c-knob { transform: translateX(304px) scale(.55); opacity: 0; transition: transform .36s cubic-bezier(.22, 1, .36, 1), opacity .18s ease-in .18s; }
+.curtain.is-toggle .c-pill-fill { opacity: 1; }
+.curtain.is-toggle .c-track { stroke-opacity: 0; }
+.curtain.is-toggle .c-ev-mark { opacity: 1; transform: scale(1); }
+.curtain.is-toggle .c-sub { opacity: 1; transform: none; }
+.curtain.is-engulf .c-word { opacity: 0; transition: opacity .36s ease-out .1s; }
+.curtain.is-engulf .c-sub { opacity: 0; transition: opacity .26s ease-out; }
+.curtain.is-engulf .c-track { opacity: 0; transition: opacity .22s; }
+.curtain.is-engulf .c-ev { transform: translateX(-756px); }
+.curtain.is-zoom .c-pill-fill { filter: none; }
+.curtain.is-zoom .c-ev-mark { transform: scale(2.4); opacity: 0; transition: transform .86s cubic-bezier(.65, 0, .25, 1), opacity .5s ease-in .2s; }
+.curtain.is-fade { opacity: 0; pointer-events: none; }
+.curtain.done { opacity: 0; visibility: hidden; pointer-events: none; }
+body.curtain-lock { overflow: hidden; }
 
 /* Header (ev-env): glass logo pill + white nav pill on the left, green CTA pill on the right; no bar behind them */
 .header { position: fixed; inset: 0 0 auto; z-index: 50; padding-top: 16px; pointer-events: none; transition: translate .4s var(--pg-ease); }

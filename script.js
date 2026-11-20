@@ -18,11 +18,88 @@ if (lenis) {
   });
 }
 
-// Preloader: brand curtain lifts once the page has loaded
+// Preloader: slow, smooth typing -> EV toggle switch -> pill engulfs text -> full-height color-shift zoom reveal
 const curtain = document.getElementById('curtain');
-const lift = () => { curtain?.classList.add('done'); document.body.classList.add('ready'); }; // .ready plays the hero headline reveal; inner pages have no curtain
-addEventListener('load', () => setTimeout(lift, 250));
-setTimeout(lift, 2500); // never block the page on slow video loads
+if (!curtain || reduceMotion) {
+  curtain?.classList.add('done');
+  document.body.classList.add('ready');
+} else {
+  document.body.classList.add('curtain-lock');
+  lenis?.stop();
+  const caret = document.getElementById('cCaret');
+  const pillFill = document.getElementById('cPillFill');
+  const gradStops = [...curtain.querySelectorAll('#c-evg stop')];
+  const caretStops = [252, 514, 762, 838, 1040, 1300, 1566]; // right edge offsets (relative to x=124) for e-n-v-i-z-o-n
+  let finished = false;
+  const finish = () => {
+    if (finished) return;
+    finished = true;
+    curtain.classList.add('done');
+    document.body.classList.remove('curtain-lock');
+    lenis?.start();
+    document.body.classList.add('ready');
+  };
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const lerpRgb = (c0, c1, t) => `rgb(${Math.round(lerp(c0[0], c1[0], t))} ${Math.round(lerp(c0[1], c1[1], t))} ${Math.round(lerp(c0[2], c1[2], t))})`;
+  const easeInOutQuart = p => (p < .5 ? 8 * p * p * p * p : 1 - Math.pow(-2 * p + 2, 4) / 2);
+  const tweenRect = (from, to, dur, onStep) => {
+    if (!pillFill) return;
+    const t0 = performance.now();
+    const step = now => {
+      const p = Math.min(1, (now - t0) / dur);
+      const e = easeInOutQuart(p);
+      pillFill.setAttribute('x', lerp(from.x, to.x, e).toFixed(1));
+      pillFill.setAttribute('y', lerp(from.y, to.y, e).toFixed(1));
+      pillFill.setAttribute('width', lerp(from.w, to.w, e).toFixed(1));
+      pillFill.setAttribute('height', lerp(from.h, to.h, e).toFixed(1));
+      pillFill.setAttribute('rx', lerp(from.rx, to.rx, e).toFixed(1));
+      onStep?.(e);
+      if (p < 1 && !finished) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  // Compute SVG-unit bounds that guarantee 100% full viewport width + height on any screen aspect ratio
+  const fullScreenRect = () => {
+    const svg = curtain.querySelector('.curtain-logo');
+    const r = svg ? svg.getBoundingClientRect() : { width: 380 };
+    const unitPerPx = 2224 / Math.max(r.width, 1);
+    const fullW = Math.ceil(innerWidth * unitPerPx) + 400;
+    const fullH = Math.ceil(innerHeight * unitPerPx) + 400;
+    return { x: 1234 - fullW / 2, y: 337 - fullH / 2, w: fullW, h: fullH, rx: 0 };
+  };
+  const cBrand = [[0, 166, 80], [22, 177, 76], [113, 191, 69]];   // #00A650 -> #16B14C -> #71BF45
+  const cDeep  = [[5, 46, 28],  [10, 38, 26],  [14, 28, 24]];    // #052E1C -> #0A261A -> #0E1C18
+  requestAnimationFrame(() => {
+    curtain.classList.add('is-type');
+    caretStops.forEach((dx, i) => setTimeout(() => {
+      if (caret) caret.style.transform = `translateX(${dx}px)`;
+    }, i * 95 + 25));
+    setTimeout(() => curtain.classList.add('is-toggle'), 860);
+    setTimeout(() => {
+      curtain.classList.add('is-engulf');
+      tweenRect(
+        { x: 1720, y: 171, w: 624, h: 320, rx: 160 },
+        { x: 124,  y: 146, w: 2220, h: 370, rx: 185 },
+        680
+      );
+    }, 1880);
+    setTimeout(() => {
+      curtain.classList.add('is-zoom');
+      tweenRect(
+        { x: 124, y: 146, w: 2220, h: 370, rx: 185 },
+        fullScreenRect(),
+        860,
+        e => gradStops.forEach((s, i) => s.setAttribute('stop-color', lerpRgb(cBrand[i], cDeep[i], e)))
+      );
+    }, 2600);
+    setTimeout(() => {
+      curtain.classList.add('is-fade');
+      document.body.classList.add('ready');
+    }, 3120);
+    setTimeout(finish, 3720);
+  });
+  setTimeout(finish, 4600); // hard failsafe so curtain never blocks the page
+}
 
 // Header: shadow on scroll, mobile menu, Solutions dropdown
 const header = document.getElementById('header');

@@ -208,7 +208,11 @@ const spy = new IntersectionObserver(es => es.forEach(e => {
   a.parentElement.parentElement.scrollTo({ left: a.offsetLeft - 16, behavior: 'smooth' });
 }), { rootMargin: '-45% 0px -50% 0px' });
 spyLinks.forEach(l => { const t = document.getElementById(l.hash.slice(1)); if (t) spy.observe(t); });
-if (spyLinks.length) spy.observe(document.getElementById('top'));
+if (spyLinks.length) {
+  spy.observe(document.getElementById('top'));
+  // phones: the sub-nav's fixed quote bar waits until the hero (which has its own quote button) leaves the screen
+  new IntersectionObserver(([e]) => document.body.classList.toggle('hero-on', e.isIntersecting), { threshold: 0.25 }).observe(document.getElementById('top'));
+}
 
 // Rotators: parallel lists take turns (.is-active slides in, .is-prev slides out); picking one restarts the clock
 function cycle(groups, ms) {

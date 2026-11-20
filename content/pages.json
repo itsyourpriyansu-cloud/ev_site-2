@@ -1037,7 +1037,13 @@
           ],
           "image": "/assets/img/delivery-team.webp",
           "imageAlt": "Two engineers reviewing a tablet beside a DC charger and an electric SUV (illustrative image)",
-          "band": true
+          "band": true,
+          "chips": [
+            "Homes & societies",
+            "Workplaces & retail",
+            "Fleets & depots",
+            "CPOs & highways"
+          ]
         },
         {
           "type": "jump",
@@ -1869,7 +1875,13 @@
           ],
           "image": "/assets/img/night-canopy.webp",
           "imageAlt": "Electric SUV charging under a lit solar canopy at night, with a city skyline behind (illustrative render)",
-          "band": true
+          "band": true,
+          "chips": [
+            "Design",
+            "Supply",
+            "Install",
+            "Operate"
+          ]
         },
         {
           "type": "cards",
@@ -1973,7 +1985,13 @@
             }
           ],
           "image": "/assets/img/night-canopy.webp",
-          "imageAlt": "Electric SUV charging under a lit solar canopy at night, with a city skyline behind (illustrative render)"
+          "imageAlt": "Electric SUV charging under a lit solar canopy at night, with a city skyline behind (illustrative render)",
+          "chips": [
+            "Charger quotes",
+            "Site assessments",
+            "Fleet charging",
+            "Partnerships"
+          ]
         },
         {
           "type": "cards",

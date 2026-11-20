@@ -4,13 +4,14 @@
 **Phase 2 DONE (19 Nov 2026):** `node build.mjs` writes 11 routes + `404.html` from `content/pages.json`; `index.html` stays byte-identical. Image slots resolve through `content/images.json` (brief: `docs/image-prompts.md`). Markup uses the §1.2 class names, which get their CSS in Phase 3, so inner pages render mostly unstyled until then. The landing page (`index.html`, `style.css`, `script.js`) is the design source; every inner page reuses its parts.
 **Phases 3–7 DONE (19 Nov 2026), client-ready:** inner-page CSS block at the end of `style.css` (tokens only, hover gated, phone CTA bar). Added: /chargers power ladder (log kW scale, stacks on phones), /partners sub-nav, /contact "What happens next" (PROPOSED copy), /about vision and mission set as type, sub-nav scroll-spy and card reveals in `script.js`. Fixed: Destination read 1–22 kW (the "1–2 guns" entry was parsed as power), and the phone CTA bar stuck to the top (the sub-nav's backdrop-filter trapped it). Checked at 1440 and 390: no overflow, no broken images, one h1 per page, no dead links or anchors, no forbidden copy, all 49 quote buttons open the right form, no console errors.
 
+**Hero rework (20 Nov 2026):** inner photo heroes now reuse the homepage hero pattern (crumbs + title + CTAs on top, tagline + glass facts card at the foot, same overlay, weight-300 type, same reveal); the duplicate eyebrow is gone; hero chips became a non-clickable facts card; product heroes stay two-column down to 768px so the quote button is above the fold on tablets; the phone quote bar hides while the hero is on screen. 13 generated images live (heroes, DC bands, 5 segments).
+
 **Deferred (not needed for the client demo):**
 - /solutions pinned stage tracker; /partners model picker; partnership fieldset in the quote dialog + `data-partner`; `?quote=` deep link.
-- Hide the phone CTA bar while the product hero (which has its own quote button) is on screen.
 - `tests/qa.mjs` (Playwright) to replace the manual browser checks.
 - Full audits with the fixing-accessibility, fixing-metadata, fixing-motion-performance and web-perf skills (contrast numbers, focus order in the dialog, LCP per page).
 - `SITE_URL` canonical/`og:url`/JSON-LD on the real domain; drop `noindex` at launch.
-- Remaining 14 image slots (partners, product scenes, stages) on approval; Privacy/Terms legal text; the unlicensed GLB swap (§8).
+- 14 image slots still to generate: par-opportunity, par-distributor, par-recurring, seg-public, scene-atom-ac-socket/-wallbox/-destination/-dc-fast, stage-1…6 (they show fallbacks; drop each file into `assets/img/gen/`, set `approved`, rebuild); Privacy/Terms legal text; the unlicensed GLB swap (§8).
 **Content source:** `../envizon_ev/content/pages.json` (pages, the 4 Atom products, shared `stages` and `capabilities`) and `content/icons.json`. The rules come from `../envizon_ev/docs/inner-pages-plan.md`, `design-system.md` and `content-register.md`: no invented stats, prices, logos or testimonials; `BLOCKED` content is never rendered; `null` spec values show **"Confirmed per datasheet"**; standards read "designed to", never "certified".
 
 ---

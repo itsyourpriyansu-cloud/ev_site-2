@@ -43,10 +43,10 @@ function pic(slot, image, alt) {
 const img = (p, extra = '') => p.src ? `<img src="${esc(p.src)}" alt="${esc(p.alt)}" ${extra || 'loading="lazy" decoding="async"'}>` : '';
 
 // one CTA object -> button or link. type = opens the quote dialog; href = navigates
-function btn(c, { dark = false, small = false } = {}) {
+function btn(c, { dark = false, small = false, large = false } = {}) {
   if (!c) return '';
   const data = c.type ? ` data-quote="${esc(c.type)}"${c.product ? ` data-product="${esc(c.product)}"` : ''}${c.partner ? ` data-partner="${esc(c.partner)}"` : ''}` : '';
-  const sm = small ? ' btn-sm' : '';
+  const sm = small ? ' btn-sm' : large ? ' btn-lg' : '';
   if (c.type && !c.ghost) return `<button type="button" class="btn btn-primary${sm}"${data}>${KNOB.replace(/#i-[a-z]+/, '#' + (QUOTE_ICON[c.type] || 'i-arrow'))}<span class="bp-label">${esc(c.label)}</span></button>`;
   const cls = `btn ${dark ? 'btn-glass' : 'btn-ghost'}${sm}`;
   return c.type ? `<button type="button" class="${cls}"${data}>${esc(c.label)}</button>` : `<a class="${cls}" href="${esc(c.href)}">${esc(c.label)} <em>→</em></a>`;
@@ -76,16 +76,31 @@ function crumbs(trail) {
 function hero(s, page, trail) {
   const p = pic('hero-' + page.route, s.image, s.imageAlt);
   const photo = !!p.src && page.status !== 'PAGE_PENDING';
-  return `<section class="page-hero ${photo ? 'page-hero--photo' : 'page-hero--plain'}" id="top">
-  ${photo ? `<div class="page-hero-media">${img(p, 'fetchpriority="high"')}</div>` : ''}
+  // photo hero mirrors the homepage hero: crumbs + title + CTAs on top, tagline + facts card in the foot row.
+  // The crumb already names the page, so the eyebrow only shows on plain (legal/404) heroes.
+  const ctas = s.ctas?.length ? `<div class="cta-row hero-cta hero-reveal">${s.ctas.map((c, i) => btn(c, { dark: photo, large: photo && !i })).join('')}</div>` : '';
+  if (!photo) return `<section class="page-hero page-hero--plain" id="top">
   <div class="wrap page-hero-in">
     ${crumbs(trail)}
     <div class="page-hero-copy">
       ${s.eyebrow ? `<p class="page-eyebrow">${esc(s.eyebrow)}</p>` : ''}
       <h1 class="page-title">${lines(s.title)}</h1>
       ${s.sub ? `<p class="page-sub">${esc(s.sub)}</p>` : ''}
-      ${s.chips?.length ? `<ul class="chips chips--hero">${s.chips.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}
-      ${ctaRow(s.ctas, { dark: photo })}
+      ${ctas}
+    </div>
+  </div>
+</section>`;
+  return `<section class="page-hero page-hero--photo" id="top">
+  <div class="page-hero-media">${img(p, 'fetchpriority="high"')}</div>
+  <div class="wrap page-hero-in">
+    <div class="page-hero-copy">
+      ${crumbs(trail)}
+      <h1 class="page-title">${lines(s.title)}</h1>
+      ${ctas}
+    </div>
+    <div class="hero-foot">
+      ${s.sub ? `<p class="hero-tagline">${esc(s.sub)}</p>` : ''}
+      ${s.chips?.length ? `<ul class="page-facts" aria-label="At a glance">${s.chips.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}
     </div>
   </div>
 </section>`;
@@ -259,12 +274,12 @@ function productPage(p) {
       <p class="page-eyebrow">Atom · ${p.kind === 'DC' ? 'DC fast charger' : 'AC charger'}${p.model ? ` · ${esc(p.model)}` : ''}</p>
       <h1 class="page-title">${lines(p.name)}</h1>
       <p class="page-sub">${esc(p.tagline)}</p>
-      <dl class="stats">
+      <dl class="stats hero-reveal">
         <div><dt>Output</dt><dd>${kw(p)}<small>kW ${p.kind}</small></dd></div>
         <div><dt>Connector</dt><dd class="stats-txt">${esc(connector)}</dd></div>
         <div><dt>Protections</dt><dd>${p.protections.length}<small>built in</small></dd></div>
       </dl>
-      ${ctaRow([quote, { label: 'See specifications', href: '#specs' }], { dark: true })}
+      <div class="cta-row hero-reveal">${btn(quote, { dark: true, large: true })}${btn({ label: 'See specifications', href: '#specs' }, { dark: true })}</div>
     </div>
     <div class="page-hero-product">${img({ src: p.image, alt: p.imageAlt }, 'fetchpriority="high"')}</div>
   </div>

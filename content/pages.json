@@ -2,689 +2,206 @@
   "_readme": "Inner-page copy (docs/inner-pages-plan.md). Rendered by tools/build_pages.py into <route>/index.html on top of the generated homepage shell. status: APPROVED | PROPOSED | VERIFY (shown, needs sign-off) | BLOCKED (never rendered). A spec value of null renders as 'Confirmed per datasheet' (source tables disagree).",
   "products": [
     {
-      "slug": "atom-ac-socket",
-      "name": "Atom AC Smart Socket",
-      "model": "Atom 411-3S03",
-      "kind": "AC",
+      "slug": "neo-60-120",
+      "name": "NEO Smart 60/120",
+      "model": "NEO Smart Series 60/120 kW",
+      "kind": "DC",
       "power": [
-        "3.3 kW",
-        "Single phase"
+        "60 kW",
+        "120 kW",
+        "2 CCS2 guns",
+        "Field-upgradable"
       ],
-      "tagline": "A compact, app-controlled charging socket for 2-, 3- and 4-wheelers where vehicles stay for hours.",
-      "summary": "App-controlled socket for homes, light commercial sites and parking.",
-      "image": "/assets/img/atom-ac-socket.webp",
-      "imageAlt": "Envizon Atom AC Smart Socket, a compact wall-mounted charging socket with a green status ring (illustrative render)",
+      "tagline": "Dual-output CCS2 fast charging that starts at 60 kW and grows to 120 kW in the field, for urban and commercial sites.",
+      "summary": "Start at 60 kW, upgrade to 120 kW without replacing the charger.",
+      "image": "/assets/img/neo-60-120.webp",
+      "imageAlt": "Envizon NEO Smart Series 60/120 kW DC fast charger, a dual-gun floor-standing unit (illustrative render)",
       "features": [
         {
-          "icon": "key",
-          "title": "Access control",
-          "text": "Charging starts only after authentication in the Atom EV app, so the socket can't be used by just anyone."
+          "icon": "bolt",
+          "title": "60 kW now, 120 kW later",
+          "text": "Ships with two 30 kW power modules. Add two more on site to reach 120 kW, with no new charger or footprint."
+        },
+        {
+          "icon": "flow",
+          "title": "Dynamic load switching",
+          "text": "Power is shared between the two guns module by module, so both bays stay productive."
+        },
+        {
+          "icon": "protocol",
+          "title": "OCPP 1.6J, 2.x-ready",
+          "text": "Connects to your CMS over Wi-Fi, Ethernet or 4G, keeps working offline, and upgrades to OCPP 2.x."
         },
         {
           "icon": "shield",
-          "title": "Built-in safety",
-          "text": "Protection against surge, earth faults, leakage and short circuits on every session."
-        },
-        {
-          "icon": "card",
-          "title": "Payments",
-          "text": "Users pay by UPI or debit/credit card through the app, which suits shared and commercial parking."
-        },
-        {
-          "icon": "plug",
-          "title": "Compact design",
-          "text": "A small wall-mounted unit with an LED ring that shows charging status at a glance."
+          "title": "IP55, IK10, outdoors",
+          "text": "Rated from −30 °C to +55 °C, with nine electrical protections and an emergency stop on every unit."
         }
       ],
       "useCases": [
-        {
-          "icon": "home",
-          "title": "Homes",
-          "text": "Overnight charging for scooters, three-wheelers and cars."
-        },
-        {
-          "icon": "office",
-          "title": "Offices",
-          "text": "Staff charging during the working day."
-        },
-        {
-          "icon": "apartment",
-          "title": "Outdoor and society parking",
-          "text": "Low-cost points spread across parking bays."
-        },
         {
           "icon": "mall",
-          "title": "Light commercial",
-          "text": "Shops and small sites where vehicles stay for hours."
-        }
-      ],
-      "specs": [
-        {
-          "group": "Electrical",
-          "rows": [
-            [
-              "Output power",
-              "3.3 kW, single phase"
-            ],
-            [
-              "Higher-output option",
-              null
-            ],
-            [
-              "Input",
-              "230 V AC nominal, 50 Hz"
-            ],
-            [
-              "Energy metering",
-              "Yes"
-            ]
-          ]
-        },
-        {
-          "group": "Connector",
-          "rows": [
-            [
-              "Outlet",
-              "Industrial socket (IEC 60309)"
-            ]
-          ]
-        },
-        {
-          "group": "Control & connectivity",
-          "rows": [
-            [
-              "Control",
-              "Atom EV app (OCPP)"
-            ],
-            [
-              "Authentication",
-              "Mobile app"
-            ],
-            [
-              "Payment",
-              "UPI, debit and credit cards"
-            ],
-            [
-              "Status indication",
-              null
-            ]
-          ]
-        },
-        {
-          "group": "Environment",
-          "rows": [
-            [
-              "Ingress protection",
-              null
-            ],
-            [
-              "Operating temperature",
-              null
-            ],
-            [
-              "Storage temperature",
-              "−30 to +70 °C"
-            ]
-          ]
-        },
-        {
-          "group": "Mechanical",
-          "rows": [
-            [
-              "Dimensions (W × H × D)",
-              "125 × 295 × 140 mm"
-            ],
-            [
-              "Mounting",
-              "Wall"
-            ]
-          ]
-        },
-        {
-          "group": "Designed to",
-          "rows": [
-            [
-              "Standards",
-              "IS 17017-22-1, IEC 60309"
-            ]
-          ]
-        }
-      ],
-      "protections": [
-        "Over/under-voltage",
-        "Over-current",
-        "Short circuit",
-        "Leakage current",
-        "Earth fault",
-        "Surge",
-        "Over-temperature"
-      ],
-      "faq": [
-        {
-          "q": "Which vehicles can use the smart socket?",
-          "a": "It is designed for 2-, 3- and 4-wheelers that charge from a standard AC socket using their own portable charger. We confirm compatibility for your vehicle mix during the site assessment."
-        },
-        {
-          "q": "Do users need the app?",
-          "a": "Yes. Charging is started, monitored and paid for in the Atom EV app, which is how the socket controls access."
-        },
-        {
-          "q": "Is it suitable for outdoor parking?",
-          "a": "The enclosure rating is being confirmed against the current datasheet. For exposed outdoor bays we will recommend a protected location or an IP54 product such as the wallbox."
-        }
-      ]
-    },
-    {
-      "slug": "atom-ac-wallbox",
-      "name": "Atom AC Wallbox",
-      "model": "Atom 111-2G07",
-      "kind": "AC",
-      "power": [
-        "7.4 kW",
-        "11 kW",
-        "22 kW"
-      ],
-      "tagline": "A Type 2 wallbox for homes, societies and workplaces, with RFID, app and scheduled charging.",
-      "summary": "Type 2 wallbox with RFID, app and timer modes.",
-      "image": "/assets/img/atom-ac-wallbox.webp",
-      "imageAlt": "Envizon Atom AC Wallbox with a coiled Type 2 charging cable (illustrative render)",
-      "features": [
-        {
-          "icon": "key",
-          "title": "Three ways to start",
-          "text": "Easy mode, an RFID card or the Bluetooth app. Only registered users can charge when access control is on."
-        },
-        {
-          "icon": "pulse",
-          "title": "Scheduled charging",
-          "text": "Set charging to run in off-peak hours on time-of-use tariffs."
-        },
-        {
-          "icon": "shield",
-          "title": "Built-in safety",
-          "text": "Integrated surge protection plus earth-fault, leakage, short-circuit and over-temperature protection."
+          "title": "Commercial & retail",
+          "text": "Malls, hotels and business destinations."
         },
         {
           "icon": "plug",
-          "title": "IP54, rust-free enclosure",
-          "text": "A compact wall unit with a 5 m Type 2 cable, an LED status strip and a character display."
-        }
-      ],
-      "useCases": [
-        {
-          "icon": "home",
-          "title": "Homes",
-          "text": "Bungalows, villas and individual garages."
+          "title": "Public charging",
+          "text": "City hubs, urban locations and parking facilities."
         },
         {
-          "icon": "apartment",
-          "title": "Apartments & societies",
-          "text": "RFID per resident on shared parking."
+          "icon": "depot",
+          "title": "Fleet depots",
+          "text": "Corporate and light commercial fleets."
         },
         {
           "icon": "office",
           "title": "Workplaces",
-          "text": "Small offices and staff parking."
-        },
-        {
-          "icon": "mall",
-          "title": "Commercial & public parking",
-          "text": "Two-step verification for shared bays."
-        }
-      ],
-      "specs": [
-        {
-          "group": "Electrical",
-          "rows": [
-            [
-              "Output power",
-              "7.4 kW (1-phase) · 11 kW / 22 kW (3-phase)"
-            ],
-            [
-              "3.3 kW option",
-              null
-            ],
-            [
-              "Input",
-              "230 V 1-phase or 380–415 V 3-phase, 50 Hz"
-            ],
-            [
-              "Max current",
-              "32 A"
-            ],
-            [
-              "Energy metering",
-              null
-            ]
-          ]
-        },
-        {
-          "group": "Connector",
-          "rows": [
-            [
-              "Connector",
-              "Type 2 (IEC 62196)"
-            ],
-            [
-              "Cable",
-              "5 m, tethered"
-            ]
-          ]
-        },
-        {
-          "group": "Control & connectivity",
-          "rows": [
-            [
-              "Connectivity",
-              "Bluetooth"
-            ],
-            [
-              "Authentication",
-              "Atom EV app (Bluetooth) or RFID card"
-            ],
-            [
-              "Payment",
-              "UPI, debit and credit cards"
-            ],
-            [
-              "Status & display",
-              "LED strip, character display"
-            ]
-          ]
-        },
-        {
-          "group": "Environment",
-          "rows": [
-            [
-              "Ingress protection",
-              "IP54"
-            ],
-            [
-              "Operating temperature",
-              null
-            ],
-            [
-              "Storage temperature",
-              "−30 to +70 °C"
-            ]
-          ]
-        },
-        {
-          "group": "Mechanical",
-          "rows": [
-            [
-              "Dimensions (W × H × D)",
-              "287 × 406 × 127 mm"
-            ],
-            [
-              "Mounting",
-              "Wall"
-            ]
-          ]
-        },
-        {
-          "group": "Designed to",
-          "rows": [
-            [
-              "Standards",
-              "IEC 61851-21-2, IS 17017-1, AIS-138 Part 1"
-            ]
-          ]
-        }
-      ],
-      "protections": [
-        "Over/under-voltage",
-        "Over-current",
-        "Short circuit",
-        "Leakage current",
-        "Earth fault",
-        "Integrated surge protection",
-        "Over-temperature"
-      ],
-      "faq": [
-        {
-          "q": "Will a 22 kW wallbox charge my car at 22 kW?",
-          "a": "Only if the car's on-board charger and your supply support three-phase 22 kW. Many cars accept 7.4 or 11 kW on AC, so we size the wallbox to the vehicle and the connection."
-        },
-        {
-          "q": "Can residents in a society share wallboxes?",
-          "a": "Yes. RFID cards or the app identify each user, so shared points can be used by registered residents only."
-        },
-        {
-          "q": "Does it need an internet connection?",
-          "a": "No. The wallbox is controlled over Bluetooth from the app, and RFID works locally."
-        }
-      ]
-    },
-    {
-      "slug": "atom-ac-destination",
-      "name": "Atom AC Destination",
-      "model": "Atom 232-2G40-2G40",
-      "kind": "AC",
-      "power": [
-        "7.4 kW",
-        "22 kW",
-        "1–2 guns"
-      ],
-      "tagline": "Single- or dual-gun AC charging on a pedestal for hotels, offices, malls and long-stay parking.",
-      "summary": "Single- or dual-gun AC for hotels, offices, malls and long-dwell parking.",
-      "image": "/assets/img/atom-ac-destination.webp",
-      "imageAlt": "Envizon Atom AC Destination charger, a slim pedestal unit with a Type 2 gun (illustrative render)",
-      "features": [
-        {
-          "icon": "plug",
-          "title": "Two vehicles at once",
-          "text": "Dual-gun versions charge two cars from one unit, with an LCD and a simple interface."
-        },
-        {
-          "icon": "key",
-          "title": "RFID and app access",
-          "text": "Drivers start sessions with an RFID card or the mobile app."
-        },
-        {
-          "icon": "card",
-          "title": "Optional payments",
-          "text": "UPI and card payments can be enabled for public or paid parking."
-        },
-        {
-          "icon": "protocol",
-          "title": "Network-ready",
-          "text": "Ethernet and Wi-Fi with optional 4G, and optional OCPP 1.6J for a charging management system."
-        }
-      ],
-      "useCases": [
-        {
-          "icon": "hotel",
-          "title": "Hotels & resorts",
-          "text": "Guest charging during an overnight stay."
-        },
-        {
-          "icon": "office",
-          "title": "Offices & IT parks",
-          "text": "Staff and visitor parking."
-        },
-        {
-          "icon": "mall",
-          "title": "Malls & private parking",
-          "text": "Long-stay visitor bays."
-        },
-        {
-          "icon": "apartment",
-          "title": "Apartments & communities",
-          "text": "Shared charging on common parking."
-        }
-      ],
-      "specs": [
-        {
-          "group": "Electrical",
-          "rows": [
-            [
-              "Output power",
-              "7.4 kW (1-phase) · 22 kW (3-phase)"
-            ],
-            [
-              "Higher-power (80 kW) option",
-              null
-            ],
-            [
-              "Input",
-              "415 V 3-phase, 50 Hz"
-            ],
-            [
-              "Energy metering",
-              "Class 1"
-            ]
-          ]
-        },
-        {
-          "group": "Connector",
-          "rows": [
-            [
-              "Connector",
-              "1 or 2 × Type 2 (IEC 62196)"
-            ],
-            [
-              "Cable",
-              "5 m, tethered"
-            ]
-          ]
-        },
-        {
-          "group": "Control & connectivity",
-          "rows": [
-            [
-              "Connectivity",
-              "Ethernet, Wi-Fi, optional 4G"
-            ],
-            [
-              "Backend",
-              "OCPP 1.6J (optional) or local"
-            ],
-            [
-              "Authentication",
-              "Mobile app or RFID card"
-            ],
-            [
-              "Payment",
-              "UPI, debit and credit cards (optional)"
-            ],
-            [
-              "Status & display",
-              "LEDs, LCD"
-            ]
-          ]
-        },
-        {
-          "group": "Environment",
-          "rows": [
-            [
-              "Ingress protection",
-              "IP54"
-            ],
-            [
-              "Operating temperature",
-              null
-            ],
-            [
-              "Storage temperature",
-              "−30 to +70 °C"
-            ]
-          ]
-        },
-        {
-          "group": "Mechanical",
-          "rows": [
-            [
-              "Dimensions (W × H × D)",
-              "400 × 1680 × 250 mm"
-            ],
-            [
-              "Mounting",
-              "Wall, or floor on a pedestal"
-            ]
-          ]
-        },
-        {
-          "group": "Designed to",
-          "rows": [
-            [
-              "Standards",
-              "IS 17017-1, AIS-138 Part 1, IEC 61851-1, IEC 62196-2"
-            ]
-          ]
-        }
-      ],
-      "protections": [
-        "Over/under-voltage",
-        "Over-current / overload",
-        "Short circuit",
-        "Leakage current",
-        "Earth fault",
-        "Surge",
-        "Over-temperature"
-      ],
-      "faq": [
-        {
-          "q": "How is this different from the wallbox?",
-          "a": "The destination charger is built for shared, commercial use: it can have two guns, stands on a pedestal, and connects to a charging management system over Ethernet, Wi-Fi or 4G."
-        },
-        {
-          "q": "Can it connect to our charging management system?",
-          "a": "OCPP 1.6J is available as an option. We confirm backend compatibility for your platform before the order."
-        },
-        {
-          "q": "Which connectors does it support?",
-          "a": "Type 2 (IEC 62196). Other AC connector standards are confirmed per order against the current datasheet."
-        }
-      ]
-    },
-    {
-      "slug": "atom-dc-fast",
-      "name": "Atom DC Fast Charger",
-      "model": null,
-      "kind": "DC",
-      "power": [
-        "30 kW",
-        "60–120 kW",
-        "180–360 kW"
-      ],
-      "tagline": "CCS2 fast charging for public sites, highways, fleets and bus depots, in single- and multi-gun configurations.",
-      "summary": "CCS2 public and fleet fast charging, single or multi-gun.",
-      "image": "/assets/img/atom-dc-fast.webp",
-      "imageAlt": "Envizon Atom DC Fast Charger, a floor-standing dual-gun unit with a central display (illustrative render)",
-      "features": [
-        {
-          "icon": "bolt",
-          "title": "30 to 360 kW",
-          "text": "One family across three power bands, single or multi-gun, in classic and standard enclosure sizes."
-        },
-        {
-          "icon": "shield",
-          "title": "Extended protection",
-          "text": "Adds insulation monitoring, smoke detection, phase-sequence and phase/neutral-loss protection to the standard set."
-        },
-        {
-          "icon": "card",
-          "title": "Public-ready payments",
-          "text": "RFID and app authentication, with UPI and card payments for public charging."
-        },
-        {
-          "icon": "protocol",
-          "title": "Network-ready",
-          "text": "7-inch display, Ethernet and Wi-Fi with optional 4G, and optional OCPP 1.6J."
-        }
-      ],
-      "useCases": [
-        {
-          "icon": "depot",
-          "title": "Bus depots & fleets",
-          "text": "High-power charging between shifts and routes."
-        },
-        {
-          "icon": "highway",
-          "title": "Highways & fuel stations",
-          "text": "Quick top-ups at restaurants and fuel stops."
-        },
-        {
-          "icon": "office",
-          "title": "Retail & offices",
-          "text": "Shops, commercial and office buildings."
-        },
-        {
-          "icon": "mall",
-          "title": "Malls & cinemas",
-          "text": "Public charging during a visit."
+          "text": "Offices and business parks."
         }
       ],
       "variants": {
+        "title": "Two configurations, one cabinet.",
         "head": [
-          "Band",
-          "Output",
-          "Typical sites"
+          "Configuration",
+          "Power modules",
+          "Output"
         ],
         "rows": [
           [
-            "Atom DC 30 kW",
-            "30 kW",
-            "Retail, offices, smaller public sites"
+            "Base",
+            "2 × 30 kW",
+            "60 kW"
           ],
           [
-            "Atom DC 60–120 kW",
-            "60 to 120 kW",
-            "Public charging, fleets, highway stops"
-          ],
-          [
-            "Atom DC 180–360 kW",
-            "180 to 360 kW",
-            "Bus depots, heavy fleets, high-traffic corridors"
+            "Full",
+            "4 × 30 kW",
+            "120 kW"
           ]
         ]
       },
       "specs": [
         {
-          "group": "Electrical",
+          "group": "Power & output",
           "rows": [
             [
-              "Output power",
-              "30, 60, 120, 180, 360 kW"
+              "Input power",
+              "Max 140 kVA · 415 V AC +10% / −15%, 3-phase, 50/60 Hz (L1, L2, L3, N, PE)"
             ],
             [
-              "Output voltage",
-              "200–1000 V DC"
+              "Operation mode",
+              "EVSE Mode 4"
+            ],
+            [
+              "Outputs",
+              "Two (2)"
+            ],
+            [
+              "Output power",
+              "Up to 120 kW (4 × 30 kW modules); base 60 kW (2 × 30 kW)"
+            ],
+            [
+              "Dynamic load switching",
+              "Per module: power shared between guns in module steps"
             ],
             [
               "Current per gun",
-              null
+              "250 A"
             ],
             [
-              "Input",
-              "415 V 3-phase, 50 Hz"
+              "Output voltage",
+              "150–1000 V DC"
             ],
-            [
-              "Energy metering",
-              "Class 1"
-            ]
-          ]
-        },
-        {
-          "group": "Connector",
-          "rows": [
             [
               "Connector",
-              "CCS2 (IEC 62196-3)"
+              "CCS2 (Combo-2)"
             ],
             [
-              "Cable",
-              "5 m"
+              "Cable length",
+              "5.5 m (usable)"
             ],
             [
-              "Guns",
-              "Single or multi-gun"
+              "Peak efficiency",
+              "≥ 95%*"
+            ],
+            [
+              "Power factor",
+              "0.99 at full load"
+            ],
+            [
+              "THDi",
+              "≤ 5% above 50% output power"
             ]
           ]
         },
         {
-          "group": "Control & connectivity",
+          "group": "Protection & safety",
+          "rows": [
+            [
+              "Electrical protections",
+              "Under-voltage, Over-voltage, Over-current, Short circuit, Residual current, Surge, Over-temperature, Insulation fault, Emergency stop"
+            ],
+            [
+              "Isolation",
+              "Double insulation; each DC output isolated from the other (IEC 61851-23, 7.5.101)"
+            ],
+            [
+              "Emergency stop",
+              "1 × emergency stop button"
+            ],
+            [
+              "Impact protection",
+              "IK10 (touchscreen IK08)"
+            ]
+          ]
+        },
+        {
+          "group": "Interface & communication",
           "rows": [
             [
               "Display",
-              "7-inch LCD"
-            ],
-            [
-              "Connectivity",
-              "Ethernet, Wi-Fi, optional 4G"
-            ],
-            [
-              "Backend",
-              "OCPP 1.6J (optional) or local"
+              "10.1-inch LCD touch panel"
             ],
             [
               "Authentication",
-              "Mobile app or RFID card"
+              "RFID, mobile app & OTP, Auto Charge"
             ],
             [
-              "Payment",
-              "UPI, debit and credit cards"
+              "RFID standards",
+              "ISO/IEC 14443 A/B, FeliCa, MIFARE"
+            ],
+            [
+              "Protocol",
+              "OCPP 1.6J, upgradable to OCPP 2.x"
+            ],
+            [
+              "Network",
+              "Wi-Fi, Ethernet, GSM (3G / 4G)"
+            ],
+            [
+              "SLAC retry",
+              "Automatic, up to 3 attempts to start charging"
+            ]
+          ]
+        },
+        {
+          "group": "Enclosure",
+          "rows": [
+            [
+              "Dimensions (W × H × D)",
+              "1100 × 2000 × 850 mm"
+            ],
+            [
+              "Sheet metal",
+              "Base frame 2.0 mm · body 1.6 mm · internal 1.2 mm · door 1.2 mm"
+            ],
+            [
+              "Material",
+              "GI 120 GSM, outer structure and painted parts"
+            ],
+            [
+              "Finish",
+              "40–60 µm primer, 80–100 µm fire-resistant pure polyester top coat"
             ]
           ]
         },
@@ -692,67 +209,554 @@
           "group": "Environment",
           "rows": [
             [
-              "Ingress protection",
-              "IP54, outdoor"
-            ],
-            [
               "Operating temperature",
-              null
+              "−30 °C to +55 °C (de-rating above 55 °C)"
             ],
             [
               "Storage temperature",
-              "−30 to +70 °C"
-            ]
-          ]
-        },
-        {
-          "group": "Mechanical",
-          "rows": [
-            [
-              "Dimensions, 30 kW (W × H × D)",
-              "600 × 800 × 420 mm"
+              "−40 °C to +70 °C"
             ],
             [
-              "Mounting",
-              null
+              "Humidity",
+              "< 95% RH, non-condensing"
+            ],
+            [
+              "Ingress protection",
+              "IP55"
             ]
           ]
         },
         {
-          "group": "Designed to",
+          "group": "Standards",
           "rows": [
             [
-              "Standards",
-              "IS 17017-1, AIS-138 Part 1, IEC 61851-1, IEC 62196-2"
+              "Designed to",
+              "CE / Combo-2 · DIN 70121 · ISO 15118 · IEC 61851-1 · IEC 61851-23 · IEC 61851-21-2 · IEC 62196-3 · IS 17017 (India)"
             ]
           ]
         }
       ],
       "protections": [
-        "Over/under-voltage",
+        "Under-voltage",
+        "Over-voltage",
         "Over-current",
         "Short circuit",
-        "Leakage current",
-        "Earth fault",
+        "Residual current",
         "Surge",
         "Over-temperature",
-        "Phase/neutral loss",
-        "Phase sequence",
-        "Smoke detection",
-        "Insulation monitoring"
+        "Insulation fault",
+        "Emergency stop"
       ],
       "faq": [
         {
-          "q": "Which power band do I need?",
-          "a": "It depends on how long vehicles stay, how many charge at once and the supply at your site. Quick-stop public sites usually need more power per gun than depots charging overnight. We size it after a site assessment."
+          "q": "Can I start at 60 kW and upgrade later?",
+          "a": "Yes. The base unit has two 30 kW modules. Two more can be added in the field to reach 120 kW, inside the same cabinet."
+        },
+        {
+          "q": "Can both guns charge at the same time?",
+          "a": "Yes. Power is shared between the two guns in module steps, so two vehicles charge at once and power moves to whichever needs it."
         },
         {
           "q": "Which vehicles can it charge?",
-          "a": "Vehicles that use the CCS2 connector, which most new electric cars in India use. Compatibility for buses and commercial vehicles is confirmed per model."
+          "a": "Vehicles with a CCS2 (Combo-2) inlet, which most new electric cars in India use, from 150 to 1000 V DC. Compatibility for buses and commercial vehicles is confirmed per model."
+        }
+      ]
+    },
+    {
+      "slug": "neo-180-240",
+      "name": "NEO Smart 180/240",
+      "model": "NEO Smart Series 180/240 kW",
+      "kind": "DC",
+      "power": [
+        "180 kW",
+        "240 kW",
+        "2 CCS2 guns",
+        "Six power modules"
+      ],
+      "tagline": "Dual-output CCS2 charging at 180 or 240 kW, with per-module load switching for fleet depots and highway sites.",
+      "summary": "Six-module DC charging for fleets, highways and busy public hubs.",
+      "image": "/assets/img/neo-180-240.webp",
+      "imageAlt": "Envizon NEO Smart Series 180/240 kW DC fast charger, a dual-gun floor-standing unit (illustrative render)",
+      "features": [
+        {
+          "icon": "bolt",
+          "title": "180 or 240 kW",
+          "text": "Six power modules: 30 kW each for 180 kW, or 40 kW each for 240 kW, with up to 375 A per gun."
+        },
+        {
+          "icon": "flow",
+          "title": "Dynamic load switching",
+          "text": "Power is shared between the two guns module by module, so both bays stay productive."
+        },
+        {
+          "icon": "key",
+          "title": "Tap, scan or plug in",
+          "text": "RFID card, mobile app with OTP, or Auto Charge, which starts registered vehicles on plug-in."
+        },
+        {
+          "icon": "shield",
+          "title": "IP55, IK10, outdoors",
+          "text": "Rated from −30 °C to +55 °C, with nine electrical protections and an emergency stop on every unit."
+        }
+      ],
+      "useCases": [
+        {
+          "icon": "depot",
+          "title": "Fleet & logistics",
+          "text": "Depots, logistics hubs and commercial vehicles."
+        },
+        {
+          "icon": "highway",
+          "title": "Highway corridors",
+          "text": "Intercity routes and high-traffic stops."
+        },
+        {
+          "icon": "plug",
+          "title": "Public charging hubs",
+          "text": "Multi-bay hubs in cities."
+        },
+        {
+          "icon": "site",
+          "title": "Transport terminals",
+          "text": "Industrial and infrastructure sites."
+        }
+      ],
+      "variants": {
+        "title": "Two power ratings, one cabinet.",
+        "head": [
+          "Configuration",
+          "Power modules",
+          "Output"
+        ],
+        "rows": [
+          [
+            "180 kW",
+            "6 × 30 kW",
+            "180 kW"
+          ],
+          [
+            "240 kW",
+            "6 × 40 kW",
+            "240 kW"
+          ]
+        ]
+      },
+      "specs": [
+        {
+          "group": "Power & output",
+          "rows": [
+            [
+              "Input power",
+              "Max 270 kVA · 415 V AC +10% / −15%, 3-phase, 50/60 Hz (L1, L2, L3, N, PE)"
+            ],
+            [
+              "Operation mode",
+              "EVSE Mode 4"
+            ],
+            [
+              "Outputs",
+              "Two (2)"
+            ],
+            [
+              "Output power",
+              "Up to 240 kW (6 × 40 kW modules) or 180 kW (6 × 30 kW)"
+            ],
+            [
+              "Dynamic load switching",
+              "Per module: power shared between guns in module steps"
+            ],
+            [
+              "Current per gun",
+              "200 A / 250 A / 375 A"
+            ],
+            [
+              "Output voltage",
+              "150–1000 V DC"
+            ],
+            [
+              "Connector",
+              "CCS2 (Combo-2)"
+            ],
+            [
+              "Cable length",
+              "5.5 m (usable)"
+            ],
+            [
+              "Peak efficiency",
+              "≥ 95%*"
+            ],
+            [
+              "Power factor",
+              "0.99 at full load"
+            ],
+            [
+              "THDi",
+              "≤ 5% above 50% output power"
+            ]
+          ]
+        },
+        {
+          "group": "Protection & safety",
+          "rows": [
+            [
+              "Electrical protections",
+              "Under-voltage, Over-voltage, Over-current, Short circuit, Residual current, Surge, Over-temperature, Insulation fault, Emergency stop"
+            ],
+            [
+              "Isolation",
+              "Double insulation; each DC output isolated from the other (IEC 61851-23, 7.5.101)"
+            ],
+            [
+              "Emergency stop",
+              "1 × emergency stop button"
+            ],
+            [
+              "Impact protection",
+              "IK10 (touchscreen IK08)"
+            ]
+          ]
+        },
+        {
+          "group": "Interface & communication",
+          "rows": [
+            [
+              "Display",
+              "10.1-inch LCD touch panel"
+            ],
+            [
+              "Authentication",
+              "RFID, mobile app & OTP, Auto Charge"
+            ],
+            [
+              "RFID standards",
+              "ISO/IEC 14443 A/B, FeliCa, MIFARE"
+            ],
+            [
+              "Protocol",
+              "OCPP 1.6J, upgradable to OCPP 2.x"
+            ],
+            [
+              "Network",
+              "Wi-Fi, Ethernet, GSM (3G / 4G)"
+            ],
+            [
+              "SLAC retry",
+              "Automatic, up to 3 attempts to start charging"
+            ]
+          ]
+        },
+        {
+          "group": "Enclosure",
+          "rows": [
+            [
+              "Dimensions (W × H × D)",
+              "1100 × 2000 × 850 mm"
+            ],
+            [
+              "Sheet metal",
+              "Base frame 2.0 mm · body 1.6 mm · internal 1.2 mm · door 1.2 mm"
+            ],
+            [
+              "Material",
+              "GI 120 GSM, outer structure and painted parts"
+            ],
+            [
+              "Finish",
+              "40–60 µm primer, 80–100 µm fire-resistant pure polyester top coat"
+            ]
+          ]
+        },
+        {
+          "group": "Environment",
+          "rows": [
+            [
+              "Operating temperature",
+              "−30 °C to +55 °C (de-rating above 55 °C)"
+            ],
+            [
+              "Storage temperature",
+              "−40 °C to +70 °C"
+            ],
+            [
+              "Humidity",
+              "< 95% RH, non-condensing"
+            ],
+            [
+              "Ingress protection",
+              "IP55"
+            ]
+          ]
+        },
+        {
+          "group": "Standards",
+          "rows": [
+            [
+              "Designed to",
+              "CE / Combo-2 · DIN 70121 · ISO 15118 · IEC 61851-1 · IEC 61851-23 · IEC 61851-21-2 · IEC 62196-3 · IS 17017 (India)"
+            ]
+          ]
+        }
+      ],
+      "protections": [
+        "Under-voltage",
+        "Over-voltage",
+        "Over-current",
+        "Short circuit",
+        "Residual current",
+        "Surge",
+        "Over-temperature",
+        "Insulation fault",
+        "Emergency stop"
+      ],
+      "faq": [
+        {
+          "q": "180 kW or 240 kW: which do I need?",
+          "a": "It depends on how many vehicles charge at once, how long they stop and the supply at your site. We size it after a site assessment."
         },
         {
           "q": "Will my site need a new transformer?",
-          "a": "Often, for higher power bands. The survey covers available load, DISCOM approvals and any transformer or civil works, and the quote states them separately."
+          "a": "Often, at this power. The unit draws up to 270 kVA. The survey covers available load, DISCOM approvals and transformer or civil works, and the quote lists them separately."
+        },
+        {
+          "q": "Will it work with our charging software?",
+          "a": "It speaks OCPP 1.6J, the open protocol most CMS and CPMS platforms use, and can be upgraded to OCPP 2.x. It can also run on the Envizon EV digital platform."
+        }
+      ]
+    },
+    {
+      "slug": "neo-360",
+      "name": "NEO Smart 360",
+      "model": "NEO Smart Series 360 kW",
+      "kind": "DC",
+      "power": [
+        "360 kW",
+        "375 A rated",
+        "500 A boost",
+        "2 CCS2 guns"
+      ],
+      "tagline": "Ultra-high-power dual-output CCS2 charging at 360 kW, with 375 A per gun and boost up to 500 A, for larger charging hubs.",
+      "summary": "The flagship: 360 kW and 500 A boost for high-capacity hubs and corridors.",
+      "image": "/assets/img/neo-360.webp",
+      "imageAlt": "Envizon NEO Smart Series 360 kW DC fast charger, a dual-gun floor-standing unit (illustrative render)",
+      "features": [
+        {
+          "icon": "bolt",
+          "title": "360 kW, 500 A boost",
+          "text": "375 A rated per gun, boosting up to 500 A for vehicles that can take it, so stops stay short."
+        },
+        {
+          "icon": "protocol",
+          "title": "OCPP 1.6J, 2.x-ready",
+          "text": "Connects to your CMS over Wi-Fi, Ethernet or 4G, keeps working offline, and upgrades to OCPP 2.x."
+        },
+        {
+          "icon": "key",
+          "title": "Tap, scan or plug in",
+          "text": "RFID card, mobile app with OTP, or Auto Charge, which starts registered vehicles on plug-in."
+        },
+        {
+          "icon": "shield",
+          "title": "IP55, IK10, outdoors",
+          "text": "Rated from −30 °C to +55 °C, with nine electrical protections and an emergency stop on every unit."
+        }
+      ],
+      "useCases": [
+        {
+          "icon": "highway",
+          "title": "National highways",
+          "text": "Long-distance travel and intercity routes."
+        },
+        {
+          "icon": "plug",
+          "title": "Larger charging hubs",
+          "text": "High-capacity public sites."
+        },
+        {
+          "icon": "depot",
+          "title": "Heavy fleets",
+          "text": "Commercial vehicle depots with tight turnarounds."
+        },
+        {
+          "icon": "site",
+          "title": "Infrastructure projects",
+          "text": "Industrial facilities and transport terminals."
+        }
+      ],
+      "specs": [
+        {
+          "group": "Power & output",
+          "rows": [
+            [
+              "Input power",
+              "Max 405 kVA · 415 V AC +10% / −15%, 3-phase, 50/60 Hz (L1, L2, L3, N, PE)"
+            ],
+            [
+              "Operation mode",
+              "EVSE Mode 4"
+            ],
+            [
+              "Outputs",
+              "Two (2)"
+            ],
+            [
+              "Output power",
+              "Up to 360 kW"
+            ],
+            [
+              "Current per gun",
+              "375 A, boost up to 500 A"
+            ],
+            [
+              "Output voltage",
+              "150–1000 V DC"
+            ],
+            [
+              "Connector",
+              "CCS2 (Combo-2)"
+            ],
+            [
+              "Cable length",
+              "5.5 m (usable)"
+            ],
+            [
+              "Peak efficiency",
+              "≥ 95%*"
+            ],
+            [
+              "Power factor",
+              "0.99 at full load"
+            ],
+            [
+              "THDi",
+              "≤ 5% above 50% output power"
+            ]
+          ]
+        },
+        {
+          "group": "Protection & safety",
+          "rows": [
+            [
+              "Electrical protections",
+              "Under-voltage, Over-voltage, Over-current, Short circuit, Residual current, Surge, Over-temperature, Insulation fault, Emergency stop"
+            ],
+            [
+              "Isolation",
+              "Double insulation; each DC output isolated from the other (IEC 61851-23, 7.5.101)"
+            ],
+            [
+              "Emergency stop",
+              "1 × emergency stop button"
+            ],
+            [
+              "Impact protection",
+              "IK10 (touchscreen IK08)"
+            ]
+          ]
+        },
+        {
+          "group": "Interface & communication",
+          "rows": [
+            [
+              "Display",
+              "10.1-inch LCD touch panel"
+            ],
+            [
+              "Authentication",
+              "RFID, mobile app & OTP, Auto Charge"
+            ],
+            [
+              "RFID standards",
+              "ISO/IEC 14443 A/B, FeliCa, MIFARE"
+            ],
+            [
+              "Protocol",
+              "OCPP 1.6J, upgradable to OCPP 2.x"
+            ],
+            [
+              "Network",
+              "Wi-Fi, Ethernet, GSM (3G / 4G)"
+            ],
+            [
+              "SLAC retry",
+              "Automatic, up to 3 attempts to start charging"
+            ]
+          ]
+        },
+        {
+          "group": "Enclosure",
+          "rows": [
+            [
+              "Dimensions (W × H × D)",
+              "1100 × 2000 × 850 mm"
+            ],
+            [
+              "Sheet metal",
+              "Base frame 2.0 mm · body 1.6 mm · internal 1.2 mm · door 1.2 mm"
+            ],
+            [
+              "Material",
+              "GI 120 GSM, outer structure and painted parts"
+            ],
+            [
+              "Finish",
+              "40–60 µm primer, 80–100 µm fire-resistant pure polyester top coat"
+            ]
+          ]
+        },
+        {
+          "group": "Environment",
+          "rows": [
+            [
+              "Operating temperature",
+              "−30 °C to +55 °C (de-rating above 55 °C)"
+            ],
+            [
+              "Storage temperature",
+              "−40 °C to +70 °C"
+            ],
+            [
+              "Humidity",
+              "< 95% RH, non-condensing"
+            ],
+            [
+              "Ingress protection",
+              "IP55"
+            ]
+          ]
+        },
+        {
+          "group": "Standards",
+          "rows": [
+            [
+              "Designed to",
+              "CE / Combo-2 · DIN 70121 · ISO 15118 · IEC 61851-1 · IEC 61851-23 · IEC 61851-21-2 · IEC 62196-3 · IS 17017 (India)"
+            ]
+          ]
+        }
+      ],
+      "protections": [
+        "Under-voltage",
+        "Over-voltage",
+        "Over-current",
+        "Short circuit",
+        "Residual current",
+        "Surge",
+        "Over-temperature",
+        "Insulation fault",
+        "Emergency stop"
+      ],
+      "faq": [
+        {
+          "q": "What does the 500 A boost do?",
+          "a": "Each gun is rated at 375 A and can boost up to 500 A for vehicles that accept higher current, which shortens charging stops."
+        },
+        {
+          "q": "What supply does it need?",
+          "a": "Up to 405 kVA at 415 V AC, 3-phase. Most sites need a dedicated transformer at this power, which the site assessment scopes."
+        },
+        {
+          "q": "Which vehicles can it charge?",
+          "a": "Vehicles with a CCS2 (Combo-2) inlet, which most new electric cars in India use, from 150 to 1000 V DC. Compatibility for buses and commercial vehicles is confirmed per model."
         }
       ]
     }
@@ -773,85 +777,128 @@
       "rows": [
         [
           "Hardware portfolio",
-          "AC smart sockets, wallboxes, destination chargers and DC fast chargers"
+          "NEO Smart Series DC fast chargers, 30–360 kW, CCS2 dual-output"
         ],
         [
           "User access",
-          "RFID, mobile app and scheduled charging, depending on the model"
+          "RFID, QR, mobile app & OTP, and Auto Charge"
         ],
         [
           "Site design",
-          "Load assessment, charger selection, layout, cable routing and electrical scope"
+          "Demand assessment, load studies, site layouts and bill of materials"
         ],
         [
           "Deployment",
-          "Supply, installation, commissioning, user handover and documentation"
+          "Procurement, civil, electrical and connectivity works, commissioning and acceptance testing"
+        ],
+        [
+          "Digital",
+          "CMS / CPMS, customer app, payment and POS integration over OCPP 1.6J"
         ],
         [
           "Operations",
-          "Preventive maintenance, fault triage, service escalation and uptime reporting"
-        ],
-        [
-          "Integration",
-          "OCPP version, CMS, payment and roaming compatibility confirmed per model"
+          "Remote monitoring, preventive maintenance, troubleshooting and 24/7 support"
         ]
       ]
     },
     "stages": {
       "type": "rows",
       "id": "process",
-      "eyebrow": "How a project runs",
-      "title": "Six stages, from first call to a working site.",
-      "intro": "Every project follows the same path, so you know what happens next and who owns it.",
+      "eyebrow": "Turnkey execution",
+      "title": "From site assessment to documented handover.",
+      "intro": "A structured, end-to-end approach that takes every project from feasibility and planning to commissioning and operational readiness.",
       "image": "/assets/img/delivery-team.webp",
       "imageAlt": "Two engineers reviewing a tablet beside a DC charger and an electric SUV (illustrative image)",
       "items": [
         {
-          "title": "Qualify",
-          "text": "Demand, vehicle mix, dwell time and site ownership."
+          "title": "Feasibility",
+          "text": "Demand assessment, site accessibility and power availability."
         },
         {
-          "title": "Survey",
-          "text": "Power availability, load, layout and civil/electrical scope."
+          "title": "Design & engineering",
+          "text": "Load studies, site layouts and bill of materials (BOM)."
         },
         {
-          "title": "Design & quote",
-          "text": "Charger selection, bill of materials, capex, approvals and timeline."
+          "title": "Procurement",
+          "text": "Equipment sourcing, delivery planning and warranty coordination."
         },
         {
-          "title": "Deploy",
-          "text": "Supply, installation, testing and commissioning."
+          "title": "Installation",
+          "text": "Civil, electrical and connectivity infrastructure works."
         },
         {
-          "title": "Launch",
-          "text": "Training, signage, user workflow and the handover pack."
+          "title": "Commissioning",
+          "text": "Safety checks, system integration and acceptance testing."
         },
         {
-          "title": "Operate",
-          "text": "Support, maintenance, reporting and expansion."
+          "title": "Handover",
+          "text": "Project documentation, operator training and service plans."
         }
       ],
       "layout": "steps",
       "tone": "soft"
+    },
+    "ecosystem": {
+      "type": "cards",
+      "id": "ecosystem",
+      "tone": "soft",
+      "cols": 4,
+      "eyebrow": "Our business ecosystem",
+      "title": "An integrated network. One connected EV ecosystem.",
+      "intro": "Envizon EV is the central business and technology integrator, bringing together technology, marketing, distribution and software.",
+      "items": [
+        {
+          "icon": "package",
+          "title": "Manufacturing partners",
+          "text": "DC charging equipment supply."
+        },
+        {
+          "icon": "protocol",
+          "title": "Technology platform",
+          "text": "Software and digital operations."
+        },
+        {
+          "icon": "flow",
+          "title": "Distribution network",
+          "text": "Dealers, distributors and regional partners."
+        },
+        {
+          "icon": "site",
+          "title": "Customers & deployments",
+          "text": "Businesses, fleets, charging operators and infrastructure developers."
+        }
+      ]
+    },
+    "connected": {
+      "type": "chips",
+      "id": "connected",
+      "eyebrow": "Connected. Compatible. Controlled.",
+      "title": "Every NEO charger, network-ready.",
+      "items": [
+        "OCPP 1.6 communication",
+        "RFID & QR authentication",
+        "4G / Wi-Fi / Ethernet",
+        "Remote monitoring & control",
+        "Offline operating capability"
+      ]
     }
   },
   "pages": [
     {
       "route": "chargers",
       "status": "PROPOSED",
-      "title": "EV Chargers, 3.3 kW AC to 360 kW DC | Envizon EV Solutions",
-      "description": "The Envizon Atom range: AC smart sockets, wallboxes, destination chargers and DC fast chargers up to 360 kW, with site design and installation.",
+      "title": "DC Fast Chargers, 30–360 kW | NEO Smart Series | Envizon EV",
+      "description": "The Envizon NEO Smart Series: Made-in-India CCS2 DC fast chargers from 30 to 360 kW, with OCPP 1.6J, IP55 enclosures, installation and 24/7 support.",
       "sections": [
         {
           "type": "hero",
-          "eyebrow": "EV chargers",
-          "title": "A charger for every site.",
-          "sub": "From a 3.3 kW smart socket to 360 kW DC fast charging, matched to the vehicle, the site and how long cars stay.",
+          "title": "DC charging for every scale.",
+          "sub": "From compact commercial installations to high-power hubs, the NEO Smart Series covers 30 to 360 kW on one dual-output CCS2 platform.",
           "chips": [
-            "AC 3.3–22 kW",
             "DC 30–360 kW",
-            "CCS2 · Type 2",
-            "OCPP-ready options"
+            "CCS2 · 2 guns",
+            "OCPP 1.6J",
+            "IP55 · Made in India"
           ],
           "ctas": [
             {
@@ -864,133 +911,188 @@
               "ghost": true
             }
           ],
-          "image": "/assets/img/charger-120.webp",
-          "imageAlt": "Envizon 120 kW DC charger at a highway parking bay with an electric SUV plugged in (illustrative render)",
+          "image": "/assets/img/charger-240.webp",
+          "imageAlt": "Envizon 240 kW dual-gun DC fast charger at an electric bus depot at dusk (illustrative render)",
           "band": true
         },
         {
           "type": "ladder",
           "id": "power",
           "eyebrow": "Power range",
-          "title": "Pick by how long vehicles stay.",
-          "intro": "Long stays suit AC. Short stops and high-use bays need DC. Each stop opens the full spec sheet."
+          "title": "Pick by traffic and turnaround.",
+          "intro": "More vehicles and shorter stops call for more power per gun. Each stop opens the full spec sheet."
         },
         {
           "type": "cards",
-          "id": "ac",
-          "eyebrow": "AC charging",
-          "title": "For long stays.",
-          "intro": "Homes, societies, workplaces and destinations where vehicles park for hours.",
+          "id": "range",
+          "tone": "dark",
+          "layout": "split",
+          "eyebrow": "The portfolio",
+          "title": "NEO Smart Series.",
+          "intro": "Three dual-output CCS2 chargers on one platform: field-upgradable power modules, ≥ 95% peak efficiency and IP55 outdoor enclosures.",
           "items": [
             {
-              "product": "atom-ac-socket"
+              "product": "neo-60-120"
             },
             {
-              "product": "atom-ac-wallbox"
+              "product": "neo-180-240"
             },
             {
-              "product": "atom-ac-destination"
+              "product": "neo-360"
             }
-          ],
-          "tone": "dark",
-          "layout": "split"
+          ]
         },
         {
           "type": "cards",
-          "id": "dc",
-          "tone": "dark",
-          "eyebrow": "DC fast charging",
-          "title": "For quick turnarounds.",
-          "intro": "One CCS2 family in three power bands, for public sites, fleets and depots.",
+          "id": "by-site",
+          "layout": "split",
+          "eyebrow": "By site",
+          "title": "Matched to where vehicles stop.",
           "items": [
             {
+              "slot": "dc-30",
               "image": "/assets/img/charger-60.webp",
-              "imageAlt": "DC fast charger in a car park (illustrative render)",
-              "eyebrow": "Atom DC",
-              "title": "30 kW",
-              "text": "Retail, offices and smaller public sites.",
+              "imageAlt": "DC fast charger at an office forecourt (illustrative render)",
+              "eyebrow": "60–120 kW",
+              "title": "Urban & commercial",
+              "text": "Urban charging, retail, hospitality and commercial sites.",
               "links": [
                 {
-                  "label": "View specifications",
-                  "href": "/chargers/atom-dc-fast/"
+                  "label": "NEO Smart 60/120",
+                  "href": "/chargers/neo-60-120/"
                 },
                 {
                   "label": "Request quote",
                   "type": "PRODUCT_QUOTE",
-                  "product": "Atom DC Fast Charger"
+                  "product": "NEO Smart 60/120"
                 }
-              ],
-              "slot": "dc-30"
+              ]
             },
             {
+              "slot": "dc-60-120",
               "image": "/assets/img/charger-120.webp",
-              "imageAlt": "DC fast charger at a highway plaza (illustrative render)",
-              "eyebrow": "Atom DC",
-              "title": "60–120 kW",
-              "text": "Public charging, fleets and highway stops.",
+              "imageAlt": "DC chargers at a highway rest stop (illustrative render)",
+              "eyebrow": "180–240 kW",
+              "title": "Fleet & highway",
+              "text": "Fleet depots, logistics hubs and highway stops.",
               "links": [
                 {
-                  "label": "View specifications",
-                  "href": "/chargers/atom-dc-fast/"
+                  "label": "NEO Smart 180/240",
+                  "href": "/chargers/neo-180-240/"
                 },
                 {
                   "label": "Request quote",
                   "type": "PRODUCT_QUOTE",
-                  "product": "Atom DC Fast Charger"
+                  "product": "NEO Smart 180/240"
                 }
-              ],
-              "slot": "dc-60-120"
+              ]
             },
             {
+              "slot": "dc-180-360",
               "image": "/assets/img/charger-240.webp",
-              "imageAlt": "DC fast charger at an electric bus depot (illustrative render)",
-              "eyebrow": "Atom DC",
-              "title": "180–360 kW",
-              "text": "Bus depots, heavy fleets and high-traffic corridors.",
+              "imageAlt": "High-power DC chargers at a large charging hub (illustrative render)",
+              "eyebrow": "360 kW",
+              "title": "Larger hubs",
+              "text": "High-capacity hubs, heavy-fleet depots and intercity corridors.",
               "links": [
                 {
-                  "label": "View specifications",
-                  "href": "/chargers/atom-dc-fast/"
+                  "label": "NEO Smart 360",
+                  "href": "/chargers/neo-360/"
                 },
                 {
                   "label": "Request quote",
                   "type": "PRODUCT_QUOTE",
-                  "product": "Atom DC Fast Charger"
+                  "product": "NEO Smart 360"
                 }
-              ],
-              "slot": "dc-180-360"
+              ]
             }
+          ]
+        },
+        {
+          "type": "table",
+          "id": "compare",
+          "eyebrow": "Compare",
+          "title": "Side by side.",
+          "intro": "Shared across the range: 150–1000 V DC, CCS2 with 5.5 m cables, 10.1-inch touch display, OCPP 1.6J, IP55 and IK10.",
+          "head": [
+            "Specification",
+            "NEO 60/120",
+            "NEO 180/240",
+            "NEO 360"
           ],
-          "layout": "split"
+          "rows": [
+            [
+              "Output power",
+              "60 or 120 kW",
+              "180 or 240 kW",
+              "360 kW"
+            ],
+            [
+              "Power modules",
+              "2–4 × 30 kW",
+              "6 × 30 kW or 6 × 40 kW",
+              "n/a"
+            ],
+            [
+              "Current per gun",
+              "250 A",
+              "200 / 250 / 375 A",
+              "375 A, 500 A boost"
+            ],
+            [
+              "Input (max)",
+              "140 kVA",
+              "270 kVA",
+              "405 kVA"
+            ],
+            [
+              "Outputs",
+              "2 × CCS2",
+              "2 × CCS2",
+              "2 × CCS2"
+            ],
+            [
+              "Peak efficiency",
+              "≥ 95%",
+              "≥ 95%",
+              "≥ 95%"
+            ],
+            [
+              "Best for",
+              "Urban & commercial",
+              "Fleet & highway",
+              "Larger hubs"
+            ]
+          ]
+        },
+        {
+          "type": "ref",
+          "ref": "connected"
         },
         {
           "type": "chips",
-          "eyebrow": "Solutions by customer",
-          "title": "Match the charger to the customer.",
+          "eyebrow": "Solutions by application",
+          "title": "One technology. Multiple applications.",
           "items": [
             {
-              "label": "Residential & apartments",
-              "href": "/solutions/#residential"
-            },
-            {
-              "label": "Retail, hospitality & workplaces",
+              "label": "Commercial & retail",
               "href": "/solutions/#commercial"
             },
             {
-              "label": "Fleets & logistics",
+              "label": "Fleet & logistics",
               "href": "/solutions/#fleets"
             },
             {
-              "label": "Charge Point Operators",
-              "href": "/solutions/#cpo"
-            },
-            {
-              "label": "Bus depots",
-              "href": "/solutions/#bus-depots"
-            },
-            {
-              "label": "Public & highway charging",
+              "label": "Public charging networks",
               "href": "/solutions/#public"
+            },
+            {
+              "label": "Highway corridors",
+              "href": "/solutions/#highway"
+            },
+            {
+              "label": "Industrial & infrastructure",
+              "href": "/solutions/#industrial"
             }
           ]
         },
@@ -1001,7 +1103,7 @@
         {
           "type": "cta",
           "title": "Not sure which charger fits?",
-          "sub": "Tell us about the site and the vehicles. We'll recommend a configuration after a site assessment.",
+          "sub": "Tell us about the site and the vehicles. We will recommend a configuration after a site assessment.",
           "primary": {
             "label": "Book a Site Assessment",
             "type": "SITE_ASSESSMENT"
@@ -1016,14 +1118,13 @@
     {
       "route": "solutions",
       "status": "PROPOSED",
-      "title": "EV Charging Solutions for Homes, Businesses & Fleets | Envizon EV",
-      "description": "EV charging planned around your site: residential, commercial, fleet, CPO, bus depot and public charging, from survey to operation.",
+      "title": "EV Charging Solutions for Commercial, Fleet & Highway Sites | Envizon EV",
+      "description": "DC charging for commercial and retail sites, fleets, public networks, highway corridors and industrial projects, delivered turnkey from feasibility to handover.",
       "sections": [
         {
           "type": "hero",
-          "eyebrow": "Solutions",
-          "title": "Charging planned around your site.",
-          "sub": "Right charger. Right power. Right support. Six customer types, one delivery process.",
+          "title": "One technology. Multiple applications.",
+          "sub": "DC charging for commercial, industrial and transport sites, delivered from feasibility to documented handover.",
           "ctas": [
             {
               "label": "Book a Site Assessment",
@@ -1039,19 +1140,15 @@
           "imageAlt": "Two engineers reviewing a tablet beside a DC charger and an electric SUV (illustrative image)",
           "band": true,
           "chips": [
-            "Homes & societies",
-            "Workplaces & retail",
-            "Fleets & depots",
-            "CPOs & highways"
+            "Commercial & retail",
+            "Fleet & logistics",
+            "Public networks",
+            "Highways & industry"
           ]
         },
         {
           "type": "jump",
           "items": [
-            [
-              "Residential",
-              "#residential"
-            ],
             [
               "Commercial",
               "#commercial"
@@ -1061,16 +1158,20 @@
               "#fleets"
             ],
             [
-              "CPOs",
-              "#cpo"
-            ],
-            [
-              "Bus depots",
-              "#bus-depots"
-            ],
-            [
-              "Public & highway",
+              "Public",
               "#public"
+            ],
+            [
+              "Highway",
+              "#highway"
+            ],
+            [
+              "Industrial",
+              "#industrial"
+            ],
+            [
+              "Services",
+              "#services"
             ],
             [
               "How it runs",
@@ -1081,69 +1182,29 @@
         {
           "type": "rows",
           "id": "segments",
-          "title": "One partner for every kind of site.",
+          "layout": "blocks",
+          "title": "Charging designed around your site.",
           "items": [
             {
-              "id": "residential",
-              "eyebrow": "Residential & apartments",
-              "headline": "Charging at home, without the guesswork.",
-              "text": "Individual homes need a safe, right-sized point. Societies need shared charging that's fair to residents and kind to the building's supply. We plan both around your connection and parking.",
-              "bullets": [
-                "Load check on the home or society supply",
-                "Wallbox or smart-socket recommendation per bay",
-                "RFID or app access per resident",
-                "Scheduled charging for off-peak tariffs",
-                "Installation and handover to the society"
-              ],
-              "chips": [
-                {
-                  "label": "Atom AC Smart Socket",
-                  "href": "/chargers/atom-ac-socket/"
-                },
-                {
-                  "label": "Atom AC Wallbox",
-                  "href": "/chargers/atom-ac-wallbox/"
-                }
-              ],
-              "cta": {
-                "label": "Plan home or society charging",
-                "type": "SITE_ASSESSMENT"
-              },
-              "diagram": {
-                "pill": "AC",
-                "icon": "apartment",
-                "source": "Society supply",
-                "nodes": [
-                  "Smart Socket · 3.3 kW",
-                  "Wallbox · 7.4–22 kW"
-                ],
-                "sink": "Residents · RFID"
-              }
-            },
-            {
               "id": "commercial",
-              "eyebrow": "Retail, hospitality & workplaces",
-              "headline": "Charging your guests and staff will use.",
-              "text": "Hotels, malls, offices and shops want charging that matches how long people stay. We size AC for long dwell times and add DC where turnover is quick, with payments built in.",
+              "eyebrow": "Commercial & retail",
+              "headline": "Charging that brings customers back.",
+              "text": "Shopping centres, retail destinations, hospitality and business establishments. DC charging adds value for customers and visitors while they shop, stay or meet.",
               "bullets": [
-                "Dwell-time and footfall-based sizing",
-                "Single- or dual-gun AC for long-stay bays",
-                "DC for quick-turnover locations",
-                "UPI and card payments for paid charging",
-                "Signage and user workflow at launch"
+                "Footfall and dwell-time based sizing",
+                "Dual-gun 60–120 kW chargers for shared bays",
+                "App, RFID and QR access with digital payments",
+                "Tariff and session management in the CMS",
+                "Signage, user workflow and operator training at handover"
               ],
               "chips": [
                 {
-                  "label": "Atom AC Smart Socket",
-                  "href": "/chargers/atom-ac-socket/"
+                  "label": "NEO Smart 60/120",
+                  "href": "/chargers/neo-60-120/"
                 },
                 {
-                  "label": "Atom AC Destination",
-                  "href": "/chargers/atom-ac-destination/"
-                },
-                {
-                  "label": "Atom DC Fast Charger",
-                  "href": "/chargers/atom-dc-fast/"
+                  "label": "NEO Smart 180/240",
+                  "href": "/chargers/neo-180-240/"
                 }
               ],
               "cta": {
@@ -1151,36 +1212,36 @@
                 "type": "SITE_ASSESSMENT"
               },
               "diagram": {
-                "pill": "AC + DC",
+                "pill": "DC",
                 "icon": "mall",
                 "source": "Building supply",
                 "nodes": [
-                  "Destination · 7.4–22 kW",
-                  "DC Fast · from 30 kW"
+                  "NEO 60/120 · Gun A",
+                  "NEO 60/120 · Gun B"
                 ],
-                "sink": "Guests & staff"
+                "sink": "Visitors & guests"
               }
             },
             {
               "id": "fleets",
-              "eyebrow": "Fleets & logistics",
-              "headline": "Depot charging sized to your duty cycle.",
-              "text": "Fleets run on schedules, not on chance. We plan depot power around shift patterns and route lengths, so vehicles leave charged and the connection isn't overloaded.",
+              "eyebrow": "Fleet & logistics",
+              "headline": "Charging built around vehicle utilisation.",
+              "text": "Fleet depots, logistics hubs, corporate fleets and commercial vehicles. We plan charging around duty cycles and shift patterns, so vehicles leave charged and the connection is never overloaded.",
               "bullets": [
-                "Duty-cycle and shift-pattern analysis",
-                "Overnight AC vs opportunity DC charging mix",
-                "Depot load planning and phasing",
-                "RFID per driver or vehicle",
-                "Maintenance and uptime reporting"
+                "Duty-cycle and utilisation analysis",
+                "Per-module load switching between guns",
+                "RFID per driver, Auto Charge per vehicle",
+                "Depot load planning and phased expansion",
+                "Remote monitoring and reconciled session records"
               ],
               "chips": [
                 {
-                  "label": "Atom DC Fast Charger",
-                  "href": "/chargers/atom-dc-fast/"
+                  "label": "NEO Smart 180/240",
+                  "href": "/chargers/neo-180-240/"
                 },
                 {
-                  "label": "Atom AC Destination",
-                  "href": "/chargers/atom-ac-destination/"
+                  "label": "NEO Smart 360",
+                  "href": "/chargers/neo-360/"
                 }
               ],
               "cta": {
@@ -1192,32 +1253,32 @@
                 "icon": "depot",
                 "source": "Depot transformer",
                 "nodes": [
-                  "DC Fast · 60–120 kW",
-                  "Destination · 22 kW"
+                  "NEO 180/240 · 2 guns",
+                  "NEO 180/240 · 2 guns"
                 ],
                 "sink": "Fleet vehicles"
               }
             },
             {
-              "id": "cpo",
-              "eyebrow": "Charge Point Operators",
-              "headline": "Hardware that fits your network.",
-              "text": "Operators need chargers that join their backend and stay online. We confirm OCPP and payment compatibility per model before you order, then deliver and support each site.",
+              "id": "public",
+              "eyebrow": "Public charging networks",
+              "headline": "Connected charging across the city.",
+              "text": "Public charging hubs, urban locations and parking facilities. Chargers join your network over OCPP, and drivers find, start and pay for sessions in the app.",
               "bullets": [
-                "OCPP 1.6J options on networked models",
-                "Backend compatibility confirmed before order",
-                "Multi-site rollout and commissioning",
-                "Payments, RFID and app access",
-                "Fault triage and service escalation"
+                "OCPP 1.6J, upgradable to OCPP 2.x",
+                "Customer app: discover, start, track and pay",
+                "Real-time monitoring and remote session commands",
+                "Reports, billing and settlements",
+                "Incident tracking and resolution"
               ],
               "chips": [
                 {
-                  "label": "Atom DC Fast Charger",
-                  "href": "/chargers/atom-dc-fast/"
+                  "label": "NEO Smart 60/120",
+                  "href": "/chargers/neo-60-120/"
                 },
                 {
-                  "label": "Atom AC Destination",
-                  "href": "/chargers/atom-ac-destination/"
+                  "label": "NEO Smart 180/240",
+                  "href": "/chargers/neo-180-240/"
                 }
               ],
               "cta": {
@@ -1229,62 +1290,32 @@
                 "icon": "protocol",
                 "source": "Grid connection",
                 "nodes": [
-                  "DC Fast · 30–360 kW",
-                  "Destination · 7.4–22 kW"
+                  "NEO charger · Site 1",
+                  "NEO charger · Site 2"
                 ],
-                "sink": "Your CMS backend"
+                "sink": "Your CMS / CPMS"
               }
             },
             {
-              "id": "bus-depots",
-              "eyebrow": "Bus depots",
-              "headline": "High-power charging for electric buses.",
-              "text": "A bus depot is a small power plant. We plan high-power DC around the depot's timetable, the transformer and DISCOM approvals, and the space between bays.",
+              "id": "highway",
+              "eyebrow": "Highway & transport corridors",
+              "headline": "High-power charging where long trips stop.",
+              "text": "National highways, intercity routes and high-traffic locations. Strategically placed high-power DC charging makes long-distance electric travel practical.",
               "bullets": [
-                "180–360 kW DC charging",
-                "Transformer and DISCOM scope in the survey",
-                "Gun scheduling around the timetable",
-                "Layout for bus manoeuvring and cable reach",
-                "Preventive maintenance plans"
+                "180–360 kW for short stops",
+                "Site selection, traffic and power assessment",
+                "Up to 500 A boost on the NEO Smart 360",
+                "Offline operation where networks are patchy",
+                "24/7 support availability"
               ],
               "chips": [
                 {
-                  "label": "Atom DC Fast Charger",
-                  "href": "/chargers/atom-dc-fast/"
-                }
-              ],
-              "cta": {
-                "label": "Plan depot charging",
-                "type": "FLEET"
-              },
-              "diagram": {
-                "pill": "High power",
-                "icon": "depot",
-                "source": "HT supply",
-                "nodes": [
-                  "Bay 1 · DC 180–360 kW",
-                  "Bay 2 · DC 180–360 kW",
-                  "Bay 3 · DC 180–360 kW"
-                ],
-                "sink": "Bus fleet"
-              }
-            },
-            {
-              "id": "public",
-              "eyebrow": "Public & highway charging",
-              "headline": "Fast charging where drivers stop.",
-              "text": "Fuel stations, highway restaurants, malls and metro parking need quick, reliable public charging. We plan DC for turnover and add payments drivers already use.",
-              "bullets": [
-                "30–360 kW DC for short stops",
-                "Site selection and power check",
-                "UPI and card payments",
-                "Signage and user workflow",
-                "Uptime reporting and support"
-              ],
-              "chips": [
+                  "label": "NEO Smart 360",
+                  "href": "/chargers/neo-360/"
+                },
                 {
-                  "label": "Atom DC Fast Charger",
-                  "href": "/chargers/atom-dc-fast/"
+                  "label": "NEO Smart 180/240",
+                  "href": "/chargers/neo-180-240/"
                 }
               ],
               "cta": {
@@ -1292,18 +1323,86 @@
                 "type": "SITE_ASSESSMENT"
               },
               "diagram": {
-                "pill": "Public",
+                "pill": "High power",
                 "icon": "highway",
-                "source": "Grid connection",
+                "source": "HT supply",
                 "nodes": [
-                  "DC Fast · 60–120 kW",
-                  "DC Fast · 30 kW"
+                  "NEO 360 · 2 guns",
+                  "NEO 360 · 2 guns"
                 ],
-                "sink": "Drivers · UPI"
+                "sink": "Intercity drivers"
+              }
+            },
+            {
+              "id": "industrial",
+              "eyebrow": "Industrial & infrastructure",
+              "headline": "Charging built into larger projects.",
+              "text": "Industrial facilities, transport terminals and infrastructure developments. We integrate DC charging into the wider electrical and civil scope, from load study to commissioning.",
+              "bullets": [
+                "Load studies, site layouts and BOM",
+                "Coordination with the main electrical and civil works",
+                "Scales from one charger to a multi-bay hub",
+                "Acceptance testing and full documentation",
+                "Preventive maintenance plans"
+              ],
+              "chips": [
+                {
+                  "label": "NEO Smart 60/120",
+                  "href": "/chargers/neo-60-120/"
+                },
+                {
+                  "label": "NEO Smart 180/240",
+                  "href": "/chargers/neo-180-240/"
+                },
+                {
+                  "label": "NEO Smart 360",
+                  "href": "/chargers/neo-360/"
+                }
+              ],
+              "cta": {
+                "label": "Book a site assessment",
+                "type": "SITE_ASSESSMENT"
+              },
+              "diagram": {
+                "pill": "Project",
+                "icon": "site",
+                "source": "Site substation",
+                "nodes": [
+                  "NEO 240 · Bay 1",
+                  "NEO 360 · Bay 2"
+                ],
+                "sink": "Site vehicles"
               }
             }
-          ],
-          "layout": "blocks"
+          ]
+        },
+        {
+          "type": "rows",
+          "id": "hub",
+          "tone": "dark",
+          "slot": "hub-concept",
+          "image": "/assets/img/night-canopy.webp",
+          "imageAlt": "A multi-bay EV charging hub at night (illustrative render)",
+          "eyebrow": "The destination hub concept",
+          "title": "4 machines. 8 bays. One connected destination.",
+          "intro": "A scalable hub that serves many vehicles at once, backed by integrated infrastructure, intelligent software and centralised operations.",
+          "items": [
+            {
+              "num": "04",
+              "title": "Charging machines",
+              "text": "Dual-output NEO chargers that share power between their guns."
+            },
+            {
+              "num": "08",
+              "title": "Charging bays",
+              "text": "Two CCS2 guns per machine, so eight vehicles charge at once."
+            },
+            {
+              "num": "01",
+              "title": "Connected platform",
+              "text": "One CMS for sessions, tariffs, payments and monitoring across the hub."
+            }
+          ]
         },
         {
           "type": "ref",
@@ -1311,38 +1410,103 @@
         },
         {
           "type": "cards",
-          "id": "packages",
+          "id": "services",
           "tone": "soft",
-          "eyebrow": "Turnkey scope",
-          "title": "Packaged the way you buy.",
           "cols": 4,
+          "eyebrow": "Our solutions",
+          "title": "Four connected services. One complete charging ecosystem.",
           "items": [
             {
               "icon": "plug",
-              "title": "Charger supply + installation",
-              "text": "Hardware, mounting, wiring and commissioning."
+              "eyebrow": "01 · Equipment",
+              "title": "EV chargers & accessories",
+              "text": "High-performance charging equipment for diverse applications."
             },
             {
               "icon": "tools",
-              "title": "Complete site EPC",
-              "text": "Design, civil and electrical works, approvals and commissioning."
+              "eyebrow": "02 · Deployment",
+              "title": "Installation & commissioning",
+              "text": "End-to-end infrastructure setup, installation and commissioning."
             },
             {
-              "icon": "depot",
-              "title": "Fleet depot package",
-              "text": "Depot power planning, DC charging and phasing."
+              "icon": "protocol",
+              "eyebrow": "03 · Digital",
+              "title": "CMS, apps & payments",
+              "text": "Connected platforms for charger management, customer access and payments."
             },
             {
-              "icon": "refresh",
-              "title": "Managed operations + AMC",
-              "text": "Maintenance, monitoring and support after launch."
+              "icon": "pulse",
+              "eyebrow": "04 · Operations",
+              "title": "Monitoring & maintenance",
+              "text": "Continuous monitoring, technical assistance and ongoing maintenance."
             }
           ],
           "note": "Every quote states its inclusions and exclusions: utility upgrades, transformer, civil work, permits, network connectivity, payment/CMS, taxes and warranty."
         },
         {
-          "type": "ref",
-          "ref": "capabilities"
+          "type": "cards",
+          "id": "digital",
+          "cols": 4,
+          "eyebrow": "Digital charging",
+          "title": "A connected customer and operator experience.",
+          "intro": "One platform connects EV users, chargers and operators through software, real-time monitoring and payments.",
+          "items": [
+            {
+              "icon": "phone",
+              "eyebrow": "01",
+              "title": "Customer app",
+              "text": "Discover stations, authenticate, start sessions, track charging and pay."
+            },
+            {
+              "icon": "sliders",
+              "eyebrow": "02",
+              "title": "CMS / CPMS",
+              "text": "Tariffs and sessions, real-time monitoring and control, reports, billing and settlements."
+            },
+            {
+              "icon": "clipboard",
+              "eyebrow": "03",
+              "title": "Operator tools",
+              "text": "Incident tracking and resolution, performance tracking and reconciled transaction records."
+            },
+            {
+              "icon": "pulse",
+              "eyebrow": "04",
+              "title": "Site connectivity",
+              "text": "Charger status, energy and fault monitoring, remote session commands and device management."
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "id": "support",
+          "tone": "soft",
+          "cols": 4,
+          "eyebrow": "Service & support",
+          "title": "More than hardware. Support for the whole lifecycle.",
+          "intro": "Charging infrastructure is a long-term investment. Its value depends on dependable service as much as on the equipment.",
+          "items": [
+            {
+              "icon": "tools",
+              "title": "Installation & commissioning",
+              "text": "Installation, configuration and commissioning of DC charging infrastructure."
+            },
+            {
+              "icon": "support",
+              "title": "Technical support",
+              "text": "Guidance, diagnostics and troubleshooting for chargers and connected systems."
+            },
+            {
+              "icon": "chat",
+              "title": "Customer support",
+              "text": "Help for operators and EV users, for a seamless charging experience."
+            },
+            {
+              "icon": "refresh",
+              "title": "24/7 support",
+              "text": "Round-the-clock availability for operational assistance and service requests."
+            }
+          ]
         },
         {
           "type": "faq",
@@ -1351,30 +1515,30 @@
           "items": [
             {
               "q": "Do you only supply chargers, or install them too?",
-              "a": "Both. We can supply chargers alone, supply and install, or deliver the complete site including civil and electrical works."
+              "a": "Both. We supply chargers alone, supply and install, or deliver the whole site turnkey: feasibility, design, procurement, civil and electrical works, commissioning and handover."
             },
             {
               "q": "What happens during a site assessment?",
-              "a": "We check the available power and load, the parking layout, cable routes and the civil and electrical scope, then recommend chargers and a phased plan."
+              "a": "We check demand, site access and power availability, the parking layout, cable routes and the civil and electrical scope, then recommend chargers and a phased plan."
             },
             {
               "q": "Who handles DISCOM approvals and transformer upgrades?",
-              "a": "We include them in the survey and state them separately in the quote, so you can see what the charger costs and what the site needs."
+              "a": "We include them in the survey and list them separately in the quote, so you can see what the chargers cost and what the site needs."
             },
             {
-              "q": "Can we start small and add chargers later?",
-              "a": "Yes. We design the electrical scope with expansion in mind, so later chargers don't mean starting over."
+              "q": "Can we start small and add capacity later?",
+              "a": "Yes. NEO chargers take extra power modules in the field, and we design the electrical scope for expansion, so growth does not mean starting over."
             },
             {
               "q": "What support do you provide after launch?",
-              "a": "Preventive maintenance, fault triage and service escalation, with AMC and managed-operations options. Service levels are agreed in the contract."
+              "a": "Remote monitoring, preventive maintenance, troubleshooting and 24/7 support, with AMC and managed-operations options agreed in the contract."
             }
           ]
         },
         {
           "type": "cta",
           "title": "Tell us about your site.",
-          "sub": "We'll come back with a charger recommendation and a phased plan.",
+          "sub": "We will come back with a charger recommendation and a phased plan.",
           "primary": {
             "label": "Book a Site Assessment",
             "type": "SITE_ASSESSMENT"
@@ -1395,13 +1559,13 @@
         {
           "type": "hero",
           "eyebrow": "Partner with Envizon EV",
-          "title": "Build a local EV charging business.",
-          "sub": "Distribute, deliver and operate EV charging in your territory, with central product, engineering and training support.",
+          "title": "Growing together. Powering the future.",
+          "sub": "The EV market offers opportunities across technology, manufacturing, infrastructure and mobility. We connect manufacturers, technology partners and distribution networks to expand reach and speed up adoption.",
           "chips": [
-            "Distributor",
-            "Turnkey infrastructure",
-            "Charge-point operations",
-            "Revenue sharing"
+            "Dealers & distributors",
+            "Regional partners",
+            "Technology partners",
+            "Charge-point operations"
           ],
           "ctas": [
             {
@@ -1461,7 +1625,7 @@
           "items": [
             {
               "title": "Product sales",
-              "text": "Develop local demand for AC and DC chargers across homes, workplaces, fleets and public sites."
+              "text": "Develop local demand for DC fast charging across commercial sites, fleets, public hubs and highways."
             },
             {
               "title": "Project delivery",
@@ -1477,6 +1641,10 @@
             }
           ],
           "slot": "par-opportunity"
+        },
+        {
+          "type": "ref",
+          "ref": "ecosystem"
         },
         {
           "type": "cards",
@@ -1555,8 +1723,8 @@
               ]
             },
             {
-              "image": "/assets/img/model-site-operator.webp",
-              "imageAlt": "Isometric villa with chargers in its parking area (illustrative render)",
+              "image": "/assets/img/gen/seg-cpo.webp",
+              "imageAlt": "Isometric public charging hub with DC chargers (illustrative render)",
               "contain": true,
               "eyebrow": "Model C",
               "title": "Site Operator / Revenue Share",
@@ -1591,22 +1759,20 @@
           "id": "range",
           "tone": "dark",
           "eyebrow": "What you'll sell",
-          "title": "A range for every charging need.",
+          "title": "A DC range for every scale.",
           "items": [
             {
-              "product": "atom-ac-socket"
+              "product": "neo-60-120"
             },
             {
-              "product": "atom-ac-wallbox"
+              "product": "neo-180-240"
             },
             {
-              "product": "atom-ac-destination"
-            },
-            {
-              "product": "atom-dc-fast"
+              "product": "neo-360"
             }
           ],
-          "layout": "split"
+          "layout": "split",
+          "intro": "The NEO Smart Series, 30 to 360 kW, backed by our software, installation and 24/7 support."
         },
         {
           "type": "ref",
@@ -1657,7 +1823,7 @@
           "cols": 2,
           "items": [
             {
-              "icon": "apartment",
+              "icon": "site",
               "title": "The site partner contributes",
               "text": "Land or parking bays, access, customer footfall and possibly part of the capex. Rent, power supply, access hours, signage and exclusivity are agreed up front."
             },
@@ -1750,7 +1916,7 @@
             {
               "num": "Days 16–30",
               "title": "Build pipeline",
-              "text": "Map 50–100 prospects: dealers, apartments, hotels, fleets, parking and solar/electrical partners."
+              "text": "Map 50–100 prospects: malls, hotels, fleets, logistics hubs, highway sites and electrical partners."
             },
             {
               "num": "Days 31–60",
@@ -1854,14 +2020,13 @@
     {
       "route": "about",
       "status": "PROPOSED",
-      "title": "About Envizon EV Solutions | EV Charging, End to End",
-      "description": "Envizon EV Solutions designs, supplies, installs and operates EV charging for homes, businesses, fleets and operators in India.",
+      "title": "About Envizon EV | Powering India's Electric Future",
+      "description": "Envizon EV brings together Made-in-India DC charging hardware, proprietary software, digital payments and turnkey deployment for India's electric mobility transition.",
       "sections": [
         {
           "type": "hero",
-          "eyebrow": "About Envizon EV",
-          "title": "EV charging, end to end.",
-          "sub": "We design, supply, install and support EV charging, so our customers get a working site, not just a box on the wall.",
+          "title": "Powering India's electric future.",
+          "sub": "We bring together charging hardware, proprietary software, digital connectivity and deployment capability for India's electric mobility ecosystem.",
           "ctas": [
             {
               "label": "Talk to Us",
@@ -1874,41 +2039,61 @@
             }
           ],
           "image": "/assets/img/night-canopy.webp",
-          "imageAlt": "Electric SUV charging under a lit solar canopy at night, with a city skyline behind (illustrative render)",
+          "imageAlt": "Electric SUV charging under a lit canopy at night, with a city skyline behind (illustrative render)",
           "band": true,
           "chips": [
-            "Design",
-            "Supply",
-            "Install",
-            "Operate"
+            "Made in India",
+            "Smart technology",
+            "Scalable infrastructure"
           ]
         },
         {
           "type": "cards",
-          "id": "what-we-do",
-          "eyebrow": "What we do",
-          "title": "One team, from survey to support.",
+          "id": "who-we-are",
           "cols": 4,
+          "eyebrow": "Who we are",
+          "title": "Your partner in EV infrastructure.",
+          "intro": "Enabling India's electric mobility transition, from a single charger to a high-power network.",
           "items": [
             {
-              "icon": "site",
-              "title": "Design",
-              "text": "Site surveys, load assessment, charger selection and layout."
+              "icon": "bolt",
+              "title": "DC charging hardware",
+              "text": "Compact DC fast chargers to ultra-high-power systems."
             },
             {
               "icon": "package",
-              "title": "Supply",
-              "text": "The Atom range, from 3.3 kW AC to 360 kW DC."
+              "title": "Made in India",
+              "text": "Indian manufacturing and technology partnerships."
             },
             {
-              "icon": "tools",
-              "title": "Install",
-              "text": "Civil and electrical works, commissioning and handover."
+              "icon": "protocol",
+              "title": "Proprietary software",
+              "text": "Our own charging management platform."
+            },
+            {
+              "icon": "card",
+              "title": "Digital payments",
+              "text": "Payment and POS integration."
             },
             {
               "icon": "pulse",
-              "title": "Operate",
-              "text": "Maintenance, fault triage, reporting and expansion."
+              "title": "Remote monitoring",
+              "text": "Charger monitoring and management from anywhere."
+            },
+            {
+              "icon": "flow",
+              "title": "Dealer network",
+              "text": "Dealer and distributor network development."
+            },
+            {
+              "icon": "tools",
+              "title": "Installation & support",
+              "text": "Installation, commissioning and technical support."
+            },
+            {
+              "icon": "trend",
+              "title": "Scalable networks",
+              "text": "Charging network deployment at any scale."
             }
           ]
         },
@@ -1916,21 +2101,71 @@
           "type": "cards",
           "id": "purpose",
           "tone": "soft",
-          "eyebrow": "Why we exist",
-          "title": "Vision and mission.",
           "cols": 2,
+          "eyebrow": "Vision & mission",
+          "title": "Shaping the EV charging landscape.",
+          "intro": "Electric mobility is reshaping transport, energy and infrastructure. We are building the technology and infrastructure to support it, from individual charging points to high-power networks.",
           "items": [
             {
-              "eyebrow": "Vision",
-              "title": "Clean transport, charged locally.",
-              "text": "Cities where electric vehicles are the easy choice, because dependable charging is wherever people live, work and travel."
+              "eyebrow": "Our vision",
+              "title": "Accessible charging across India.",
+              "text": "To enable accessible charging across India through dependable charging technology and intelligent infrastructure."
             },
             {
-              "eyebrow": "Mission",
-              "title": "Charging that works on day one, and day one thousand.",
-              "text": "Deliver safe, standards-based EV charging that's sized to each site, installed properly and supported for its working life."
+              "eyebrow": "Our mission",
+              "title": "Performance, safety, support.",
+              "text": "To deliver high-performance EV charging solutions built on safety, technological innovation and dependable customer support."
             }
           ]
+        },
+        {
+          "type": "cards",
+          "id": "why",
+          "cols": 3,
+          "eyebrow": "Why Envizon EV",
+          "title": "Intelligent technology. Dependable performance.",
+          "items": [
+            {
+              "icon": "bolt",
+              "eyebrow": "01",
+              "title": "High-power DC charging",
+              "text": "A DC portfolio from 30 to 360 kW for diverse vehicle segments and charging needs."
+            },
+            {
+              "icon": "protocol",
+              "eyebrow": "02",
+              "title": "Intelligent technology",
+              "text": "Proprietary software for monitoring, operations, customer support and payments."
+            },
+            {
+              "icon": "package",
+              "eyebrow": "03",
+              "title": "Made in India",
+              "text": "A strong domestic manufacturing base, with technology and manufacturing collaborations."
+            },
+            {
+              "icon": "key",
+              "eyebrow": "04",
+              "title": "Smart connectivity",
+              "text": "OCPP communication, RFID and QR authentication, app access and multiple network options."
+            },
+            {
+              "icon": "trend",
+              "eyebrow": "05",
+              "title": "Scalable infrastructure",
+              "text": "From single commercial installations to fleet depots, public hubs and high-power networks."
+            },
+            {
+              "icon": "support",
+              "eyebrow": "06",
+              "title": "Lifecycle support",
+              "text": "Installation, commissioning, preventive maintenance, troubleshooting and technical support."
+            }
+          ]
+        },
+        {
+          "type": "ref",
+          "ref": "ecosystem"
         },
         {
           "type": "ref",
@@ -1939,23 +2174,23 @@
         {
           "type": "chips",
           "eyebrow": "Standards",
-          "title": "Hardware designed to recognised standards.",
-          "intro": "Certification is confirmed per model against current datasheets.",
+          "title": "Built to recognised standards.",
+          "intro": "The NEO Smart Series is designed to these standards. Certificates are shared per model on request.",
           "items": [
-            "IS 17017-1",
-            "IS 17017-22-1",
-            "AIS-138 Part 1",
+            "CE / Combo-2",
+            "DIN 70121",
+            "ISO 15118",
             "IEC 61851-1",
+            "IEC 61851-23",
             "IEC 61851-21-2",
-            "IEC 62196-2",
             "IEC 62196-3",
-            "IEC 60309"
+            "IS 17017 (India)"
           ]
         },
         {
           "type": "cta",
-          "title": "Let's plan your charging site.",
-          "sub": "Tell us about the site and the vehicles, and we'll take it from there.",
+          "title": "Together, let's power the EV revolution.",
+          "sub": "Tell us about the site and the vehicles, and we will take it from there.",
           "primary": {
             "label": "Get a Quote",
             "type": "GENERAL"
@@ -1990,7 +2225,8 @@
             "Charger quotes",
             "Site assessments",
             "Fleet charging",
-            "Partnerships"
+            "Partnerships",
+            "24/7 support"
           ]
         },
         {
@@ -2003,7 +2239,7 @@
             {
               "icon": "plug",
               "title": "Charger quote",
-              "text": "Pricing for a specific charger or configuration.",
+              "text": "Pricing for a NEO charger or configuration.",
               "links": [
                 {
                   "label": "Request a quote",
@@ -2014,7 +2250,7 @@
             {
               "icon": "site",
               "title": "Site assessment",
-              "text": "A survey of power, layout and scope for your site.",
+              "text": "Demand, power, layout and scope for your site.",
               "links": [
                 {
                   "label": "Book an assessment",
@@ -2036,7 +2272,7 @@
             {
               "icon": "flow",
               "title": "Partnership",
-              "text": "Distributor, delivery, site-operator and CPO models.",
+              "text": "Dealers, distributors, regional and technology partners.",
               "links": [
                 {
                   "label": "Become a partner",
@@ -2045,25 +2281,24 @@
               ]
             },
             {
-              "icon": "chat",
-              "title": "Anything else",
-              "text": "General questions about Envizon EV.",
+              "icon": "support",
+              "title": "24/7 support",
+              "text": "Round-the-clock help for operators and live sites.",
               "links": [
                 {
-                  "label": "Send an enquiry",
+                  "label": "Raise a request",
                   "type": "GENERAL"
                 }
               ]
             },
             {
-              "status": "VERIFY",
               "icon": "mail",
-              "title": "Sales email",
-              "text": "evse_sales@envizonev.com",
+              "title": "Email us",
+              "text": "info@envizonev.com",
               "links": [
                 {
-                  "label": "Email sales",
-                  "href": "mailto:evse_sales@envizonev.com"
+                  "label": "Send an email",
+                  "href": "mailto:info@envizonev.com"
                 }
               ]
             }

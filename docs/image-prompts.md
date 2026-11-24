@@ -1,3 +1,5 @@
+> **Superseded where they differ by [`docs/brochure-v2-changes.md`](brochure-v2-changes.md)** (Brochure v2, Nov 2026): DC-only NEO Smart Series, no Atom AC range or residential segment. Use its hardware look and slot list for new images.
+
 # Envizon EV inner pages: image prompts for Antigravity
 
 **What this is:** one prompt per new image the inner pages need, written against the visual system of the finished homepage (`index.html`). Generate each slot and save it to **`assets/img/gen/<file>`** with the exact file name and size given. Don't overwrite anything in `assets/img/`.

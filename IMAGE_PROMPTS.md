@@ -1,3 +1,5 @@
+> **Superseded where they differ by [`docs/brochure-v2-changes.md`](docs/brochure-v2-changes.md)** (Brochure v2, Nov 2026): DC-only NEO Smart Series, no Atom AC range or residential segment. Use its hardware look and slot list for new images.
+
 # Envizon EV landing page: image and video generation brief
 
 This brief is for the build agent (Antigravity). It covers:

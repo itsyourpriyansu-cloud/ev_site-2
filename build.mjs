@@ -26,9 +26,10 @@ const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').re
 const live = arr => (arr || []).filter(x => x?.status !== 'BLOCKED');
 const pad = n => String(n).padStart(2, '0');
 const QUOTE_ICON = { PRODUCT_QUOTE: 'i-quote', SITE_ASSESSMENT: 'i-pin', FLEET: 'i-arrow', PARTNERSHIP: 'i-arrow', GENERAL: 'i-call' };
-const SEG_OF_ICON = { home: 'residential', apartment: 'residential', office: 'commercial', mall: 'commercial', hotel: 'commercial', depot: 'fleets', highway: 'public' };
-const STANDARD_PROTECTIONS = ['Over/under-voltage', 'Over-current', 'Short circuit', 'Leakage current', 'Earth fault', 'Surge', 'Over-temperature'];
-const products = live(P.products), bySlug = Object.fromEntries(products.map(p => [p.slug, p]));
+const SEG_OF_ICON = { office: 'commercial', mall: 'commercial', hotel: 'commercial', depot: 'fleets', plug: 'public', highway: 'highway', site: 'industrial' };
+const STANDARD_PROTECTIONS = ['Under-voltage', 'Over-voltage', 'Over-current', 'Short circuit', 'Residual current', 'Surge', 'Over-temperature', 'Insulation fault', 'Emergency stop'];
+const products = live(P.products);
+const bySlug = Object.fromEntries(products.map(p => [p.slug, p]));
 let usedIcons, footCta;
 
 const icon = name => { if (!name) return ''; usedIcons.add(name); return `<svg class="ico" aria-hidden="true"><use href="#u-${esc(name)}"/></svg>`; };
@@ -194,12 +195,12 @@ const chips = s => section(s, `${head(s)}\n<ul class="chips chips--lg">${s.items
 const flow = s => section(s, `${head(s)}\n<ol class="flow">${s.items.map((it, i) => `<li><span class="flow-n">${pad(i + 1)}</span>${icon(it.icon)}<h3>${esc(it.title)}</h3><p>${esc(it.text)}</p></li>`).join('\n')}</ol>`);
 const callout = s => section({}, `<aside class="callout"><p class="callout-k">${esc(s.eyebrow)}</p><h3>${esc(s.title)}</h3><ul>${s.bullets.map(b => `<li>${esc(b)}</li>`).join('')}</ul></aside>`, ' block--tight');
 
-// power ladder: each product as a band on a log kW scale (2–400 kW), stops link to the spec page
-const LOG = k => (Math.log10(k) - Math.log10(2)) / (Math.log10(400) - Math.log10(2)) * 100;
+// power ladder: each product as a band on a log kW scale (20–400 kW), stops link to the spec page
+const LOG = k => (Math.log10(k) - Math.log10(20)) / (Math.log10(400) - Math.log10(20)) * 100;
 const ladder = s => section(s, `${head(s)}
-<div class="ladder"><ol class="ladder-track" aria-label="Atom range by output power">${products.map(p => {
+<div class="ladder"><ol class="ladder-track" aria-label="NEO Smart Series by output power">${products.map(p => {
   const [lo, hi = lo] = kw(p).split('–').map(Number);
-  return `<li class="ladder-stop" style="--a:${LOG(lo).toFixed(1)}%;--b:${LOG(hi).toFixed(1)}%"><a href="/chargers/${p.slug}/"><b>${esc(p.name.replace(/^Atom (AC |DC )?/, ''))}</b><small>${kw(p)} kW ${p.kind}</small></a></li>`;
+  return `<li class="ladder-stop" style="--a:${LOG(lo).toFixed(1)}%;--b:${LOG(hi).toFixed(1)}%"><a href="/chargers/${p.slug}/"><b>${esc(p.name.replace(/^NEO Smart /, ''))}</b><small>${kw(p)} kW ${p.kind}</small></a></li>`;
 }).join('')}</ol></div>`);
 
 function subnav(links, cta) {
@@ -254,7 +255,7 @@ function productPage(p) {
   const quote = { label: 'Request a Quote', type: 'PRODUCT_QUOTE', product: p.name };
   const connector = specVal(p, 'Connector', 'Outlet') || 'Confirmed per datasheet';
   const scene = pic('scene-' + p.slug, null, '');
-  const links = [['Overview', '#overview'], ['Features', '#features'], ['Use cases', '#use-cases'], ...(p.variants ? [['Variants', '#variants']] : []), ['Specifications', '#specs'], ['FAQ', '#faq']];
+  const links = [['Overview', '#overview'], ['Features', '#features'], ['Use cases', '#use-cases'], ...(p.variants ? [['Configurations', '#variants']] : []), ['Specifications', '#specs'], ['FAQ', '#faq']];
   const [f0, ...fRest] = p.features;
   footCta = { title: `Get a quote for the ${p.name}.`, primary: quote };
   return [
@@ -283,8 +284,8 @@ function productPage(p) {
 </div>`),
     section({ id: 'use-cases' }, `<div class="head-row"><div class="head-copy"><h2>Use cases<span class="accent">Where it fits.</span></h2></div></div>
 <ul class="uses">${p.useCases.map(u => { const seg = SEG_OF_ICON[u.icon]; const inner = `${icon(u.icon)}<h3>${esc(u.title)}</h3><p>${esc(u.text)}</p>`; return `<li>${seg ? `<a class="use" href="/solutions/#${seg}">${inner}<span class="use-go" aria-hidden="true">→</span></a>` : `<div class="use">${inner}</div>`}</li>`; }).join('\n')}</ul>`),
-    p.variants ? section({ id: 'variants', tone: 'soft' }, `${head({ eyebrow: 'Variants', title: 'One family, three power bands.' }, { label: 'Plan depot charging', type: 'FLEET' })}
-<div class="tbl-wrap" tabindex="0" role="region" aria-label="Power bands"><table class="tbl">
+    p.variants ? section({ id: 'variants', tone: 'soft' }, `${head({ eyebrow: 'Configurations', title: p.variants.title }, quote)}
+<div class="tbl-wrap" tabindex="0" role="region" aria-label="Configurations"><table class="tbl">
   <thead><tr>${p.variants.head.map(h => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead>
   <tbody>${p.variants.rows.map(([k, ...v]) => `<tr><th scope="row">${esc(k)}</th>${v.map(x => `<td>${esc(x)}</td>`).join('')}</tr>`).join('\n')}</tbody>
 </table></div>`) : '',
@@ -292,10 +293,10 @@ function productPage(p) {
 <div class="spec">${p.specs.map(g => `
   <div class="spec-group"><h3>${esc(g.group)}</h3><dl>${g.rows.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${v == null ? '<span class="verify">Confirmed per datasheet</span>' : esc(v)}</dd></div>`).join('')}</dl></div>`).join('')}
 </div>
-<p class="spec-note">Standards are listed as "designed to". Certificates are shared per model on request.</p>`),
+<p class="spec-note">Specifications may change. All values are nominal unless stated otherwise. De-rating applies above 55 °C ambient. *Peak efficiency is stated under nominal conditions; actual efficiency depends on the vehicle's charging profile. Certificates are shared per model on request.</p>`),
     section({ id: 'protections', tone: 'dark' }, `<div class="head-row"><div class="head-copy"><h2>Protection<span class="accent">Guarded at every fault.</span></h2></div></div>
 <ul class="chips chips--lg chips--dark">${p.protections.map(x => `<li${STANDARD_PROTECTIONS.includes(x) ? '' : ' class="is-extra"'}>${esc(x)}</li>`).join('')}</ul>`),
-    section({ id: 'related' }, `<div class="head-row"><div class="head-copy"><h2>Related chargers<span class="accent">The rest of the Atom range.</span></h2></div>${btn({ label: 'All chargers', href: '/chargers/' })}</div>
+    section({ id: 'related' }, `<div class="head-row"><div class="head-copy"><h2>Related chargers<span class="accent">The rest of the NEO Smart Series.</span></h2></div>${btn({ label: 'All chargers', href: '/chargers/' })}</div>
 <div class="related">${others.map(o => `<a class="hero-card" href="/chargers/${o.slug}/"><img src="${esc(o.image)}" alt="" width="72" height="72" loading="lazy"><span><b>${esc(o.name)}</b><small>${kw(o)} kW ${o.kind}</small></span></a>`).join('')}</div>`),
     faq({ eyebrow: 'FAQ', title: `About the ${p.name}.`, items: p.faq }, quote),
   ].join('\n');
@@ -326,7 +327,8 @@ function page({ route, title, description, main, heroImg, trail, navRoute, ld = 
     if (!svg) throw new Error(`icon "${n}" not in content/icons.json`);
     return `<symbol id="u-${n}" viewBox="0 0 ${ICONS.ui[n] ? 24 : 96} ${ICONS.ui[n] ? 24 : 96}" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${svg}</symbol>`;
   }).join('');
-  pre = pre.replace('</defs></svg>', symbols + '</defs></svg>');
+  if (!/<\/defs>\s*<\/svg>/.test(pre)) throw new Error('shell changed: icon sprite end not found');
+  pre = pre.replace(/<\/defs>\s*<\/svg>/, m => symbols + m); // first match is the icon sprite; tolerate reformatting
 
   let post = POST;
   if (footCta) post = post.replace(FOOT_CTA, `$1<h2>${esc(footCta.title)}</h2>\n      <button type="button" class="btn-pill" data-quote="${esc(footCta.primary.type)}"${footCta.primary.product ? ` data-product="${esc(footCta.primary.product)}"` : ''}>${esc(footCta.primary.label)}</button>`);

@@ -3,14 +3,14 @@
  "slots": {
   "hero-chargers": {
    "file": "/assets/img/gen/hero-chargers.webp",
-   "fallback": "/assets/img/charger-120.webp",
-   "alt": "Four Envizon Atom chargers, from a wall socket to a DC fast charger, in an office car park at dusk (illustrative render)",
+   "fallback": "/assets/img/charger-240.webp",
+   "alt": "Three Envizon NEO Smart Series DC fast chargers under a canopy at dusk, one charging a white SUV (illustrative render)",
    "approved": true
   },
   "hero-solutions": {
    "file": "/assets/img/gen/hero-solutions.webp",
    "fallback": "/assets/img/night-canopy.webp",
-   "alt": "Dusk view of an apartment car park, an office forecourt and a van bay, each with EV chargers (illustrative render)",
+   "alt": "Dusk view of a commercial forecourt with NEO DC chargers, a hatchback and two electric vans charging (illustrative render)",
    "approved": true
   },
   "hero-partners": {
@@ -28,7 +28,7 @@
   "hero-contact": {
    "file": "/assets/img/gen/hero-contact.webp",
    "fallback": "/assets/img/night-canopy.webp",
-   "alt": "A site supervisor on a call beside a wall-mounted EV charger in a basement car park (illustrative render)",
+   "alt": "An Envizon support engineer on a call beside a dual-gun DC fast charger at a charging hub at dusk (illustrative render)",
    "approved": true
   },
   "dc-30": {
@@ -67,12 +67,6 @@
    "alt": "Isometric service van and technician maintaining a DC charger (illustrative render)",
    "approved": false
   },
-  "seg-residential": {
-   "file": "/assets/img/gen/seg-residential.webp",
-   "fallback": "/assets/img/model-site-operator.webp",
-   "alt": "Isometric apartment society with EV chargers (illustrative render)",
-   "approved": true
-  },
   "seg-commercial": {
    "file": "/assets/img/gen/seg-commercial.webp",
    "fallback": "/assets/img/hero-charge-poster.webp",
@@ -85,83 +79,83 @@
    "alt": "Isometric logistics yard with EV chargers (illustrative render)",
    "approved": true
   },
-  "seg-cpo": {
+  "seg-public": {
    "file": "/assets/img/gen/seg-cpo.webp",
    "fallback": "/assets/img/support-hub.webp",
    "alt": "Isometric public charging hub with EV chargers (illustrative render)",
    "approved": true
   },
-  "seg-bus-depots": {
-   "file": "/assets/img/gen/seg-bus-depots.webp",
-   "fallback": "/assets/img/charger-240.webp",
-   "alt": "Isometric city bus depot with EV chargers (illustrative render)",
-   "approved": true
-  },
-  "seg-public": {
-   "file": "/assets/img/gen/seg-public.webp",
-   "fallback": "/assets/img/model-turnkey.webp",
-   "alt": "Isometric highway fuel station with EV chargers (illustrative render)",
-   "approved": false
-  },
-  "scene-atom-ac-socket": {
-   "file": "/assets/img/gen/scene-atom-ac-socket.webp",
-   "fallback": "/assets/img/atom-ac-socket.webp",
-   "alt": "Envizon Atom AC Smart Socket at a house (illustrative render)",
-   "approved": false
-  },
-  "scene-atom-ac-wallbox": {
-   "file": "/assets/img/gen/scene-atom-ac-wallbox.webp",
-   "fallback": "/assets/img/atom-ac-wallbox.webp",
-   "alt": "Envizon Atom AC Wallbox in an apartment basement (illustrative render)",
-   "approved": false
-  },
-  "scene-atom-ac-destination": {
-   "file": "/assets/img/gen/scene-atom-ac-destination.webp",
-   "fallback": "/assets/img/atom-ac-destination.webp",
-   "alt": "Envizon Atom AC Destination at a hotel entrance (illustrative render)",
-   "approved": false
-  },
-  "scene-atom-dc-fast": {
-   "file": "/assets/img/gen/scene-atom-dc-fast.webp",
-   "fallback": "/assets/img/atom-dc-fast.webp",
-   "alt": "Envizon Atom DC Fast Charger at a highway plaza (illustrative render)",
-   "approved": false
-  },
   "stage-1": {
    "file": "/assets/img/gen/stage-1.webp",
    "fallback": "/assets/img/activation-roadmap.webp",
-   "alt": "Isometric car park at the qualify stage of a charging project (illustrative render)",
-   "approved": false
+   "alt": "Isometric charging site at the feasibility stage (illustrative render)",
+   "approved": true
   },
   "stage-2": {
    "file": "/assets/img/gen/stage-2.webp",
    "fallback": "/assets/img/deployment-cutaway.webp",
-   "alt": "Isometric car park at the survey stage of a charging project (illustrative render)",
-   "approved": false
+   "alt": "Isometric charging site at the design and engineering stage (illustrative render)",
+   "approved": true
   },
   "stage-3": {
    "file": "/assets/img/gen/stage-3.webp",
    "fallback": "/assets/img/price-project.webp",
-   "alt": "Isometric car park at the design stage of a charging project (illustrative render)",
-   "approved": false
+   "alt": "Isometric charging site at the procurement stage (illustrative render)",
+   "approved": true
   },
   "stage-4": {
    "file": "/assets/img/gen/stage-4.webp",
    "fallback": "/assets/img/delivery-team.webp",
-   "alt": "Isometric car park at the deploy stage of a charging project (illustrative render)",
-   "approved": false
+   "alt": "Isometric charging site at the installation stage (illustrative render)",
+   "approved": true
   },
   "stage-5": {
    "file": "/assets/img/gen/stage-5.webp",
    "fallback": "/assets/img/charger-60.webp",
-   "alt": "Isometric car park at the launch stage of a charging project (illustrative render)",
-   "approved": false
+   "alt": "Isometric charging site at the commissioning stage (illustrative render)",
+   "approved": true
   },
   "stage-6": {
    "file": "/assets/img/gen/stage-6.webp",
    "fallback": "/assets/img/support-hub.webp",
-   "alt": "Isometric car park at the operate stage of a charging project (illustrative render)",
+   "alt": "Isometric charging site at the handover stage (illustrative render)",
+   "approved": true
+  },
+  "seg-highway": {
+   "file": "/assets/img/gen/seg-highway.webp",
+   "fallback": "/assets/img/model-turnkey.webp",
+   "alt": "Isometric highway service plaza with high-power DC chargers (illustrative render)",
+   "approved": true
+  },
+  "seg-industrial": {
+   "file": "/assets/img/gen/seg-industrial.webp",
+   "fallback": "/assets/img/gen/seg-bus-depots.webp",
+   "alt": "Isometric warehouse loading yard with DC chargers serving electric trucks and a van (illustrative render)",
+   "approved": true
+  },
+  "hub-concept": {
+   "file": "/assets/img/gen/hub-concept.webp",
+   "fallback": "/assets/img/night-canopy.webp",
+   "alt": "Isometric destination charging hub with four dual-gun DC chargers and eight bays (illustrative render)",
    "approved": false
+  },
+  "scene-neo-60-120": {
+   "file": "/assets/img/gen/scene-neo-60-120.webp",
+   "fallback": "/assets/img/charger-120.webp",
+   "alt": "Envizon NEO Smart 60/120 charging a white hatchback outside a commercial building at dusk (illustrative render)",
+   "approved": true
+  },
+  "scene-neo-180-240": {
+   "file": "/assets/img/gen/scene-neo-180-240.webp",
+   "fallback": "/assets/img/charger-240.webp",
+   "alt": "Envizon NEO Smart Series charger at a logistics depot (illustrative render)",
+   "approved": true
+  },
+  "scene-neo-360": {
+   "file": "/assets/img/gen/scene-neo-360.webp",
+   "fallback": "/assets/img/charger-120.webp",
+   "alt": "Envizon NEO Smart Series charger at a highway charging hub (illustrative render)",
+   "approved": true
   }
  }
 }

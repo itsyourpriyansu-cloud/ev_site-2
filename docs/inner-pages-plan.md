@@ -1,3 +1,5 @@
+> **Superseded where they differ by [`docs/brochure-v2-changes.md`](brochure-v2-changes.md)** (Brochure v2, Nov 2026): DC-only NEO Smart Series, no Atom AC range or residential segment. Use its hardware look and slot list for new images.
+
 # ev2 inner pages: section-by-section build plan
 
 **Status:** Phase 1 DONE (19 Nov 2026): D1–D5 accepted as recommended. L1–L6, L9 (paths + robots) and L10 are applied. L7 was dropped: the new pill header reads on any background. L8 (`aria-current`) and the per-page canonical/`og:url` move to `build.mjs` in Phase 2 (needs `SITE_URL`). The nav's "How it Works" and "FAQ" were replaced by About and Contact; FAQ stays in the footer as `/#faq`. Inner heroes must carry `id="top"` (the footer logo links to `#top`).

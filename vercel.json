@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/chargers/atom-(.*)", "destination": "/chargers/", "permanent": true }
+  ]
+}

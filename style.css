@@ -296,7 +296,7 @@ symbol[id^="l-"] * { vector-effect: non-scaling-stroke; }
 .lay-arrow { color: var(--color-green-3); }
 .lay-swap b { font-weight: 600; color: var(--pg-ink); }
 
-/* Inside every Atom: pinned light tour; card left, charger stage behind it on the right, chapter rail far right */
+/* Inside every NEO: pinned light tour; card left, charger stage behind it on the right, chapter rail far right */
 .inside { background: var(--bg-dark); background-blend-mode: overlay; }
 .inside .sticky { background: radial-gradient(50% 60% at 64% 58%, rgb(214 241 219 / .16), transparent 70%); }
 .tour-title .accent { color: rgb(214 241 219 / .62); }
@@ -380,7 +380,7 @@ symbol[id^="l-"] * { vector-effect: non-scaling-stroke; }
 @media not ((hover: hover) and (pointer: fine)) { .sol-float { display: none; } }
 
 /* Chargers: a four-cell spec selector over one blueprint stage (ghost kW numeral, product, spec card) */
-.picker-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--dk-line); }
+.picker-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-block: 1px solid var(--dk-line); }
 .picker-list button { position: relative; display: grid; grid-template-columns: auto 1fr; align-content: start; gap: 4px 14px; padding: 22px 22px 24px; transition: background-color .3s; }
 .picker-list button + button { border-left: 1px solid var(--dk-line); }
 .picker-list button::before { content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 2px; background: var(--color-green-3); transform: scaleX(0); transform-origin: left; transition: transform .5s var(--pg-ease); }
@@ -677,7 +677,7 @@ symbol[id^="l-"] * { vector-effect: non-scaling-stroke; }
   .hero-end { width: 100%; }
   .hero-explore { margin-left: auto; }
   .pick { grid-template-columns: 1fr; }
-  .picker-list { grid-template-columns: repeat(4, minmax(190px, 1fr)); overflow-x: auto; scrollbar-width: none; }
+  .picker-list { grid-template-columns: repeat(3, minmax(190px, 1fr)); overflow-x: auto; scrollbar-width: none; }
   .pick { min-height: 0; }
   .pick-img { min-height: 300px; }
   .pick-info { border-left: 0; border-top: 1px solid var(--dk-line); }

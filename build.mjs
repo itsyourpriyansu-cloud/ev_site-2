@@ -41,6 +41,9 @@ function pic(slot, image, alt) {
   if (s?.approved && existsSync(new URL('.' + s.file, root))) return { src: s.file, alt: s.alt };
   return { src: image || s?.fallback, alt: image ? alt : (s?.alt ?? alt) };
 }
+// intrinsic size of a local webp (VP8X header, i.e. our alpha cut-outs) for width/height attributes; '' if unknown
+const wh = src => { try { const b = readFileSync(new URL('.' + src, root)); return b.toString('latin1', 12, 16) === 'VP8X' ? `width="${1 + b.readUIntLE(24, 3)}" height="${1 + b.readUIntLE(27, 3)}"` : ''; } catch { return ''; } };
+console.assert(/^width="\d{2,4}" height="\d{2,4}"$/.test(wh('/assets/img/neo-360.webp')) && wh('/nope.webp') === '', 'wh');
 const img = (p, extra = '') => p.src ? `<img src="${esc(p.src)}" alt="${esc(p.alt)}" ${extra || 'loading="lazy" decoding="async"'}>` : '';
 
 // one CTA object -> button or link. type = opens the quote dialog; href = navigates
@@ -69,7 +72,30 @@ const specVal = (p, ...names) => p.specs.flatMap(g => g.rows).find(([k, v]) => n
 console.assert(kw({ power: ['7.4 kW', '11 kW', '22 kW'] }) === '7.4–22' && kw({ power: ['3.3 kW'] }) === '3.3' && kw({ power: ['7.4 kW', '22 kW', '1–2 guns'] }) === '7.4–22', 'kw');
 
 // ---------- section renderers ----------
+// brochure "Product portfolio": the real NEO renders side by side at their true relative heights, grouped by site type
+function lineupHero(s) {
+  const items = s.lineup.flatMap(g => g.items);
+  const tallest = Math.max(...items.map(i => +(wh(i.image).match(/height="(\d+)"/)?.[1] || 1)));
+  const item = it => {
+    const h = +(wh(it.image).match(/height="(\d+)"/)?.[1] || tallest);
+    const inner = `<img src="${esc(it.image)}" alt="" ${wh(it.image)} style="--h:${(h / tallest).toFixed(3)}"><b>${esc(it.kw)}</b><small>${esc(it.label)}</small>${it.quote ? '<em>Specs on request</em>' : ''}`;
+    return `<li>${it.quote ? `<button type="button" class="lu-item" data-quote="PRODUCT_QUOTE" data-product="${esc(it.quote)}" aria-label="${esc(`${it.kw}, ${it.label}: request specifications`)}">${inner}</button>` : `<a class="lu-item" href="${esc(it.href)}" aria-label="${esc(`${it.kw}, ${it.label}: view specifications`)}">${inner}</a>`}</li>`;
+  };
+  return `<section class="page-hero lu-hero" id="top">
+  <div class="wrap lu-in">
+    <div class="lu-copy">
+      <h1 class="page-title">${lines(s.title)}</h1>
+      <p class="page-sub hero-reveal">${esc(s.sub)}</p>
+      ${s.ctas?.length ? `<div class="cta-row hero-reveal">${s.ctas.map((c, i) => btn(c, { dark: true, large: !i })).join('')}</div>` : ''}
+    </div>
+    <div class="lu-stage">${s.lineup.map(g => `<div class="lu-group" style="--n:${g.items.length}"><p class="lu-g">${icon(g.icon)}${esc(g.group)}</p><ul>${g.items.map(item).join('')}</ul></div>`).join('')}</div>
+    ${s.chips?.length ? `<ul class="lu-facts" aria-label="At a glance">${s.chips.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}
+  </div>
+</section>`;
+}
+
 function hero(s, page, trail) {
+  if (s.lineup) return lineupHero(s);
   const p = pic('hero-' + page.route, s.image, s.imageAlt);
   const photo = !!p.src && page.status !== 'PAGE_PENDING';
   // photo hero mirrors the homepage hero: title + CTAs on top, tagline + facts card in the foot row. No crumbs or eyebrows (owner call).
@@ -99,11 +125,11 @@ function hero(s, page, trail) {
 }
 
 function productCard(p, dark) {
-  const specs = [specVal(p, 'Connector', 'Outlet'), specVal(p, 'Authentication', 'Control'), specVal(p, 'Ingress protection')].filter(Boolean);
+  const specs = [`2 × ${specVal(p, 'Connector Type')}`, `${perGun(p)} per gun`, `${specVal(p, 'IP Rating')} · OCPP 1.6J`];
   return `<article class="pcard">
-      <a class="pcard-img" href="/chargers/${p.slug}/" tabindex="-1" aria-hidden="true">${img({ src: p.image, alt: '' })}</a>
+      <a class="pcard-img" href="/chargers/${p.slug}/" tabindex="-1" aria-hidden="true">${img({ src: p.image, alt: '' }, `loading="lazy" decoding="async" ${wh(p.image)}`)}</a>
       <div class="pcard-info">
-        <p class="pick-kw">${kw(p)}<small>kW ${p.kind}</small></p>
+        <p class="pick-kw">${esc(p.stats[0][0].replace(/ /g, ''))}<small>kW ${p.kind}</small></p>
         <h3><a href="/chargers/${p.slug}/">${esc(p.name)}</a></h3>
         <p>${esc(p.tagline)}</p>
         ${specs.length ? `<ul class="pick-specs">${specs.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
@@ -195,14 +221,6 @@ const chips = s => section(s, `${head(s)}\n<ul class="chips chips--lg">${s.items
 const flow = s => section(s, `${head(s)}\n<ol class="flow">${s.items.map((it, i) => `<li><span class="flow-n">${pad(i + 1)}</span>${icon(it.icon)}<h3>${esc(it.title)}</h3><p>${esc(it.text)}</p></li>`).join('\n')}</ol>`);
 const callout = s => section({}, `<aside class="callout"><p class="callout-k">${esc(s.eyebrow)}</p><h3>${esc(s.title)}</h3><ul>${s.bullets.map(b => `<li>${esc(b)}</li>`).join('')}</ul></aside>`, ' block--tight');
 
-// power ladder: each product as a band on a log kW scale (20–400 kW), stops link to the spec page
-const LOG = k => (Math.log10(k) - Math.log10(20)) / (Math.log10(400) - Math.log10(20)) * 100;
-const ladder = s => section(s, `${head(s)}
-<div class="ladder"><ol class="ladder-track" aria-label="NEO Smart Series by output power">${products.map(p => {
-  const [lo, hi = lo] = kw(p).split('–').map(Number);
-  return `<li class="ladder-stop" style="--a:${LOG(lo).toFixed(1)}%;--b:${LOG(hi).toFixed(1)}%"><a href="/chargers/${p.slug}/"><b>${esc(p.name.replace(/^NEO Smart /, ''))}</b><small>${kw(p)} kW ${p.kind}</small></a></li>`;
-}).join('')}</ol></div>`);
-
 function subnav(links, cta) {
   return `<nav class="subnav" aria-label="On this page"><div class="wrap subnav-in">
   <ul>${links.map(([label, href]) => `<li><a href="${esc(href)}">${esc(label)}</a></li>`).join('')}</ul>
@@ -239,7 +257,6 @@ function render(s, page, trail) {
     case 'table': return table(s);
     case 'chips': return chips(s);
     case 'flow': return flow(s);
-    case 'ladder': return ladder(s);
     case 'callout': return callout(s);
     case 'jump': return subnav(s.items, PRESET[page.route]);
     case 'faq': return faq(s, PRESET[page.route]);
@@ -250,54 +267,86 @@ function render(s, page, trail) {
 }
 
 // ---------- product page ----------
+// Anatomy pins sit on the brochure render; the three NEO cabinets share proportions, so one set of points fits all
+const perGun = p => specVal(p, 'Output Current per Gun').replace(/ Boost up to (.*)/i, ' (boost up to $1)');
+const ANATOMY = [
+  { x: 45, y: 27, title: '10.1-inch touch display', text: () => 'LCD touch panel showing both guns side by side. The touchscreen is rated IK08.' },
+  { x: 41, y: 40.5, title: 'RFID, QR and app start', text: () => 'Tap an RFID card (ISO/IEC 14443 A/B, FeliCa, MIFARE), scan the panel QR code or use the app with OTP. Auto Charge starts registered vehicles on plug-in.' },
+  { x: 45, y: 47.5, title: 'Emergency stop', text: () => 'One emergency stop button on the front panel, backed by nine electrical protections.' },
+  { x: 30, y: 58, title: 'Two CCS2 guns', text: p => `CCS2 (Combo-2) at 150–1000 V DC, ${perGun(p)} per gun, each output isolated from the other.` },
+  { x: 6, y: 72, title: '5.5 m charging cables', text: () => 'Usable cable length on each gun, so one cabinet serves two bays.' },
+  { x: 84, y: 22, title: 'Outdoor enclosure', text: () => 'GI 120 GSM body with a fire-resistant polyester coat. IP55, IK10, rated −30 °C to +55 °C.' },
+];
+const ml = v => esc(v).replace(/\n/g, '<br>');
+const LINEUP = P.pages.find(p => p.route === 'chargers')?.sections.find(s => s.lineup)?.lineup.flatMap(g => g.items) || [];
+
 function productPage(p) {
-  const others = products.filter(o => o !== p);
   const quote = { label: 'Request a Quote', type: 'PRODUCT_QUOTE', product: p.name };
-  const connector = specVal(p, 'Connector', 'Outlet') || 'Confirmed per datasheet';
-  const scene = pic('scene-' + p.slug, null, '');
-  const links = [['Overview', '#overview'], ['Features', '#features'], ['Use cases', '#use-cases'], ...(p.variants ? [['Configurations', '#variants']] : []), ['Specifications', '#specs'], ['FAQ', '#faq']];
-  const [f0, ...fRest] = p.features;
+  const kwTxt = `${p.stats[0][0]} kW`;
+  const cur = specVal(p, 'Output Current per Gun'), kva = specVal(p, 'Input Power Requirement').match(/Max (\d+) kVA/)[1];
+  const figs = [[p.stats[0][0], 'kW max output'], ['150–1000', 'V DC output voltage'], [cur.match(/\d+/g).join(' / '), /boost/i.test(cur) ? 'A per gun, rated / boost' : 'A per gun'], [kva, 'kVA max input']];
+  const links = [['Overview', '#overview'], ['Features', '#features'], ['Power', '#power'], ['Specifications', '#specs'], ['Protection', '#protection'], ['Applications', '#use-cases'], ['FAQ', '#faq']];
+  const m = p.modules;
+  const range = [...products.map(o => ({ href: `/chargers/${o.slug}/`, image: o.image, kw: `${o.stats[0][0]} kW`, name: o.name, cur: o === p })), ...LINEUP.filter(i => i.quote).map(i => ({ image: i.image, kw: i.kw, name: i.quote, quote: true }))];
   footCta = { title: `Get a quote for the ${p.name}.`, primary: quote };
   return [
-`<section class="page-hero page-hero--product" id="top">
-  <div class="wrap page-hero-in">
-    <div class="page-hero-copy">
-      <h1 class="page-title">${lines(p.name)}</h1>
-      <p class="page-sub">${esc(p.tagline)}</p>
-      <dl class="stats hero-reveal">
-        <div><dt>Output</dt><dd>${kw(p)}<small>kW ${p.kind}</small></dd></div>
-        <div><dt>Connector</dt><dd class="stats-txt">${esc(connector)}</dd></div>
-        <div><dt>Protections</dt><dd>${p.protections.length}<small>built in</small></dd></div>
-      </dl>
+`<section class="page-hero pd-hero" id="top">
+  <div class="wrap pd-hero-in">
+    <div class="pd-copy">
+      <p class="pd-kicker hero-reveal"><span>${esc(p.type)}</span>Made in India</p>
+      <h1 class="pd-title"><span class="pd-series">NEO Smart Series</span><span class="pd-kw">${lines(kwTxt)}</span></h1>
+      <p class="pd-line hero-reveal">${esc(p.line)}</p>
+      <p class="page-sub hero-reveal">${esc(p.tagline)}</p>
       <div class="cta-row hero-reveal">${btn(quote, { dark: true, large: true })}${btn({ label: 'See specifications', href: '#specs' }, { dark: true })}</div>
     </div>
-    <div class="page-hero-product">${img({ src: p.image, alt: p.imageAlt }, 'fetchpriority="high"')}</div>
+    <div class="pd-stage" aria-hidden="true"><span class="pd-ghost">${esc(p.stats[0][0].replace(/ /g, ''))}</span>${img({ src: p.image, alt: '' }, `fetchpriority="high" ${wh(p.image)}`)}</div>
+    <dl class="pd-stats hero-reveal">${p.stats.map(([v, k]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
   </div>
 </section>`,
     subnav(links, quote),
-    section({ id: 'overview' }, `<div class="head-row"><div class="head-copy"><h2>Overview<span class="accent">${esc(p.summary)}</span></h2></div></div>
-<ul class="chips chips--lg">${p.power.map(x => `<li>${esc(x)}</li>`).join('')}</ul>`),
-    section({ id: 'features', tone: 'soft' }, `<div class="head-row"><div class="head-copy"><h2>Key features<span class="accent">Built into every unit.</span></h2></div></div>
-<div class="feats">
-  <article class="feat is-lg"><figure class="feat-img${scene.src && scene.src !== p.image ? '' : ' is-cutout'}">${img(scene.src ? scene : { src: p.image, alt: p.imageAlt })}</figure><div class="feat-body">${icon(f0.icon)}<h3>${esc(f0.title)}</h3><p>${esc(f0.text)}</p></div></article>
-  ${fRest.map((f, i) => `<article class="feat${i === fRest.length - 1 ? ' is-mint' : ''}">${icon(f.icon)}<h3>${esc(f.title)}</h3><p>${esc(f.text)}</p></article>`).join('\n  ')}
+    section({ id: 'overview' }, `<div class="head-row"><div class="head-copy"><h2>Overview<span class="accent">${esc(p.summary)}</span></h2><p class="head-note">One floor-standing cabinet, 1100 × 2000 × 850 mm, with everything a driver and an operator need on the front panel.</p></div></div>
+<div class="anat">
+  <figure class="anat-fig">${img({ src: p.image, alt: p.imageAlt }, `loading="lazy" decoding="async" ${wh(p.image)}`)}<ol class="anat-pins" aria-hidden="true">${ANATOMY.map((a, i) => `<li style="--x:${a.x}%;--y:${a.y}%">${i + 1}</li>`).join('')}</ol></figure>
+  <ol class="anat-list">${ANATOMY.map((a, i) => `<li><span class="anat-n">${pad(i + 1)}</span><div><h3>${esc(a.title)}</h3><p>${esc(a.text(p))}</p></div></li>`).join('')}</ol>
 </div>`),
-    section({ id: 'use-cases' }, `<div class="head-row"><div class="head-copy"><h2>Use cases<span class="accent">Where it fits.</span></h2></div></div>
-<ul class="uses">${p.useCases.map(u => { const seg = SEG_OF_ICON[u.icon]; const inner = `${icon(u.icon)}<h3>${esc(u.title)}</h3><p>${esc(u.text)}</p>`; return `<li>${seg ? `<a class="use" href="/solutions/#${seg}">${inner}<span class="use-go" aria-hidden="true">→</span></a>` : `<div class="use">${inner}</div>`}</li>`; }).join('\n')}</ul>`),
-    p.variants ? section({ id: 'variants', tone: 'soft' }, `${head({ eyebrow: 'Configurations', title: p.variants.title }, quote)}
-<div class="tbl-wrap" tabindex="0" role="region" aria-label="Configurations"><table class="tbl">
-  <thead><tr>${p.variants.head.map(h => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead>
-  <tbody>${p.variants.rows.map(([k, ...v]) => `<tr><th scope="row">${esc(k)}</th>${v.map(x => `<td>${esc(x)}</td>`).join('')}</tr>`).join('\n')}</tbody>
-</table></div>`) : '',
-    section({ id: 'specs' }, `${head({ eyebrow: 'Specifications', title: 'The full sheet.' }, { label: 'Request the datasheet', type: 'PRODUCT_QUOTE', product: p.name, ghost: true })}
-<div class="spec">${p.specs.map(g => `
-  <div class="spec-group"><h3>${esc(g.group)}</h3><dl>${g.rows.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${v == null ? '<span class="verify">Confirmed per datasheet</span>' : esc(v)}</dd></div>`).join('')}</dl></div>`).join('')}
-</div>
-<p class="spec-note">Specifications may change. All values are nominal unless stated otherwise. De-rating applies above 55 °C ambient. *Peak efficiency is stated under nominal conditions; actual efficiency depends on the vehicle's charging profile. Certificates are shared per model on request.</p>`),
-    section({ id: 'protections', tone: 'dark' }, `<div class="head-row"><div class="head-copy"><h2>Protection<span class="accent">Guarded at every fault.</span></h2></div></div>
-<ul class="chips chips--lg chips--dark">${p.protections.map(x => `<li${STANDARD_PROTECTIONS.includes(x) ? '' : ' class="is-extra"'}>${esc(x)}</li>`).join('')}</ul>`),
-    section({ id: 'related' }, `<div class="head-row"><div class="head-copy"><h2>Related chargers<span class="accent">The rest of the NEO Smart Series.</span></h2></div>${btn({ label: 'All chargers', href: '/chargers/' })}</div>
-<div class="related">${others.map(o => `<a class="hero-card" href="/chargers/${o.slug}/"><img src="${esc(o.image)}" alt="" width="72" height="72" loading="lazy"><span><b>${esc(o.name)}</b><small>${kw(o)} kW ${o.kind}</small></span></a>`).join('')}</div>`),
+    section({ id: 'features', tone: 'soft' }, `<div class="head-row"><div class="head-copy"><h2>Key features<span class="accent">Built into every unit.</span></h2></div></div>
+<div class="feats">${p.features.map((f, i) => `<article class="feat${i === 0 ? ' is-mint' : ''}"><span class="feat-n">${pad(i + 1)}</span>${icon(f.icon)}<h3>${esc(f.title)}</h3><p>${esc(f.text)}</p></article>`).join('\n')}</div>`),
+    section({ id: 'power', tone: 'dark' }, `<div class="head-row"><div class="head-copy"><h2>Power &amp; output<span class="accent">${esc(p.line.split(' · ')[0])}.</span></h2>${m ? '<p class="head-note">Power comes from modules inside the cabinet and is shared between the two guns in module steps.</p>' : ''}</div>${btn(quote, { dark: true })}</div>
+<dl class="figs">${figs.map(([v, k]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+${m ? `<div class="mods">${m.configs.map(c => `<article class="mod">
+  ${c.image ? `<img class="mod-img" src="${esc(c.image)}" alt="" loading="lazy" ${wh(c.image)}>` : ''}
+  <div class="mod-body"><p class="mod-k">${esc(c.label)}</p><p class="mod-kw">${c.kw}<small>kW</small></p>
+  <ol class="mod-rack" aria-label="${c.on} of ${m.slots} module slots filled, ${c.each} kW each">${Array.from({ length: m.slots }, (_, i) => i < c.on ? `<li class="is-on">${c.each} kW</li>` : '<li>Open slot</li>').join('')}</ol>
+  <p class="mod-sum">${c.on} × ${c.each} kW modules${c.on < m.slots ? ' · add modules on site to upgrade' : ''}</p></div>
+</article>`).join('\n')}</div>` : ''}`),
+    section({ id: 'specs' }, `<div class="sheet">
+  <aside class="sheet-side">
+    <h2>Specifications<span class="accent">The full sheet.</span></h2>
+    <p class="sheet-model">${esc(p.name)}<br>${esc(p.type)} · ${esc(p.line.split(' · ')[0])}</p>
+    <nav aria-label="Specification groups"><ol>${p.specs.map((g, i) => `<li><a href="#spec-${i + 1}"><span>${pad(i + 1)}</span>${esc(g.group)}</a></li>`).join('')}</ol></nav>
+    ${btn({ label: 'Request the datasheet', type: 'PRODUCT_QUOTE', product: p.name, ghost: true })}
+  </aside>
+  <div class="sheet-main">${p.specs.map((g, i) => `
+    <div class="spec-group" id="spec-${i + 1}"><h3><span>${pad(i + 1)}</span>${esc(g.group)}</h3><dl>${g.rows.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${v == null ? '<span class="verify">Confirmed per datasheet</span>' : ml(v)}</dd></div>`).join('')}</dl></div>`).join('')}
+    <p class="spec-note">Specifications may change. All values are nominal unless stated otherwise. De-rating applies above 55 °C ambient. *Peak efficiency is stated under nominal conditions; during a charging session, actual efficiency depends on the vehicle's charging profile.</p>
+  </div>
+</div>`),
+    section({ id: 'protection', tone: 'dark' }, `<div class="head-row"><div class="head-copy"><h2>Electrical protection<span class="accent">Guarded at every fault.</span></h2><p class="head-note">${p.protections.length} protections on every unit, with double insulation between the two DC outputs.</p></div></div>
+<div class="prot">
+  <ul class="prot-list">${p.protections.map((x, i) => `<li><span>${pad(i + 1)}</span>${esc(x)}</li>`).join('')}</ul>
+  <dl class="prot-facts">${[['Isolation', 'Isolation'], ['Emergency push button', 'Emergency Push Button'], ['Impact protection', 'Mechanical Impact Protection']].map(([k, n]) => `<div><dt>${k}</dt><dd>${esc(specVal(p, n))}</dd></div>`).join('')}</dl>
+</div>`),
+    section({ id: 'use-cases', tone: 'soft' }, `<div class="head-row"><div class="head-copy"><h2>Applications<span class="accent">Where it fits.</span></h2></div>${btn({ label: 'All solutions', href: '/solutions/' })}</div>
+<ul class="apps">${p.useCases.map(u => {
+  const seg = SEG_OF_ICON[u.icon], ph = seg ? pic('seg-' + seg, null, '') : {};
+  const inner = `<figure class="app-img">${img({ src: ph.src, alt: '' })}</figure><div class="app-body">${icon(u.icon)}<h3>${esc(u.title)}</h3><p>${esc(u.text)}</p></div>`;
+  return `<li>${seg ? `<a class="app" href="/solutions/#${seg}">${inner}<span class="app-go" aria-hidden="true">→</span></a>` : `<div class="app">${inner}</div>`}</li>`;
+}).join('\n')}</ul>`),
+    section({ id: 'range' }, `<div class="head-row"><div class="head-copy"><h2>The range<span class="accent">NEO Smart Series.</span></h2></div>${btn({ label: 'All chargers', href: '/chargers/' })}</div>
+<ul class="rng-list">${range.map(r => {
+  const inner = `<span class="rng-img"><img src="${esc(r.image)}" alt="" loading="lazy" ${wh(r.image)}></span><span class="rng-kw">${esc(r.kw)}</span><span class="rng-name">${esc(r.name)}</span><span class="rng-tag">${r.cur ? 'You are viewing this model' : r.quote ? 'Specifications on request' : 'View specifications →'}</span>`;
+  return `<li>${r.quote ? `<button type="button" class="rng" data-quote="PRODUCT_QUOTE" data-product="${esc(r.name)}">${inner}</button>` : `<a class="rng${r.cur ? ' is-current' : ''}" href="${r.href}"${r.cur ? ' aria-current="page"' : ''}>${inner}</a>`}</li>`;
+}).join('')}</ul>`),
     faq({ eyebrow: 'FAQ', title: `About the ${p.name}.`, items: p.faq }, quote),
   ].join('\n');
 }
@@ -347,14 +396,14 @@ for (const pg of P.pages.filter(p => p.status !== 'BLOCKED')) {
   const trail = [[NAMES[pg.route] || pg.title]];
   const main = live(pg.sections).map(s => render(s, pg, trail)).join('\n');
   const h = pg.sections.find(s => s.type === 'hero');
-  const heroImg = pg.status === 'PAGE_PENDING' ? null : pic('hero-' + pg.route, h?.image, '').src;
+  const heroImg = pg.status === 'PAGE_PENDING' ? null : h?.lineup ? h.lineup[0].items[0].image : pic('hero-' + pg.route, h?.image, '').src;
   written.push(page({ route: pg.route, title: pg.title, description: pg.description, main, heroImg, trail: [[NAMES[pg.route] || pg.title, `/${pg.route}/`]], navRoute: [pg.route] }));
 }
 for (const p of products) {
   usedIcons = new Set(); footCta = null;
   const main = productPage(p);
   const ld = [{ '@context': 'https://schema.org', '@type': 'Product', name: p.name, ...(p.model ? { model: p.model } : {}), description: p.tagline, image: abs(p.image), brand: { '@type': 'Brand', name: 'Envizon EV' } }];
-  written.push(page({ route: `chargers/${p.slug}`, title: `${p.name} | ${kw(p)} kW ${p.kind} EV Charger | Envizon EV`, description: p.tagline, main, heroImg: p.image, trail: [['Chargers', '/chargers/'], [p.name, `/chargers/${p.slug}/`]], navRoute: ['chargers', `chargers/${p.slug}`], ld }));
+  written.push(page({ route: `chargers/${p.slug}`, title: `${p.name} ${p.type} | Envizon EV`, description: p.tagline, main, heroImg: p.image, trail: [['Chargers', '/chargers/'], [p.name, `/chargers/${p.slug}/`]], navRoute: ['chargers', `chargers/${p.slug}`], ld }));
 }
 usedIcons = new Set(); footCta = null;
 written.push(page({ route: '', title: 'Page not found | Envizon EV Solutions', description: 'This page does not exist. Find EV chargers, charging solutions and partner details from Envizon EV Solutions.', main: hero({ eyebrow: '404', title: "This page isn't here.", sub: 'The link may be old, or the page has moved. These will get you back on track.', ctas: [{ label: 'Get a Quote', type: 'GENERAL' }, { label: 'Home', href: '/' }, { label: 'Chargers', href: '/chargers/' }, { label: 'Solutions', href: '/solutions/' }, { label: 'Contact', href: '/contact/' }] }, { route: '404', status: 'PAGE_PENDING' }, [['Page not found']]) }));

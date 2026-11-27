@@ -11,6 +11,7 @@ if (lenis) {
     const a = e.target.closest('a[href*="#"]:not([data-quote])'), t = a && a.pathname === location.pathname && a.hash.length > 1 && document.querySelector(a.hash);
     if (!t) return;
     e.preventDefault();
+ 
     lenis.scrollTo(t, { offset: -parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) });
     history.pushState(null, '', a.hash);
     if (!t.matches('a, button, input, select, textarea, [tabindex]')) t.tabIndex = -1;
@@ -204,34 +205,16 @@ for (const s of sections) {
   s.el.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => jumpTo(s, clamp(s.step + +b.dataset.go, 0, s.n - 1))));
 }
 
-// Charger tour: each chapter moves the 3D camera (or pans the fallback image) to the part in focus
-// shortcut: Plugzmart's Eclipz 240 model as a concept placeholder (not licensed, shows their ECLIPZ branding); swap MODEL for Envizon's own GLB before any live deploy
-const MODEL = '/assets/3d/concept-eclipz-240.glb';
+// Charger tour: each chapter pans and zooms the NEO render to the part in focus (the ring marks it)
 const tour = sections.find(s => s.el.id === 'inside');
 if (tour) {
-  const stage = tour.el.querySelector('.tour-stage'), mv = stage.querySelector('model-viewer'), count = tour.el.querySelector('.tour-count b');
+  const stage = tour.el.querySelector('.tour-stage'), count = tour.el.querySelector('.tour-count b');
   tour.onStep = k => {
-    const a = tour.el.querySelector(`.tour-card [data-item="${k}"]`);
-    const [x, y, z] = a.dataset.at.split(' '), [orbit, target, fov] = a.dataset.cam.split('|');
+    const [x, y, z] = tour.el.querySelector(`.tour-card [data-item="${k}"]`).dataset.at.split(' ');
     stage.style.cssText = `--x:${x}%;--y:${y}%;--s:${z}`;
-    mv.setAttribute('camera-orbit', orbit); // attributes, so they apply before and after model-viewer upgrades
-    mv.setAttribute('camera-target', target);
-    mv.setAttribute('field-of-view', fov);
     count.textContent = String(k + 1).padStart(2, '0');
   };
   tour.onStep(Math.max(0, tour.step));
-  // 3D only where the tour pins and motion is welcome. The library and the 2 MB model load right after the page
-  // (idle time, so the hero and its LCP image go first), and the stage hides the image meanwhile, so the section
-  // opens on the model; the image tour comes back only if the model or the library fails
-  if (!reduceMotion && measure(tour.el).pinned) {
-    stage.classList.add('wait-3d');
-    const fail = () => stage.classList.remove('wait-3d');
-    mv.addEventListener('load', () => stage.classList.add('is-3d'));
-    mv.addEventListener('error', fail);
-    // slow network: after 8 s show the image tour; the model still fades in over it when it lands (is-3d hides the image)
-    const start = () => { mv.setAttribute('src', MODEL); import('https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js').catch(fail); setTimeout(fail, 8000); };
-    addEventListener('load', () => window.requestIdleCallback ? requestIdleCallback(start, { timeout: 1500 }) : setTimeout(start, 200), { once: true });
-  }
 }
 
 // Roving-focus tablists (feature tabs, charger picker): arrow keys move and select
@@ -267,7 +250,7 @@ const io = new IntersectionObserver(entries => entries.forEach(e => {
   e.target.addEventListener('transitionend', () => { e.target.style.transitionDelay = ''; }, { once: true }); // so later hovers aren't delayed
   io.unobserve(e.target);
 }), { threshold: 0.15 });
-document.querySelectorAll('.block .head-row, .sol-row, .picker, .why-intro, .step, .faq-intro, .faq-item, .faq-panel, .partners-in, .card, .pcard, .seg, .row, .stage, .feat, .use, .spec-group, .flow li, .callout, .ladder').forEach((el, i) => {
+document.querySelectorAll('.block .head-row, .sol-row, .picker, .why-intro, .step, .faq-intro, .faq-item, .faq-panel, .partners-in, .card, .pcard, .seg, .row, .stage, .feat, .spec-group, .flow li, .callout, .anat-list li, .figs > div, .mod, .prot-list li, .app, .rng').forEach((el, i) => {
   el.classList.add('reveal');
   el.style.transitionDelay = (i % 4) * 70 + 'ms';
   io.observe(el);

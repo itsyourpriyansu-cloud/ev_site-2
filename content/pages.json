@@ -3,7 +3,7 @@
   "products": [
     {
       "slug": "neo-60-120",
-      "name": "NEO Smart 60/120",
+      "name": "NEO Smart Series 60/120 kW",
       "model": "NEO Smart Series 60/120 kW",
       "kind": "DC",
       "power": [
@@ -15,7 +15,7 @@
       "tagline": "Dual-output CCS2 fast charging that starts at 60 kW and grows to 120 kW in the field, for urban and commercial sites.",
       "summary": "Start at 60 kW, upgrade to 120 kW without replacing the charger.",
       "image": "/assets/img/neo-60-120.webp",
-      "imageAlt": "Envizon NEO Smart Series 60/120 kW DC fast charger, a dual-gun floor-standing unit (illustrative render)",
+      "imageAlt": "Envizon EV NEO Smart Series 60/120 kW DC fast charger: floor-standing cabinet with a 10.1-inch touch screen and two CCS2 guns",
       "features": [
         {
           "icon": "bolt",
@@ -60,178 +60,158 @@
           "text": "Offices and business parks."
         }
       ],
-      "variants": {
-        "title": "Two configurations, one cabinet.",
-        "head": [
-          "Configuration",
-          "Power modules",
-          "Output"
-        ],
-        "rows": [
-          [
-            "Base",
-            "2 × 30 kW",
-            "60 kW"
-          ],
-          [
-            "Full",
-            "4 × 30 kW",
-            "120 kW"
-          ]
-        ]
-      },
       "specs": [
         {
-          "group": "Power & output",
+          "group": "Power & Output",
           "rows": [
             [
-              "Input power",
-              "Max 140 kVA · 415 V AC +10% / −15%, 3-phase, 50/60 Hz (L1, L2, L3, N, PE)"
+              "Input Power Requirement",
+              "Max 140 kVA\n415 VAC, +10% / –15%, 3-Phase, 50 / 60 Hz\nL1, L2, L3, N, PE"
             ],
             [
-              "Operation mode",
+              "Operation Mode",
               "EVSE Mode 4"
             ],
             [
-              "Outputs",
+              "Number of Outputs",
               "Two (2)"
             ],
             [
-              "Output power",
-              "Up to 120 kW (4 × 30 kW modules); base 60 kW (2 × 30 kW)"
+              "Output Power",
+              "Up to 120 kW (4 × 30 kW modules)\nBase configuration: 60 kW (2 × 30 kW modules)"
             ],
             [
-              "Dynamic load switching",
-              "Per module: power shared between guns in module steps"
+              "Dynamic Load Switching",
+              "Per-module — power shared between guns in module steps"
             ],
             [
-              "Current per gun",
+              "Output Voltage",
+              "150 – 1000 VDC"
+            ],
+            [
+              "Output Current per Gun",
               "250 A"
             ],
             [
-              "Output voltage",
-              "150–1000 V DC"
-            ],
-            [
-              "Connector",
+              "Connector Type",
               "CCS2 (Combo-2)"
             ],
             [
-              "Cable length",
+              "Charging Cable Length",
               "5.5 m (usable)"
             ],
             [
-              "Peak efficiency",
-              "≥ 95%*"
+              "Peak Efficiency",
+              "≥ 95% *"
             ],
             [
-              "Power factor",
+              "Power Factor",
               "0.99 at full load"
             ],
             [
               "THDi",
-              "≤ 5% above 50% output power"
+              "≤ 5% at output power above 50%"
             ]
           ]
         },
         {
-          "group": "Protection & safety",
+          "group": "Electrical Protection & Safety",
           "rows": [
             [
-              "Electrical protections",
-              "Under-voltage, Over-voltage, Over-current, Short circuit, Residual current, Surge, Over-temperature, Insulation fault, Emergency stop"
+              "Electrical Protections",
+              "Under-voltage, Over-voltage, Over-current, Residual current, Surge protection, Short circuit, Over-temperature, Insulation fault, Emergency stop"
             ],
             [
               "Isolation",
-              "Double insulation; each DC output isolated from the other (IEC 61851-23, 7.5.101)"
+              "Double insulation. Each DC output isolated from the other (per IEC 61851-23, Section 7.5.101)"
             ],
             [
-              "Emergency stop",
-              "1 × emergency stop button"
+              "Emergency Push Button",
+              "1 × Emergency Stop Button"
             ],
             [
-              "Impact protection",
-              "IK10 (touchscreen IK08)"
+              "Mechanical Impact Protection",
+              "IK10 (Touchscreen: IK08)"
             ]
           ]
         },
         {
-          "group": "Interface & communication",
+          "group": "User Interface & Communication",
           "rows": [
             [
               "Display",
               "10.1-inch LCD touch panel"
             ],
             [
-              "Authentication",
-              "RFID, mobile app & OTP, Auto Charge"
+              "User Authentication",
+              "RFID card reader — ISO/IEC 14443 A/B, FeliCa, MIFARE\nMobile Application & OTP\nAuto Charge"
             ],
             [
-              "RFID standards",
-              "ISO/IEC 14443 A/B, FeliCa, MIFARE"
+              "Communication Protocol",
+              "OCPP 1.6J (upgradable to OCPP 2.x, latest version)"
             ],
             [
-              "Protocol",
-              "OCPP 1.6J, upgradable to OCPP 2.x"
-            ],
-            [
-              "Network",
+              "Network Connection",
               "Wi-Fi, Ethernet, GSM (3G / 4G)"
             ],
             [
-              "SLAC retry",
-              "Automatic, up to 3 attempts to start charging"
+              "SLAC Retry",
+              "Automatic retry on SLAC failure — up to 3 attempts to start charging"
             ]
           ]
         },
         {
-          "group": "Enclosure",
+          "group": "Enclosure & Construction",
           "rows": [
             [
               "Dimensions (W × H × D)",
               "1100 × 2000 × 850 mm"
             ],
             [
-              "Sheet metal",
-              "Base frame 2.0 mm · body 1.6 mm · internal 1.2 mm · door 1.2 mm"
+              "Sheet Metal Thickness",
+              "Base frame: 2.0 mm · Body frame: 1.6 mm\nInternal sheet: 1.2 mm · Door: 1.2 mm"
             ],
             [
               "Material",
-              "GI 120 GSM, outer structure and painted parts"
+              "GI 120 GSM — outer structure and painted parts"
             ],
             [
-              "Finish",
-              "40–60 µm primer, 80–100 µm fire-resistant pure polyester top coat"
+              "Primer Base Coat",
+              "40 – 60 microns"
+            ],
+            [
+              "Top Coat Paint",
+              "Pure polyester, fire-resistant (80 – 100 micron)"
             ]
           ]
         },
         {
-          "group": "Environment",
+          "group": "Environmental & Operating Conditions",
           "rows": [
             [
-              "Operating temperature",
-              "−30 °C to +55 °C (de-rating above 55 °C)"
+              "Operating Temperature",
+              "–30 °C to +55 °C (de-rating applies above 55 °C)"
             ],
             [
-              "Storage temperature",
-              "−40 °C to +70 °C"
+              "Storage Temperature",
+              "–40 °C to +70 °C"
             ],
             [
               "Humidity",
-              "< 95% RH, non-condensing"
+              "< 95% relative humidity, non-condensing"
             ],
             [
-              "Ingress protection",
+              "IP Rating",
               "IP55"
             ]
           ]
         },
         {
-          "group": "Standards",
+          "group": "Standards & Compliance",
           "rows": [
             [
-              "Designed to",
-              "CE / Combo-2 · DIN 70121 · ISO 15118 · IEC 61851-1 · IEC 61851-23 · IEC 61851-21-2 · IEC 62196-3 · IS 17017 (India)"
+              "Compliance & Standards",
+              "CE / Combo-2\nDIN 70121; ISO 15118\nIEC 61851-1; IEC 61851-23; IEC 61851-21-2\nIEC 62196-3\nIS 17017 (India)"
             ]
           ]
         }
@@ -260,11 +240,50 @@
           "q": "Which vehicles can it charge?",
           "a": "Vehicles with a CCS2 (Combo-2) inlet, which most new electric cars in India use, from 150 to 1000 V DC. Compatibility for buses and commercial vehicles is confirmed per model."
         }
-      ]
+      ],
+      "type": "DC Fast Charger",
+      "line": "60 / 120 kW Dual-Output · CCS2 · Field-Upgradable Power Modules · IP55",
+      "stats": [
+        [
+          "60 / 120",
+          "kW max output"
+        ],
+        [
+          "≥ 95%",
+          "Peak efficiency"
+        ],
+        [
+          "2",
+          "Output guns"
+        ],
+        [
+          "IP55",
+          "Ingress protection"
+        ]
+      ],
+      "modules": {
+        "slots": 4,
+        "configs": [
+          {
+            "label": "Base configuration",
+            "kw": 60,
+            "on": 2,
+            "each": 30,
+            "image": "/assets/img/neo-60.webp"
+          },
+          {
+            "label": "Full configuration",
+            "kw": 120,
+            "on": 4,
+            "each": 30,
+            "image": "/assets/img/neo-60-120.webp"
+          }
+        ]
+      }
     },
     {
       "slug": "neo-180-240",
-      "name": "NEO Smart 180/240",
+      "name": "NEO Smart Series 180/240 kW",
       "model": "NEO Smart Series 180/240 kW",
       "kind": "DC",
       "power": [
@@ -276,7 +295,7 @@
       "tagline": "Dual-output CCS2 charging at 180 or 240 kW, with per-module load switching for fleet depots and highway sites.",
       "summary": "Six-module DC charging for fleets, highways and busy public hubs.",
       "image": "/assets/img/neo-180-240.webp",
-      "imageAlt": "Envizon NEO Smart Series 180/240 kW DC fast charger, a dual-gun floor-standing unit (illustrative render)",
+      "imageAlt": "Envizon EV NEO Smart Series 180/240 kW DC fast charger: floor-standing cabinet with a 10.1-inch touch screen and two CCS2 guns",
       "features": [
         {
           "icon": "bolt",
@@ -321,178 +340,158 @@
           "text": "Industrial and infrastructure sites."
         }
       ],
-      "variants": {
-        "title": "Two power ratings, one cabinet.",
-        "head": [
-          "Configuration",
-          "Power modules",
-          "Output"
-        ],
-        "rows": [
-          [
-            "180 kW",
-            "6 × 30 kW",
-            "180 kW"
-          ],
-          [
-            "240 kW",
-            "6 × 40 kW",
-            "240 kW"
-          ]
-        ]
-      },
       "specs": [
         {
-          "group": "Power & output",
+          "group": "Power & Output",
           "rows": [
             [
-              "Input power",
-              "Max 270 kVA · 415 V AC +10% / −15%, 3-phase, 50/60 Hz (L1, L2, L3, N, PE)"
+              "Input Power Requirement",
+              "Max 270 kVA\n415 VAC, +10% / –15%, 3-Phase, 50 / 60 Hz\nL1, L2, L3, N, PE"
             ],
             [
-              "Operation mode",
+              "Operation Mode",
               "EVSE Mode 4"
             ],
             [
-              "Outputs",
+              "Number of Outputs",
               "Two (2)"
             ],
             [
-              "Output power",
-              "Up to 240 kW (6 × 40 kW modules) or 180 kW (6 × 30 kW)"
+              "Output Power",
+              "Up to 240 kW (6 × 40 kW modules)\nUp to 180 kW (6 × 30 kW modules)"
             ],
             [
-              "Dynamic load switching",
-              "Per module: power shared between guns in module steps"
+              "Dynamic Load Switching",
+              "Per-module — power shared between guns in module steps"
             ],
             [
-              "Current per gun",
+              "Output Voltage",
+              "150 – 1000 VDC"
+            ],
+            [
+              "Output Current per Gun",
               "200 A / 250 A / 375 A"
             ],
             [
-              "Output voltage",
-              "150–1000 V DC"
-            ],
-            [
-              "Connector",
+              "Connector Type",
               "CCS2 (Combo-2)"
             ],
             [
-              "Cable length",
+              "Charging Cable Length",
               "5.5 m (usable)"
             ],
             [
-              "Peak efficiency",
-              "≥ 95%*"
+              "Peak Efficiency",
+              "≥ 95% *"
             ],
             [
-              "Power factor",
+              "Power Factor",
               "0.99 at full load"
             ],
             [
               "THDi",
-              "≤ 5% above 50% output power"
+              "≤ 5% at output power above 50%"
             ]
           ]
         },
         {
-          "group": "Protection & safety",
+          "group": "Electrical Protection & Safety",
           "rows": [
             [
-              "Electrical protections",
-              "Under-voltage, Over-voltage, Over-current, Short circuit, Residual current, Surge, Over-temperature, Insulation fault, Emergency stop"
+              "Electrical Protections",
+              "Under-voltage, Over-voltage, Over-current, Residual current, Surge protection, Short circuit, Over-temperature, Insulation fault, Emergency stop"
             ],
             [
               "Isolation",
-              "Double insulation; each DC output isolated from the other (IEC 61851-23, 7.5.101)"
+              "Double insulation. Each DC output isolated from the other (per IEC 61851-23, Section 7.5.101)"
             ],
             [
-              "Emergency stop",
-              "1 × emergency stop button"
+              "Emergency Push Button",
+              "1 × Emergency Stop Button"
             ],
             [
-              "Impact protection",
-              "IK10 (touchscreen IK08)"
+              "Mechanical Impact Protection",
+              "IK10 (Touchscreen: IK08)"
             ]
           ]
         },
         {
-          "group": "Interface & communication",
+          "group": "User Interface & Communication",
           "rows": [
             [
               "Display",
               "10.1-inch LCD touch panel"
             ],
             [
-              "Authentication",
-              "RFID, mobile app & OTP, Auto Charge"
+              "User Authentication",
+              "RFID card reader — ISO/IEC 14443 A/B, FeliCa, MIFARE\nMobile Application & OTP\nAuto Charge"
             ],
             [
-              "RFID standards",
-              "ISO/IEC 14443 A/B, FeliCa, MIFARE"
+              "Communication Protocol",
+              "OCPP 1.6J (upgradable to OCPP 2.x, latest version)"
             ],
             [
-              "Protocol",
-              "OCPP 1.6J, upgradable to OCPP 2.x"
-            ],
-            [
-              "Network",
+              "Network Connection",
               "Wi-Fi, Ethernet, GSM (3G / 4G)"
             ],
             [
-              "SLAC retry",
-              "Automatic, up to 3 attempts to start charging"
+              "SLAC Retry",
+              "Automatic retry on SLAC failure — up to 3 attempts to start charging"
             ]
           ]
         },
         {
-          "group": "Enclosure",
+          "group": "Enclosure & Construction",
           "rows": [
             [
               "Dimensions (W × H × D)",
               "1100 × 2000 × 850 mm"
             ],
             [
-              "Sheet metal",
-              "Base frame 2.0 mm · body 1.6 mm · internal 1.2 mm · door 1.2 mm"
+              "Sheet Metal Thickness",
+              "Base frame: 2.0 mm · Body frame: 1.6 mm\nInternal sheet: 1.2 mm · Door: 1.2 mm"
             ],
             [
               "Material",
-              "GI 120 GSM, outer structure and painted parts"
+              "GI 120 GSM — outer structure and painted parts"
             ],
             [
-              "Finish",
-              "40–60 µm primer, 80–100 µm fire-resistant pure polyester top coat"
+              "Primer Base Coat",
+              "40 – 60 microns"
+            ],
+            [
+              "Top Coat Paint",
+              "Pure polyester, fire-resistant (80 – 100 micron)"
             ]
           ]
         },
         {
-          "group": "Environment",
+          "group": "Environmental & Operating Conditions",
           "rows": [
             [
-              "Operating temperature",
-              "−30 °C to +55 °C (de-rating above 55 °C)"
+              "Operating Temperature",
+              "–30 °C to +55 °C (de-rating applies above 55 °C)"
             ],
             [
-              "Storage temperature",
-              "−40 °C to +70 °C"
+              "Storage Temperature",
+              "–40 °C to +70 °C"
             ],
             [
               "Humidity",
-              "< 95% RH, non-condensing"
+              "< 95% relative humidity, non-condensing"
             ],
             [
-              "Ingress protection",
+              "IP Rating",
               "IP55"
             ]
           ]
         },
         {
-          "group": "Standards",
+          "group": "Standards & Compliance",
           "rows": [
             [
-              "Designed to",
-              "CE / Combo-2 · DIN 70121 · ISO 15118 · IEC 61851-1 · IEC 61851-23 · IEC 61851-21-2 · IEC 62196-3 · IS 17017 (India)"
+              "Compliance & Standards",
+              "CE / Combo-2\nDIN 70121; ISO 15118\nIEC 61851-1; IEC 61851-23; IEC 61851-21-2\nIEC 62196-3\nIS 17017 (India)"
             ]
           ]
         }
@@ -521,11 +520,48 @@
           "q": "Will it work with our charging software?",
           "a": "It speaks OCPP 1.6J, the open protocol most CMS and CPMS platforms use, and can be upgraded to OCPP 2.x. It can also run on the Envizon EV digital platform."
         }
-      ]
+      ],
+      "type": "DC Fast Charger",
+      "line": "180 / 240 kW Dual-Output · CCS2 · Per-Module Dynamic Load Switching",
+      "stats": [
+        [
+          "180 / 240",
+          "kW max output"
+        ],
+        [
+          "≥ 95%",
+          "Peak efficiency"
+        ],
+        [
+          "2",
+          "Output guns"
+        ],
+        [
+          "IP55",
+          "Ingress protection"
+        ]
+      ],
+      "modules": {
+        "slots": 6,
+        "configs": [
+          {
+            "label": "30 kW modules",
+            "kw": 180,
+            "on": 6,
+            "each": 30
+          },
+          {
+            "label": "40 kW modules",
+            "kw": 240,
+            "on": 6,
+            "each": 40
+          }
+        ]
+      }
     },
     {
       "slug": "neo-360",
-      "name": "NEO Smart 360",
+      "name": "NEO Smart Series 360 kW",
       "model": "NEO Smart Series 360 kW",
       "kind": "DC",
       "power": [
@@ -537,7 +573,7 @@
       "tagline": "Ultra-high-power dual-output CCS2 charging at 360 kW, with 375 A per gun and boost up to 500 A, for larger charging hubs.",
       "summary": "The flagship: 360 kW and 500 A boost for high-capacity hubs and corridors.",
       "image": "/assets/img/neo-360.webp",
-      "imageAlt": "Envizon NEO Smart Series 360 kW DC fast charger, a dual-gun floor-standing unit (illustrative render)",
+      "imageAlt": "Envizon EV NEO Smart Series 360 kW DC fast charger: floor-standing cabinet with a 10.1-inch touch screen and two CCS2 guns",
       "features": [
         {
           "icon": "bolt",
@@ -584,152 +620,152 @@
       ],
       "specs": [
         {
-          "group": "Power & output",
+          "group": "Power & Output",
           "rows": [
             [
-              "Input power",
-              "Max 405 kVA · 415 V AC +10% / −15%, 3-phase, 50/60 Hz (L1, L2, L3, N, PE)"
+              "Input Power Requirement",
+              "Max 405 kVA\n415 VAC, +10% / –15%, 3-Phase, 50 / 60 Hz\nL1, L2, L3, N, PE"
             ],
             [
-              "Operation mode",
+              "Operation Mode",
               "EVSE Mode 4"
             ],
             [
-              "Outputs",
+              "Number of Outputs",
               "Two (2)"
             ],
             [
-              "Output power",
+              "Output Power",
               "Up to 360 kW"
             ],
             [
-              "Current per gun",
-              "375 A, boost up to 500 A"
+              "Output Voltage",
+              "150 – 1000 VDC"
             ],
             [
-              "Output voltage",
-              "150–1000 V DC"
+              "Output Current per Gun",
+              "375 A Boost up to 500 A"
             ],
             [
-              "Connector",
+              "Connector Type",
               "CCS2 (Combo-2)"
             ],
             [
-              "Cable length",
+              "Charging Cable Length",
               "5.5 m (usable)"
             ],
             [
-              "Peak efficiency",
-              "≥ 95%*"
+              "Peak Efficiency",
+              "≥ 95% *"
             ],
             [
-              "Power factor",
+              "Power Factor",
               "0.99 at full load"
             ],
             [
               "THDi",
-              "≤ 5% above 50% output power"
+              "≤ 5% at output power above 50%"
             ]
           ]
         },
         {
-          "group": "Protection & safety",
+          "group": "Electrical Protection & Safety",
           "rows": [
             [
-              "Electrical protections",
-              "Under-voltage, Over-voltage, Over-current, Short circuit, Residual current, Surge, Over-temperature, Insulation fault, Emergency stop"
+              "Electrical Protections",
+              "Under-voltage, Over-voltage, Over-current, Residual current, Surge protection, Short circuit, Over-temperature, Insulation fault, Emergency stop"
             ],
             [
               "Isolation",
-              "Double insulation; each DC output isolated from the other (IEC 61851-23, 7.5.101)"
+              "Double insulation. Each DC output isolated from the other (per IEC 61851-23, Section 7.5.101)"
             ],
             [
-              "Emergency stop",
-              "1 × emergency stop button"
+              "Emergency Push Button",
+              "1 × Emergency Stop Button"
             ],
             [
-              "Impact protection",
-              "IK10 (touchscreen IK08)"
+              "Mechanical Impact Protection",
+              "IK10 (Touchscreen: IK08)"
             ]
           ]
         },
         {
-          "group": "Interface & communication",
+          "group": "User Interface & Communication",
           "rows": [
             [
               "Display",
               "10.1-inch LCD touch panel"
             ],
             [
-              "Authentication",
-              "RFID, mobile app & OTP, Auto Charge"
+              "User Authentication",
+              "RFID card reader — ISO/IEC 14443 A/B, FeliCa, MIFARE\nMobile Application & OTP\nAuto Charge"
             ],
             [
-              "RFID standards",
-              "ISO/IEC 14443 A/B, FeliCa, MIFARE"
+              "Communication Protocol",
+              "OCPP 1.6J (upgradable to OCPP 2.x, latest version)"
             ],
             [
-              "Protocol",
-              "OCPP 1.6J, upgradable to OCPP 2.x"
-            ],
-            [
-              "Network",
+              "Network Connection",
               "Wi-Fi, Ethernet, GSM (3G / 4G)"
             ],
             [
-              "SLAC retry",
-              "Automatic, up to 3 attempts to start charging"
+              "SLAC Retry",
+              "Automatic retry on SLAC failure — up to 3 attempts to start charging"
             ]
           ]
         },
         {
-          "group": "Enclosure",
+          "group": "Enclosure & Construction",
           "rows": [
             [
               "Dimensions (W × H × D)",
               "1100 × 2000 × 850 mm"
             ],
             [
-              "Sheet metal",
-              "Base frame 2.0 mm · body 1.6 mm · internal 1.2 mm · door 1.2 mm"
+              "Sheet Metal Thickness",
+              "Base frame: 2.0 mm · Body frame: 1.6 mm\nInternal sheet: 1.2 mm · Door: 1.2 mm"
             ],
             [
               "Material",
-              "GI 120 GSM, outer structure and painted parts"
+              "GI 120 GSM — outer structure and painted parts"
             ],
             [
-              "Finish",
-              "40–60 µm primer, 80–100 µm fire-resistant pure polyester top coat"
+              "Primer Base Coat",
+              "40 – 60 microns"
+            ],
+            [
+              "Top Coat Paint",
+              "Pure polyester, fire-resistant (80 – 100 micron)"
             ]
           ]
         },
         {
-          "group": "Environment",
+          "group": "Environmental & Operating Conditions",
           "rows": [
             [
-              "Operating temperature",
-              "−30 °C to +55 °C (de-rating above 55 °C)"
+              "Operating Temperature",
+              "–30 °C to +55 °C (de-rating applies above 55 °C)"
             ],
             [
-              "Storage temperature",
-              "−40 °C to +70 °C"
+              "Storage Temperature",
+              "–40 °C to +70 °C"
             ],
             [
               "Humidity",
-              "< 95% RH, non-condensing"
+              "< 95% relative humidity, non-condensing"
             ],
             [
-              "Ingress protection",
+              "IP Rating",
               "IP55"
             ]
           ]
         },
         {
-          "group": "Standards",
+          "group": "Standards & Compliance",
           "rows": [
             [
-              "Designed to",
-              "CE / Combo-2 · DIN 70121 · ISO 15118 · IEC 61851-1 · IEC 61851-23 · IEC 61851-21-2 · IEC 62196-3 · IS 17017 (India)"
+              "Compliance & Standards",
+              "CE / Combo-2\nDIN 70121; ISO 15118\nIEC 61851-1; IEC 61851-23; IEC 61851-21-2\nIEC 62196-3\nIS 17017 (India)"
             ]
           ]
         }
@@ -758,6 +794,26 @@
           "q": "Which vehicles can it charge?",
           "a": "Vehicles with a CCS2 (Combo-2) inlet, which most new electric cars in India use, from 150 to 1000 V DC. Compatibility for buses and commercial vehicles is confirmed per model."
         }
+      ],
+      "type": "DC Fast Charger",
+      "line": "360 kW Dual-Output · CCS2 · 375 A (Boost up to 500 A)",
+      "stats": [
+        [
+          "360",
+          "kW max output"
+        ],
+        [
+          "375 / 500 A",
+          "Rated / boost current"
+        ],
+        [
+          "2",
+          "Output guns"
+        ],
+        [
+          "IP55",
+          "Ingress"
+        ]
       ]
     }
   ],
@@ -892,11 +948,11 @@
       "sections": [
         {
           "type": "hero",
-          "title": "DC charging for every scale.",
-          "sub": "From compact commercial installations to high-power hubs, the NEO Smart Series covers 30 to 360 kW on one dual-output CCS2 platform.",
+          "title": "DC charging solutions for every scale.",
+          "sub": "From compact commercial installations to high-power charging infrastructure, ENVIZON EV offers a comprehensive range of DC charging solutions.",
           "chips": [
-            "DC 30–360 kW",
             "CCS2 · 2 guns",
+            "≥ 95% peak efficiency",
             "OCPP 1.6J",
             "IP55 · Made in India"
           ],
@@ -911,16 +967,56 @@
               "ghost": true
             }
           ],
-          "image": "/assets/img/charger-240.webp",
-          "imageAlt": "Envizon 240 kW dual-gun DC fast charger at an electric bus depot at dusk (illustrative render)",
-          "band": true
-        },
-        {
-          "type": "ladder",
-          "id": "power",
-          "eyebrow": "Power range",
-          "title": "Pick by traffic and turnaround.",
-          "intro": "More vehicles and shorter stops call for more power per gun. Each stop opens the full spec sheet."
+          "lineup": [
+            {
+              "group": "Urban and commercial",
+              "icon": "office",
+              "items": [
+                {
+                  "kw": "60 kW",
+                  "label": "Urban charging",
+                  "image": "/assets/img/neo-60.webp",
+                  "href": "/chargers/neo-60-120/"
+                },
+                {
+                  "kw": "120 kW",
+                  "label": "Commercial sites",
+                  "image": "/assets/img/neo-60-120.webp",
+                  "href": "/chargers/neo-60-120/"
+                }
+              ]
+            },
+            {
+              "group": "Fleet and highway",
+              "icon": "depot",
+              "items": [
+                {
+                  "kw": "240 kW",
+                  "label": "Fleet and highway",
+                  "image": "/assets/img/neo-180-240.webp",
+                  "href": "/chargers/neo-180-240/"
+                }
+              ]
+            },
+            {
+              "group": "Larger hubs",
+              "icon": "site",
+              "items": [
+                {
+                  "kw": "360 kW",
+                  "label": "Larger charging hubs",
+                  "image": "/assets/img/neo-360.webp",
+                  "href": "/chargers/neo-360/"
+                },
+                {
+                  "kw": "480 kW",
+                  "label": "High-capacity sites",
+                  "image": "/assets/img/neo-480.webp",
+                  "quote": "NEO Smart Series 480 kW"
+                }
+              ]
+            }
+          ]
         },
         {
           "type": "cards",
@@ -929,7 +1025,7 @@
           "layout": "split",
           "eyebrow": "The portfolio",
           "title": "NEO Smart Series.",
-          "intro": "Three dual-output CCS2 chargers on one platform: field-upgradable power modules, ≥ 95% peak efficiency and IP55 outdoor enclosures.",
+          "intro": "Dual-output CCS2 DC fast chargers on one platform: field-upgradable power modules, ≥ 95% peak efficiency and IP55 outdoor enclosures. The 480 kW model for high-capacity sites is quoted on request.",
           "items": [
             {
               "product": "neo-60-120"
@@ -958,13 +1054,13 @@
               "text": "Urban charging, retail, hospitality and commercial sites.",
               "links": [
                 {
-                  "label": "NEO Smart 60/120",
+                  "label": "NEO Smart Series 60/120 kW",
                   "href": "/chargers/neo-60-120/"
                 },
                 {
                   "label": "Request quote",
                   "type": "PRODUCT_QUOTE",
-                  "product": "NEO Smart 60/120"
+                  "product": "NEO Smart Series 60/120 kW"
                 }
               ]
             },
@@ -977,13 +1073,13 @@
               "text": "Fleet depots, logistics hubs and highway stops.",
               "links": [
                 {
-                  "label": "NEO Smart 180/240",
+                  "label": "NEO Smart Series 180/240 kW",
                   "href": "/chargers/neo-180-240/"
                 },
                 {
                   "label": "Request quote",
                   "type": "PRODUCT_QUOTE",
-                  "product": "NEO Smart 180/240"
+                  "product": "NEO Smart Series 180/240 kW"
                 }
               ]
             },
@@ -996,13 +1092,13 @@
               "text": "High-capacity hubs, heavy-fleet depots and intercity corridors.",
               "links": [
                 {
-                  "label": "NEO Smart 360",
+                  "label": "NEO Smart Series 360 kW",
                   "href": "/chargers/neo-360/"
                 },
                 {
                   "label": "Request quote",
                   "type": "PRODUCT_QUOTE",
-                  "product": "NEO Smart 360"
+                  "product": "NEO Smart Series 360 kW"
                 }
               ]
             }
@@ -1016,9 +1112,9 @@
           "intro": "Shared across the range: 150–1000 V DC, CCS2 with 5.5 m cables, 10.1-inch touch display, OCPP 1.6J, IP55 and IK10.",
           "head": [
             "Specification",
-            "NEO 60/120",
-            "NEO 180/240",
-            "NEO 360"
+            "NEO 60/120 kW",
+            "NEO 180/240 kW",
+            "NEO 360 kW"
           ],
           "rows": [
             [
@@ -1199,11 +1295,11 @@
               ],
               "chips": [
                 {
-                  "label": "NEO Smart 60/120",
+                  "label": "NEO Smart Series 60/120 kW",
                   "href": "/chargers/neo-60-120/"
                 },
                 {
-                  "label": "NEO Smart 180/240",
+                  "label": "NEO Smart Series 180/240 kW",
                   "href": "/chargers/neo-180-240/"
                 }
               ],
@@ -1216,8 +1312,8 @@
                 "icon": "mall",
                 "source": "Building supply",
                 "nodes": [
-                  "NEO 60/120 · Gun A",
-                  "NEO 60/120 · Gun B"
+                  "NEO 60/120 kW · Gun A",
+                  "NEO 60/120 kW · Gun B"
                 ],
                 "sink": "Visitors & guests"
               }
@@ -1236,11 +1332,11 @@
               ],
               "chips": [
                 {
-                  "label": "NEO Smart 180/240",
+                  "label": "NEO Smart Series 180/240 kW",
                   "href": "/chargers/neo-180-240/"
                 },
                 {
-                  "label": "NEO Smart 360",
+                  "label": "NEO Smart Series 360 kW",
                   "href": "/chargers/neo-360/"
                 }
               ],
@@ -1253,8 +1349,8 @@
                 "icon": "depot",
                 "source": "Depot transformer",
                 "nodes": [
-                  "NEO 180/240 · 2 guns",
-                  "NEO 180/240 · 2 guns"
+                  "NEO 180/240 kW · 2 guns",
+                  "NEO 180/240 kW · 2 guns"
                 ],
                 "sink": "Fleet vehicles"
               }
@@ -1273,11 +1369,11 @@
               ],
               "chips": [
                 {
-                  "label": "NEO Smart 60/120",
+                  "label": "NEO Smart Series 60/120 kW",
                   "href": "/chargers/neo-60-120/"
                 },
                 {
-                  "label": "NEO Smart 180/240",
+                  "label": "NEO Smart Series 180/240 kW",
                   "href": "/chargers/neo-180-240/"
                 }
               ],
@@ -1304,17 +1400,17 @@
               "bullets": [
                 "180–360 kW for short stops",
                 "Site selection, traffic and power assessment",
-                "Up to 500 A boost on the NEO Smart 360",
+                "Up to 500 A boost on the NEO Smart Series 360 kW",
                 "Offline operation where networks are patchy",
                 "24/7 support availability"
               ],
               "chips": [
                 {
-                  "label": "NEO Smart 360",
+                  "label": "NEO Smart Series 360 kW",
                   "href": "/chargers/neo-360/"
                 },
                 {
-                  "label": "NEO Smart 180/240",
+                  "label": "NEO Smart Series 180/240 kW",
                   "href": "/chargers/neo-180-240/"
                 }
               ],
@@ -1327,8 +1423,8 @@
                 "icon": "highway",
                 "source": "HT supply",
                 "nodes": [
-                  "NEO 360 · 2 guns",
-                  "NEO 360 · 2 guns"
+                  "NEO 360 kW · 2 guns",
+                  "NEO 360 kW · 2 guns"
                 ],
                 "sink": "Intercity drivers"
               }
@@ -1347,15 +1443,15 @@
               ],
               "chips": [
                 {
-                  "label": "NEO Smart 60/120",
+                  "label": "NEO Smart Series 60/120 kW",
                   "href": "/chargers/neo-60-120/"
                 },
                 {
-                  "label": "NEO Smart 180/240",
+                  "label": "NEO Smart Series 180/240 kW",
                   "href": "/chargers/neo-180-240/"
                 },
                 {
-                  "label": "NEO Smart 360",
+                  "label": "NEO Smart Series 360 kW",
                   "href": "/chargers/neo-360/"
                 }
               ],
@@ -1369,7 +1465,7 @@
                 "source": "Site substation",
                 "nodes": [
                   "NEO 240 · Bay 1",
-                  "NEO 360 · Bay 2"
+                  "NEO 360 kW · Bay 2"
                 ],
                 "sink": "Site vehicles"
               }

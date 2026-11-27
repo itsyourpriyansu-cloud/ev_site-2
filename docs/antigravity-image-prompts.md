@@ -10,12 +10,13 @@
 
 **The charger (NEO Smart Series look).** It must match in every image.
 - A tall, floor-standing rectangular cabinet, about 1.1 m wide × 2.0 m tall × 0.85 m deep. It stands as tall as an adult.
-- Off-white (warm white) powder-coated body.
-- Brand-green angled panels on both sides and a green diagonal stripe at the base. The green runs from `#16B14C` to `#71BF45`.
-- A dark charcoal front bezel holding a 10.1-inch portrait touchscreen. The screen shows only soft abstract green shapes, never readable text.
-- A red emergency-stop button below the screen, with a small RFID tap pad beside it.
-- **Two CCS2 guns**, one holstered on each side, with thick black cables. Each cable runs to a vehicle's charge port or loops back to its holster. Never show loose or extra cables.
-- **Reference:** attach the brochure page 6 lineup image (the five beige-and-green chargers) if you have it. Otherwise use `assets/img/atom-dc-fast.webp` for proportions only, not colour.
+- Warm cream powder-coated body with a softly rounded top, a brand-green side panel with louvred vents, and a brushed-steel plinth. The green runs from `#4E9A1E` to `#71BF45`.
+- A logo panel at the top front (leave it blank or soft, never readable text).
+- A green shield-shaped bezel around a near-square touchscreen, with a thin vertical green light bar on each side. The screen shows a soft two-column A / B layout, never readable text.
+- Below the screen: an RFID tap symbol and a small QR square, then a red emergency-stop button with a yellow ring.
+- **Two CCS2 guns holstered side by side on the front face**, each holster with a short green status light above it. The thick black cables loop down and out to the left and right. Never show loose or extra cables.
+- Two green diagonal stripes with thin circuit-trace lines across the lower front.
+- **Reference:** attach `assets/img/neo-60-120.webp` (cut out of the brochure page 6 lineup). It is the real product; match it.
 
 **Never show:** wall-mounted chargers, wall boxes, Type 2 or home sockets, coiled home cables, or chrome or futuristic chargers.
 

@@ -18,8 +18,7 @@
   <link rel="apple-touch-icon" href="/assets/brand/favicon-180.png">
   <link rel="preload" href="/assets/fonts/heading-thin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/img/gen/hero-chargers.webp" as="image">
-
+  <link rel="preload" href="/assets/img/neo-60.webp" as="image">
   <link rel="preconnect" href="https://unpkg.com" crossorigin>
   <link rel="stylesheet" href="/style.css">
 </head>
@@ -172,7 +171,7 @@
         <path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z" />
         <path d="m9 12 2 2 4-4" />
       </symbol>
-    </defs>
+    <symbol id="u-office" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="1.5"/><path d="M8 7V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/><path d="M3 13h18"/></symbol><symbol id="u-depot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h11v9H2z"/><path d="M13 10h4l4 4v2h-8"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></symbol><symbol id="u-site" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20V9l7-5 7 5v11"/><path d="M9 20v-6h6v6"/><path d="M12 9v2"/></symbol></defs>
   </svg>
 
   <!-- Header: floating pill -->
@@ -184,9 +183,9 @@
         <div class="nav-item">
           <a href="/chargers/" aria-current="page" class="nav-link">Chargers</a>
           <div class="dropdown">
-            <a href="/chargers/neo-60-120/"><b>NEO Smart 60/120</b><span>60–120 kW DC</span></a>
-            <a href="/chargers/neo-180-240/"><b>NEO Smart 180/240</b><span>180–240 kW DC</span></a>
-            <a href="/chargers/neo-360/"><b>NEO Smart 360</b><span>360 kW DC</span></a>
+            <a href="/chargers/neo-60-120/"><b>NEO Smart Series 60/120 kW</b><span>DC Fast Charger · Dual-Output</span></a>
+            <a href="/chargers/neo-180-240/"><b>NEO Smart Series 180/240 kW</b><span>DC Fast Charger · Dual-Output</span></a>
+            <a href="/chargers/neo-360/"><b>NEO Smart Series 360 kW</b><span>DC Fast Charger · Dual-Output</span></a>
             <a href="/chargers/" aria-current="page" class="dd-all"><b>All chargers →</b></a>
           </div>
         </div>
@@ -228,12 +227,12 @@
   </header>
 
   <main id="main" data-page="chargers">
-<section class="page-hero page-hero--photo" id="top">
-  <div class="page-hero-media"><img src="/assets/img/gen/hero-chargers.webp" alt="Three Envizon NEO Smart Series DC fast chargers under a canopy at dusk, one charging a white SUV (illustrative render)" fetchpriority="high"></div>
-  <div class="wrap page-hero-in">
-    <div class="page-hero-copy">
-      <h1 class="page-title"><span class="ln"><span>DC charging for every scale.</span></span></h1>
-      <div class="cta-row hero-cta hero-reveal"><button type="button" class="btn btn-primary btn-lg" data-quote="PRODUCT_QUOTE"><span class="bp-knob" aria-hidden="true"><svg
+<section class="page-hero lu-hero" id="top">
+  <div class="wrap lu-in">
+    <div class="lu-copy">
+      <h1 class="page-title"><span class="ln"><span>DC charging solutions for every scale.</span></span></h1>
+      <p class="page-sub hero-reveal">From compact commercial installations to high-power charging infrastructure, ENVIZON EV offers a comprehensive range of DC charging solutions.</p>
+      <div class="cta-row hero-reveal"><button type="button" class="btn btn-primary btn-lg" data-quote="PRODUCT_QUOTE"><span class="bp-knob" aria-hidden="true"><svg
             class="bp-dots" viewBox="0 0 24 24">
             <circle style="--i:0" cx="4" cy="12" r="1.35" />
             <circle style="--i:1" cx="8" cy="12" r="1.35" />
@@ -246,29 +245,21 @@
             <use href="#i-quote" />
           </svg><i class="bp-spin"><b></b><b></b><b></b></i></span><span class="bp-label">Get a Quote</span></button><button type="button" class="btn btn-glass" data-quote="GENERAL">Talk to an Expert</button></div>
     </div>
-    <div class="hero-foot">
-      <p class="hero-tagline">From compact commercial installations to high-power hubs, the NEO Smart Series covers 30 to 360 kW on one dual-output CCS2 platform.</p>
-      <ul class="page-facts" aria-label="At a glance"><li>DC 30–360 kW</li><li>CCS2 · 2 guns</li><li>OCPP 1.6J</li><li>IP55 · Made in India</li></ul>
-    </div>
-  </div>
-</section>
-<section class="block" id="power">
-  <div class="wrap">
-<div class="head-row"><div class="head-copy"><h2>Power range<span class="accent">Pick by traffic and turnaround.</span></h2><p class="head-note">More vehicles and shorter stops call for more power per gun. Each stop opens the full spec sheet.</p></div></div>
-<div class="ladder"><ol class="ladder-track" aria-label="NEO Smart Series by output power"><li class="ladder-stop" style="--a:36.7%;--b:59.8%"><a href="/chargers/neo-60-120/"><b>60/120</b><small>60–120 kW DC</small></a></li><li class="ladder-stop" style="--a:73.3%;--b:82.9%"><a href="/chargers/neo-180-240/"><b>180/240</b><small>180–240 kW DC</small></a></li><li class="ladder-stop" style="--a:96.5%;--b:96.5%"><a href="/chargers/neo-360/"><b>360</b><small>360 kW DC</small></a></li></ol></div>
+    <div class="lu-stage"><div class="lu-group" style="--n:2"><p class="lu-g"><svg class="ico" aria-hidden="true"><use href="#u-office"/></svg>Urban and commercial</p><ul><li><a class="lu-item" href="/chargers/neo-60-120/" aria-label="60 kW, Urban charging: view specifications"><img src="/assets/img/neo-60.webp" alt="" width="410" height="752" style="--h:0.774"><b>60 kW</b><small>Urban charging</small></a></li><li><a class="lu-item" href="/chargers/neo-60-120/" aria-label="120 kW, Commercial sites: view specifications"><img src="/assets/img/neo-60-120.webp" alt="" width="413" height="806" style="--h:0.830"><b>120 kW</b><small>Commercial sites</small></a></li></ul></div><div class="lu-group" style="--n:1"><p class="lu-g"><svg class="ico" aria-hidden="true"><use href="#u-depot"/></svg>Fleet and highway</p><ul><li><a class="lu-item" href="/chargers/neo-180-240/" aria-label="240 kW, Fleet and highway: view specifications"><img src="/assets/img/neo-180-240.webp" alt="" width="425" height="857" style="--h:0.883"><b>240 kW</b><small>Fleet and highway</small></a></li></ul></div><div class="lu-group" style="--n:2"><p class="lu-g"><svg class="ico" aria-hidden="true"><use href="#u-site"/></svg>Larger hubs</p><ul><li><a class="lu-item" href="/chargers/neo-360/" aria-label="360 kW, Larger charging hubs: view specifications"><img src="/assets/img/neo-360.webp" alt="" width="434" height="911" style="--h:0.938"><b>360 kW</b><small>Larger charging hubs</small></a></li><li><button type="button" class="lu-item" data-quote="PRODUCT_QUOTE" data-product="NEO Smart Series 480 kW" aria-label="480 kW, High-capacity sites: request specifications"><img src="/assets/img/neo-480.webp" alt="" width="449" height="971" style="--h:1.000"><b>480 kW</b><small>High-capacity sites</small><em>Specs on request</em></button></li></ul></div></div>
+    <ul class="lu-facts" aria-label="At a glance"><li>CCS2 · 2 guns</li><li>≥ 95% peak efficiency</li><li>OCPP 1.6J</li><li>IP55 · Made in India</li></ul>
   </div>
 </section>
 <section class="block dark" id="range">
   <div class="wrap">
-<div class="head-row"><div class="head-copy"><h2>The portfolio<span class="accent">NEO Smart Series.</span></h2><p class="head-note">Three dual-output CCS2 chargers on one platform: field-upgradable power modules, ≥ 95% peak efficiency and IP55 outdoor enclosures.</p></div></div>
+<div class="head-row"><div class="head-copy"><h2>The portfolio<span class="accent">NEO Smart Series.</span></h2><p class="head-note">Dual-output CCS2 DC fast chargers on one platform: field-upgradable power modules, ≥ 95% peak efficiency and IP55 outdoor enclosures. The 480 kW model for high-capacity sites is quoted on request.</p></div></div>
 <div class="pcards"><article class="pcard">
-      <a class="pcard-img" href="/chargers/neo-60-120/" tabindex="-1" aria-hidden="true"><img src="/assets/img/neo-60-120.webp" alt="" loading="lazy" decoding="async"></a>
+      <a class="pcard-img" href="/chargers/neo-60-120/" tabindex="-1" aria-hidden="true"><img src="/assets/img/neo-60-120.webp" alt="" loading="lazy" decoding="async" width="413" height="806"></a>
       <div class="pcard-info">
-        <p class="pick-kw">60–120<small>kW DC</small></p>
-        <h3><a href="/chargers/neo-60-120/">NEO Smart 60/120</a></h3>
+        <p class="pick-kw">60/120<small>kW DC</small></p>
+        <h3><a href="/chargers/neo-60-120/">NEO Smart Series 60/120 kW</a></h3>
         <p>Dual-output CCS2 fast charging that starts at 60 kW and grows to 120 kW in the field, for urban and commercial sites.</p>
-        <ul class="pick-specs"><li>CCS2 (Combo-2)</li><li>RFID, mobile app &amp; OTP, Auto Charge</li><li>IP55</li></ul>
-        <div class="cta-row"><button type="button" class="btn btn-primary" data-quote="PRODUCT_QUOTE" data-product="NEO Smart 60/120"><span class="bp-knob" aria-hidden="true"><svg
+        <ul class="pick-specs"><li>2 × CCS2 (Combo-2)</li><li>250 A per gun</li><li>IP55 · OCPP 1.6J</li></ul>
+        <div class="cta-row"><button type="button" class="btn btn-primary" data-quote="PRODUCT_QUOTE" data-product="NEO Smart Series 60/120 kW"><span class="bp-knob" aria-hidden="true"><svg
             class="bp-dots" viewBox="0 0 24 24">
             <circle style="--i:0" cx="4" cy="12" r="1.35" />
             <circle style="--i:1" cx="8" cy="12" r="1.35" />
@@ -283,13 +274,13 @@
       </div>
     </article>
 <article class="pcard">
-      <a class="pcard-img" href="/chargers/neo-180-240/" tabindex="-1" aria-hidden="true"><img src="/assets/img/neo-180-240.webp" alt="" loading="lazy" decoding="async"></a>
+      <a class="pcard-img" href="/chargers/neo-180-240/" tabindex="-1" aria-hidden="true"><img src="/assets/img/neo-180-240.webp" alt="" loading="lazy" decoding="async" width="425" height="857"></a>
       <div class="pcard-info">
-        <p class="pick-kw">180–240<small>kW DC</small></p>
-        <h3><a href="/chargers/neo-180-240/">NEO Smart 180/240</a></h3>
+        <p class="pick-kw">180/240<small>kW DC</small></p>
+        <h3><a href="/chargers/neo-180-240/">NEO Smart Series 180/240 kW</a></h3>
         <p>Dual-output CCS2 charging at 180 or 240 kW, with per-module load switching for fleet depots and highway sites.</p>
-        <ul class="pick-specs"><li>CCS2 (Combo-2)</li><li>RFID, mobile app &amp; OTP, Auto Charge</li><li>IP55</li></ul>
-        <div class="cta-row"><button type="button" class="btn btn-primary" data-quote="PRODUCT_QUOTE" data-product="NEO Smart 180/240"><span class="bp-knob" aria-hidden="true"><svg
+        <ul class="pick-specs"><li>2 × CCS2 (Combo-2)</li><li>200 A / 250 A / 375 A per gun</li><li>IP55 · OCPP 1.6J</li></ul>
+        <div class="cta-row"><button type="button" class="btn btn-primary" data-quote="PRODUCT_QUOTE" data-product="NEO Smart Series 180/240 kW"><span class="bp-knob" aria-hidden="true"><svg
             class="bp-dots" viewBox="0 0 24 24">
             <circle style="--i:0" cx="4" cy="12" r="1.35" />
             <circle style="--i:1" cx="8" cy="12" r="1.35" />
@@ -304,13 +295,13 @@
       </div>
     </article>
 <article class="pcard">
-      <a class="pcard-img" href="/chargers/neo-360/" tabindex="-1" aria-hidden="true"><img src="/assets/img/neo-360.webp" alt="" loading="lazy" decoding="async"></a>
+      <a class="pcard-img" href="/chargers/neo-360/" tabindex="-1" aria-hidden="true"><img src="/assets/img/neo-360.webp" alt="" loading="lazy" decoding="async" width="434" height="911"></a>
       <div class="pcard-info">
         <p class="pick-kw">360<small>kW DC</small></p>
-        <h3><a href="/chargers/neo-360/">NEO Smart 360</a></h3>
+        <h3><a href="/chargers/neo-360/">NEO Smart Series 360 kW</a></h3>
         <p>Ultra-high-power dual-output CCS2 charging at 360 kW, with 375 A per gun and boost up to 500 A, for larger charging hubs.</p>
-        <ul class="pick-specs"><li>CCS2 (Combo-2)</li><li>RFID, mobile app &amp; OTP, Auto Charge</li><li>IP55</li></ul>
-        <div class="cta-row"><button type="button" class="btn btn-primary" data-quote="PRODUCT_QUOTE" data-product="NEO Smart 360"><span class="bp-knob" aria-hidden="true"><svg
+        <ul class="pick-specs"><li>2 × CCS2 (Combo-2)</li><li>375 A (boost up to 500 A) per gun</li><li>IP55 · OCPP 1.6J</li></ul>
+        <div class="cta-row"><button type="button" class="btn btn-primary" data-quote="PRODUCT_QUOTE" data-product="NEO Smart Series 360 kW"><span class="bp-knob" aria-hidden="true"><svg
             class="bp-dots" viewBox="0 0 24 24">
             <circle style="--i:0" cx="4" cy="12" r="1.35" />
             <circle style="--i:1" cx="8" cy="12" r="1.35" />
@@ -336,7 +327,7 @@
       <p>Urban charging, retail, hospitality and commercial sites.</p>
       
       
-      <div class="card-links"><a class="btn btn-ghost btn-sm" href="/chargers/neo-60-120/">NEO Smart 60/120 <em>→</em></a><button type="button" class="btn btn-ghost btn-sm" data-quote="PRODUCT_QUOTE" data-product="NEO Smart 60/120">Request quote</button></div>
+      <div class="card-links"><a class="btn btn-ghost btn-sm" href="/chargers/neo-60-120/">NEO Smart Series 60/120 kW <em>→</em></a><button type="button" class="btn btn-ghost btn-sm" data-quote="PRODUCT_QUOTE" data-product="NEO Smart Series 60/120 kW">Request quote</button></div>
     </article>
 <article class="card">
       <figure class="card-img"><img src="/assets/img/gen/dc-60-120.webp" alt="Isometric highway rest stop with three DC chargers under a canopy (illustrative render)" loading="lazy" decoding="async"></figure>
@@ -345,7 +336,7 @@
       <p>Fleet depots, logistics hubs and highway stops.</p>
       
       
-      <div class="card-links"><a class="btn btn-ghost btn-sm" href="/chargers/neo-180-240/">NEO Smart 180/240 <em>→</em></a><button type="button" class="btn btn-ghost btn-sm" data-quote="PRODUCT_QUOTE" data-product="NEO Smart 180/240">Request quote</button></div>
+      <div class="card-links"><a class="btn btn-ghost btn-sm" href="/chargers/neo-180-240/">NEO Smart Series 180/240 kW <em>→</em></a><button type="button" class="btn btn-ghost btn-sm" data-quote="PRODUCT_QUOTE" data-product="NEO Smart Series 180/240 kW">Request quote</button></div>
     </article>
 <article class="card">
       <figure class="card-img"><img src="/assets/img/gen/dc-180-360.webp" alt="Isometric electric bus depot with high-power DC charging cabinets (illustrative render)" loading="lazy" decoding="async"></figure>
@@ -354,7 +345,7 @@
       <p>High-capacity hubs, heavy-fleet depots and intercity corridors.</p>
       
       
-      <div class="card-links"><a class="btn btn-ghost btn-sm" href="/chargers/neo-360/">NEO Smart 360 <em>→</em></a><button type="button" class="btn btn-ghost btn-sm" data-quote="PRODUCT_QUOTE" data-product="NEO Smart 360">Request quote</button></div>
+      <div class="card-links"><a class="btn btn-ghost btn-sm" href="/chargers/neo-360/">NEO Smart Series 360 kW <em>→</em></a><button type="button" class="btn btn-ghost btn-sm" data-quote="PRODUCT_QUOTE" data-product="NEO Smart Series 360 kW">Request quote</button></div>
     </article></div>
   </div>
 </section>
@@ -364,7 +355,7 @@
 <div class="tbl-split">
   
   <div class="tbl-wrap" tabindex="0" role="region" aria-label="Side by side."><table class="tbl">
-    <thead><tr><th scope="col">Specification</th><th scope="col">NEO 60/120</th><th scope="col">NEO 180/240</th><th scope="col">NEO 360</th></tr></thead>
+    <thead><tr><th scope="col">Specification</th><th scope="col">NEO 60/120 kW</th><th scope="col">NEO 180/240 kW</th><th scope="col">NEO 360 kW</th></tr></thead>
     <tbody><tr><th scope="row">Output power</th><td>60 or 120 kW</td><td>180 or 240 kW</td><td>360 kW</td></tr>
 <tr><th scope="row">Power modules</th><td>2–4 × 30 kW</td><td>6 × 30 kW or 6 × 40 kW</td><td>n/a</td></tr>
 <tr><th scope="row">Current per gun</th><td>250 A</td><td>200 / 250 / 375 A</td><td>375 A, 500 A boost</td></tr>
@@ -506,9 +497,10 @@
             </select></label>
           <label>Charger interest<select name="charger" id="quoteCharger">
               <option>Not sure yet</option>
-              <option>NEO Smart 60/120</option>
-              <option>NEO Smart 180/240</option>
-              <option>NEO Smart 360</option>
+              <option>NEO Smart Series 60/120 kW</option>
+              <option>NEO Smart Series 180/240 kW</option>
+              <option>NEO Smart Series 360 kW</option>
+              <option>NEO Smart Series 480 kW</option>
             </select></label>
           <label class="full">Tell us about your site<textarea name="message" rows="3"></textarea></label>
           <label class="check full"><input type="checkbox" name="consent" required> I agree to be contacted by Envizon

@@ -64,7 +64,7 @@ Rebuild after any content change: `node build.mjs`. The homepage (`index.html`) 
 ## 3. To confirm with Envizon (brochure gaps)
 
 1. **30 kW.** "Why Envizon EV" says 30–360 kW, but the smallest spec sheet is 60 kW (2 × 30 kW modules). Is a single-module 30 kW unit sold? If not, change "30–360" to "60–360" everywhere.
-2. **480 kW.** It appears in the lineup image (p6) with no spec sheet. It is left off the site for now.
+2. **480 kW.** It appears in the lineup image (p6) with no spec sheet. The site shows it in the /chargers lineup and in each product page's "The range" strip as "Specifications on request" (opens the quote form). Add a product page once a spec sheet exists.
 3. **Shared specs.** Protection, interface, enclosure (1100 × 2000 × 850 mm), environment and standards are printed once, after the 360 kW sheet. They are shown on all 3 models. Confirm the dimensions match for 60/120 and 180/240.
 4. **Current per gun on the 180/240** is "200 A / 250 A / 375 A". Which configuration gets which value?
 5. **Footnote** says "subject to change *with* prior notice", probably meant "without". The site uses neutral wording.
@@ -77,7 +77,7 @@ Rebuild after any content change: `node build.mjs`. The homepage (`index.html`) 
 
 ## 4. Images to generate
 
-Use the families, colours, export rules and **negative prompt** in `docs/image-prompts.md` §1. One change applies to the hardware rule: **chargers now look like the NEO Smart Series, not Atom.** NEO look, from the brochure render: a tall floor-standing cabinet, about 1.1 m wide × 2 m tall. Off-white body, brand-green angled side panels and base stripe, a dark bezel around a 10.1" portrait touchscreen, a red emergency-stop button below the screen, and two CCS2 guns holstered one each side with thick black cables. No readable text or logos.
+Use the families, colours, export rules and **negative prompt** in `docs/image-prompts.md` §1. One change applies to the hardware rule: **chargers now look like the NEO Smart Series, not Atom.** NEO look, from the brochure render: a tall floor-standing cabinet, about 1.1 m wide × 2 m tall. Off-white body, brand-green angled side panels and base stripe, a green shield-shaped bezel around the touchscreen, RFID and QR below it, a red emergency stop, and two CCS2 guns holstered side by side on the front. The product images (`assets/img/neo-*.webp`) are now cut from the brochure's real lineup render; see the prompt doc for the full look. No readable text or logos.
 
 How each kind goes live:
 - **Product cut-outs:** save to `assets/img/<file>`. They appear on the next `node build.mjs`. On the homepage, also swap the three `atom-dc-fast.webp` sources in the `#chargers` picker.
